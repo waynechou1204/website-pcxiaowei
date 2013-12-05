@@ -1,0 +1,123 @@
+@CHARSET "UTF-8";
+
+body{
+	font-family:Verdana;
+}
+
+#login-content{
+	text-align:center;
+	width:70%;
+	margin:auto;
+	padding:20px 20px 20px 20px;
+}
+
+#login-pad{
+	border: 1px solid #deddd9;
+	background-color:#faf8f5;
+	
+	padding:10px 0 10px 0;
+	
+	-moz-border-radius: 15px; 
+	-webkit-border-radius: 15px; 
+	border-radius: 15px;
+}
+
+.lab-login{
+	font-family: heiti;
+	font-weight: bold;
+	font-size: 25pt;
+	color: #0ca9fb;
+}
+
+#normal-login{
+	margin-top:18px;
+	margin-bottom:20px;
+	padding-left:20px;
+	padding-right:20px;
+	height:auto;
+}
+
+#login-email{
+	width:60%;
+	margin:auto;
+	margin-bottom:5px;
+	padding:0 5px 0 5px;
+	height:60px;
+}
+#lab-email{
+	margin-bottom:5px;
+	float:left;
+}
+#inp-email{
+	float:left;
+}
+
+#login-pwd{
+	width:60%;
+	margin:auto;
+	margin-bottom:5px;
+	padding:0 5px 0 5px;
+	height:60px;
+}
+#lab-pwd{
+	margin-bottom:5px;
+	float:left;
+}
+#inp-pwd{
+	float:left;
+}
+
+#content input{
+	border: 1px solid #bbb;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#forget-pwd {
+	text-decoration:underline;
+	margin-bottom:5px;
+}
+/*-----------------------------------*/
+#login-go{
+	width:60%;
+	margin:auto;
+	margin-bottom:5px;
+	padding:0 5px 0 5px;
+	height:60px;
+}
+#login-go-remember{
+	text-align:left;
+	margin:auto;
+	margin-bottom:5px;
+	padding:0 5px 0 5px;
+	height:atuo;
+}
+#inp-go-remember{
+	width:auto;
+}
+
+.login-button{
+	
+	padding: 4px 12px;
+	margin-top:5px;
+	
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	
+	cursor:pointer;
+	height:40px;
+	width:99%;
+	color:white;
+	font-weight:bold;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.4);
+	border: 1px solid #0a90c9;
+	background: #0a9aec url(../images/s.gradient.png?v=1) repeat-x 0 -600px;
+}
+
+.login-button span{
+	color:white;
+	font-size:12pt;
+	font-weight: bold;
+}

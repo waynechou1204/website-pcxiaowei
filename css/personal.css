@@ -1,0 +1,209 @@
+@CHARSET "UTF-8";
+
+body{
+	font-family:Verdana;
+}
+
+#personal-content{
+	width:96%;
+	margin:auto;
+	padding:15px 5px 15px 5px;
+	height:auto;
+}
+
+#personal-pad{
+	width:58%;
+	float:left;
+	height:auto;
+	
+	border: 1px solid #deddd9;
+	background-color:#faf8f5;
+	
+	padding:10px 0 10px 0;
+	
+	-moz-border-radius: 15px; 
+	-webkit-border-radius: 15px; 
+	border-radius: 15px;
+}
+
+#personal-pad-head{
+	border-bottom: 1px solid #DEDDD9;
+	padding:8px 5px;
+	height:50px;
+}
+
+.lab-personal-pad-head{
+	font-family: heiti;
+	font-weight: bold;
+	font-size: 25pt;
+	color: #0ca9fb;
+	padding:5px 0px 5px 180px;
+	float:left;
+}
+
+#personal-pad-form{
+	padding:8px 20px;
+}
+
+.co-text{
+	padding: 3px;
+	border: 1px solid #BBB;
+	border-top: 1px solid #AAA;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0px 1px 0px 0px #FFF, inset 0px 1px 3px 0px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: 0px 1px 0px 0px #FFF, inset 0px 1px 3px 0px rgba(0, 0, 0, 0.05);
+	box-shadow: 0px 1px 0px 0px #FFF, inset 0px 1px 3px 0px rgba(0,0,0,0.05);
+}
+
+select {
+	-webkit-appearance: menulist;
+	box-sizing: border-box;
+	-webkit-box-align: center;
+	border: 1px solid;
+	border-image: initial;
+	white-space: pre;
+	-webkit-rtl-ordering: logical;
+	color: black;
+	background-color: white;
+	cursor: default;
+}
+
+a:link{
+	text-decoration:none;
+	color:blue;
+}
+.form-reg{
+	margin: 15px 0;
+	height: 26px;
+	width:100%;
+}
+
+#inp_user_name{
+	float:left;
+	width:40%;
+	font-size:14px;
+}
+
+#inp_user_phone{
+	float:left;
+	width:40%;
+	font-size:14px;
+}
+#lab-form-phone{
+	float:left;
+	margin: 5px 10px;
+	font-size:10px;
+}
+
+#inp_user_email{
+	float:left;
+	width:60%;
+	font-size:14px;
+}
+#inp_user_pwdorigin{
+	float:left;
+	width:40%;
+	font-size:14px;
+}
+#inp_user_pwd{
+	float:left;
+	width:40%;
+	font-size:14px;
+}#inp_user_pwdconfirm{
+	float:left;
+	width:40%;
+	font-size:14px;
+}
+#user_gender{
+	width:13%;
+	font-size:14px;
+	padding: 3px 0;
+	float:left;
+	margin-right:10px;
+}
+#user_yob{
+	width:25%;
+	font-size:14px;
+	padding: 3px 0;
+	float:left;
+	margin-right:5px;
+}
+#user_type{
+	width:15%;
+	font-size:14px;
+	padding: 3px 0;
+	float:left;
+}
+
+#form-button{
+	margin:15px 0;
+	height:30px;
+}
+#form-button-submit{
+	margin: 0 20px 0 80px;
+	height: 40px;
+	width: auto;
+	float:left;
+}
+#form-button-cancel{
+	float:left;
+	margin: 0 0 0 10px;
+}
+#button-reg{
+	cursor:pointer;
+	height:40px;
+	width:150px;
+	color:white;
+	font-weight:bold;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0);
+	border: 1px solid #0a90c9;
+	background: #0a9aec url(../images/s.gradient.png?v=1) repeat-x 0 -600px;
+}
+
+#button-cancel{
+	cursor:pointer;
+	height:40px;
+	width:150px;
+	color:#0a9aec;
+	font-weight:bold;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0);
+	border: 1px solid #c0c0c0;
+	background: #f8f8f8;
+}
+
+.hint{
+	float:left;
+	margin: 5px 10px;
+	font-size:10px;
+	color:red;
+	
+}
+
+#form-photo{
+	float:left;
+	margin:15px 0;
+}
+#user_image{
+	float:left;	
+}
+#lab-user_image{
+	float:left;
+	padding:45px 0 0 10px;
+	font-size:10px; 
+	color:gray;
+}
+#button_user_image{
+	padding:5px 0;
+	border:none;
+	float:left;
+}
+
+/*--------------------------*/
+
+#intro-and-ads{
+	width:38%;
+	float:right;
+	height:auto;
+}
