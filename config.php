@@ -1,6 +1,9 @@
 <?php
-	require '/Applications/XAMPP/xamppfiles/htdocs/Smarty-3.1.14/libs/Smarty.class.php'; 
-	//require_once require_once(SMARTY_DIR . 'Smarty.class.php');
+	//MAC OS X
+	//require '/Applications/XAMPP/xamppfiles/htdocs/Smarty-3.1.14/libs/Smarty.class.php'; 
+	
+	//Windows
+	require_once('F:/xampp/htdocs/Smarty-3.1.14/libs/Smarty.class.php');
 
 	class Smarty_GuestBook extends Smarty { 
 		function __construct() { 
