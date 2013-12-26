@@ -7,8 +7,21 @@
 		<link rel="stylesheet" type="text/css" href="../js/My97DatePicker/skin/WdatePicker.css" />
 		
 		<link rel="shortcut icon" href="../images/icon.ico" type="image/png">
-		<script src="../js/My97DatePicker/WdatePicker.js" type="text/javascript" language="javascript"></script>
 		
+		<script src="../js/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+		
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  		<link rel="Stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+		
+  		<script>
+		  $(function() {
+			var availableTags = [];
+				
+		    $( "#tag" ).autocomplete({source: availableTags});
+		  });
+	  	</script>
+  		
 		<title>同济拼车网</title>
 	</head>
 	
@@ -36,7 +49,7 @@
 			</div>
 						
 			<div id="content" class="clearfix">
-				<div id="home-search-publish" class="container_1" clearfix>
+				<div id="home-search-publish" class="container_1">
 					<div class="searcher-pad">
 						<h3>
 							我要坐车
@@ -55,15 +68,15 @@
 								<label class="label_end" style="color:white;">
 									目的地：
 								</label>
-								<select id="select_start">
+								<select id="select_end">
 									<{html_options values=$loc_ids output=$loc_names selected="2"}>
 								</select>
 							</div>
 							<div class="go_date">
 								<label class="label_date" style="color:white;">
-									出发时间：
+									出发日期：
 								</label>
-								<INPUT class="Wdate" onclick="WdatePicker({minDate:'%y-%M-{%d}'})" realValue My97Mark="false">
+								<input class="Wdate" onclick="WdatePicker({minDate:'%y-%M-{%d}'})" realValue My97Mark="false">
 							</div>
 							<div id="search-button">
 								<button type="submit" class="button_search">

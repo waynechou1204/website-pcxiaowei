@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-09-24 17:46:50
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-26 15:36:07
          compiled from "../templates/main.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:13585168655241b3ea578276-64054830%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '66e6ab708205027c9c504ae2cfd5769a310d78f1' => 
     array (
       0 => '../templates/main.tpl',
-      1 => 1378825985,
+      1 => 1388068564,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5241b3ea5ed473_25323160',
   'variables' => 
   array (
     'username' => 0,
@@ -26,8 +28,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'trips_byprice' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5241b3ea5ed473_25323160',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5241b3ea5ed473_25323160')) {function content_5241b3ea5ed473_25323160($_smarty_tpl) {?><?php if (!is_callable('smarty_function_html_options')) include '/Applications/XAMPP/xamppfiles/htdocs/Smarty-3.1.14/libs/plugins/function.html_options.php';
 ?>
@@ -39,8 +39,22 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<link rel="stylesheet" type="text/css" href="../js/My97DatePicker/skin/WdatePicker.css" />
 		
 		<link rel="shortcut icon" href="../images/icon.ico" type="image/png">
-		<script src="../js/My97DatePicker/WdatePicker.js" type="text/javascript" language="javascript"></script>
 		
+		<script src="../js/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+		
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  		<link rel="Stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+		
+  		<script>
+		  $(function() {
+			var availableTags = new Array();
+						
+				
+		    $( "#select_start" ).autocomplete({source: availableTags});
+		  });
+	  	</script>
+  		
 		<title>同济拼车网</title>
 	</head>
 	
@@ -70,7 +84,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</div>
 						
 			<div id="content" class="clearfix">
-				<div id="home-search-publish" class="container_1" clearfix>
+				<div id="home-search-publish" class="container_1">
 					<div class="searcher-pad">
 						<h3>
 							我要坐车
@@ -90,16 +104,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 								<label class="label_end" style="color:white;">
 									目的地：
 								</label>
-								<select id="select_start">
+								<select id="select_end">
 									<?php echo smarty_function_html_options(array('values'=>$_smarty_tpl->tpl_vars['loc_ids']->value,'output'=>$_smarty_tpl->tpl_vars['loc_names']->value,'selected'=>"2"),$_smarty_tpl);?>
 
 								</select>
 							</div>
 							<div class="go_date">
 								<label class="label_date" style="color:white;">
-									出发时间：
+									出发日期：
 								</label>
-								<INPUT class="Wdate" onclick="WdatePicker({minDate:'%y-%M-{%d}'})" realValue My97Mark="false">
+								<input class="Wdate" onclick="WdatePicker({minDate:'%y-%M-{%d}'})" realValue My97Mark="false">
 							</div>
 							<div id="search-button">
 								<button type="submit" class="button_search">
