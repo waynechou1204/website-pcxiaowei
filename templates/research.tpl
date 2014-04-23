@@ -83,77 +83,7 @@
 				<div id="main-content">
 					<div id="result-and-activity">
 						<div id="results">
-							<div id="result-by-time">
-								<div class="lab-by">
-									<label>最近出发的拼车</label>
-								</div>
-								
-								<{foreach $trips_bytime as $trip}>
-								<!-- use php to repeat -->
-								<hr style="border:1px dashed gray;" />
-								<div class="result">
-									<div class="result-driver-photo">
-										<div class="div-photo">
-											<img class="driver-photo" alt="Driver Photo" src="../upload/photo/<{$trip['driverId']}>" onerror="javascript:this.src='../images/default_user.jpg'" width="50" height="50">
-										</div>
-										<div class="div-driver">
-											<lable class="lab-driver"><{$trip['driverName']}></lable>
-										</div>
-									</div>
-										
-									
-									<div class="result-locations">
-										<a class="lab-loc"><{$trip['startName']}>&#8594;<{$trip['endName']}></a>
-									
-										<div class="result-time"><{$trip['timeGo']}></div>
-										
-										<{if $trip['price'] lte 10}>
-										<div class="result-price-cheap">&yen;<label><{$trip['price']}></label></div>
-										<{elseif $trip['price'] gt 30}>
-										<div class="result-price-expensive">&yen;<label><{$trip['price']}></label></div>
-										<{else}>
-										<div class="result-price-normal">&yen;<label><{$trip['price']}></label></div>
-										<{/if}>
-									
-									</div>
-								</div>		
-								<{/foreach}>
-							</div>
-							<div id="result-by-price">
-								<label class="lab-by">最便宜的拼车</label>
-								
-								<{foreach $trips_byprice as $trip}>
-								<!-- use php to repeat -->
-								<hr style="border:1px dashed gray;" />
-								<div class="result">
-									<div class="result-driver-photo">
-										<div class="div-photo">
-											<img class="driver-photo" alt="Driver Photo" src="../upload/photo/<{$trip['driverId']}>" onerror="javascript:this.src='../images/default_user.jpg'" width="50" height="50">
-										</div>
-										<div class="div-driver">
-											<lable class="lab-driver"><{$trip['driverName']}></lable>
-										</div>
-									</div>
-										
-									
-									<div class="result-locations">
-										<a class="lab-loc"><{$trip['startName']}>&#8594;<{$trip['endName']}></a>
-									
-										<div class="result-time"><{$trip['timeGo']}></div>
-										
-										<{if $trip['price'] lte 10}>
-										<div class="result-price-cheap">&yen;<label><{$trip['price']}></label></div>
-										<{elseif $trip['price'] gt 30}>
-										<div class="result-price-expensive">&yen;<label><{$trip['price']}></label></div>
-										<{else}>
-										<div class="result-price-normal">&yen;<label><{$trip['price']}></label></div>
-										<{/if}>
-									
-									</div>
-								</div>	
-								<{/foreach}>
-							</div>
-							<div class="divclear"></div>
+							
 						</div>
 						<div id="activities">
 						</div>	

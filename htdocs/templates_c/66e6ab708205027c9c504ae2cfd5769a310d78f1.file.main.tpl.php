@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-12-26 15:36:07
+<?php /* Smarty version Smarty-3.1.14, created on 2014-01-16 16:10:24
          compiled from "../templates/main.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:13585168655241b3ea578276-64054830%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '66e6ab708205027c9c504ae2cfd5769a310d78f1' => 
     array (
       0 => '../templates/main.tpl',
-      1 => 1388068564,
+      1 => 1389884890,
       2 => 'file',
     ),
   ),
@@ -42,19 +42,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		
 		<script src="../js/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
 		
-		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-  		<link rel="Stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-		
-  		<script>
-		  $(function() {
-			var availableTags = new Array();
-						
-				
-		    $( "#select_start" ).autocomplete({source: availableTags});
-		  });
-	  	</script>
-  		
 		<title>同济拼车网</title>
 	</head>
 	
@@ -116,11 +103,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 								<input class="Wdate" onclick="WdatePicker({minDate:'%y-%M-{%d}'})" realValue My97Mark="false">
 							</div>
 							<div id="search-button">
-								<button type="submit" class="button_search">
-									<span>
-										<span>搜索</span>
-									</span>
-								</button>
+								<form action="../htdocs/research.php" method="get">
+									<button type="submit" class="button_search">
+										<span>
+											<span>搜索</span>
+										</span>
+									</button>
+								</form>
 							</div>
 						</div>
 					</div>
