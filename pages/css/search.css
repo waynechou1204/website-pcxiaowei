@@ -1,0 +1,111 @@
+.main{
+	margin: 0 auto;
+	width: 960px;
+}
+
+h3{
+	font-family: "heiti";
+	font-style: bold;
+	font-size: 2em;
+	color: #848484;
+	margin-bottom: 5px; 
+}
+
+.searcher-pad{
+	width: 100%;
+	text-align:left;
+	border: 1px solid #a4a4a4;
+	margin: 15px;
+	padding: 15px;
+	height: 200px;
+}
+
+#search-pad-left{
+	float: left;
+	width: 60%;
+	height: 205px;
+}
+#search-pad-right{
+	float: right;
+	width: auto;
+	height: 100%;
+	text-align: middle;
+}
+
+.searcher-pad select,input{
+	width:97%;
+	border: 1px solid ;
+	padding:6px 8px;
+	margin: 2px 0;
+	height: auto;
+}
+
+.search-bars{
+	padding:0;
+	width:100%;
+	height: 60px;
+}
+
+.start_pos{
+	float:left;
+	width:40%;
+	height: auto;
+}
+
+.end_pos{
+	float:left;
+	width:40%;
+}
+
+.go_date{
+	width:20%;
+	float:left;
+}
+
+.input_date{
+	height:32px;
+}
+
+#search-bars #search-button {
+	width:19%;
+	float:left;
+}
+
+.button_search {
+	width:100%;
+	height:36px;
+	font-family: "heiti";
+	margin: 18px 0 0 auto;
+}
+
+#results{
+	width: 100%;
+	height: auto;
+	margin: 15px;
+	padding: 15px;
+	-webkit-border: 1px solid #a4a4a4;
+	-moz-border: 1px solid #a4a4a4;
+	-ms-border: 1px solid #a4a4a4;
+	-o-border: 1px solid #a4a4a4;
+	border: 1px solid #a4a4a4;
+	text-align:left;
+}
+
+.filter-bars{
+	height: 20px;
+	width: 100%;
+	margin: 10px 0;
+}
+
+.filter-bars input{
+	width: auto;
+	margin: 0 5px 0 10px;
+}
+
+#chk-type{
+	float: left;
+}
+#rad-price{
+	float: left;
+	margin: 0 0 0 35px;
+}

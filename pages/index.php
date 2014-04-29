@@ -51,7 +51,7 @@
 				<div class="wrap">
 				<div class="header-left">
 					<div class="logo">
-						<a href="index2.php">拼车晓位</a>
+						<a href="index.php">拼车晓位</a>
 					</div>
 				</div>
 				<div class="header-right">
@@ -67,7 +67,7 @@
 						<li id="signupContainer"><a class="signup" id="signupButton" href="#"><span>注册</span></a>
 							 <div class="clear"> </div>
 				                <div id="signupBox">                
-				                    <form id="signupForm">
+				                    <form id="signupForm" action="search.php" method="post">
 				                        <fieldset id="signupbody">
 				                        	<fieldset>
 				                                <label for="username">真实姓名 <span>*</span></label>
@@ -98,7 +98,7 @@
 						<li id="loginContainer"><a class="login" id="loginButton" href="#"><span>登录</span></i></a>
 							 <div class="clear"> </div>
 				                <div id="loginBox">                
-				                    <form id="loginForm">
+				                    <form id="loginForm" action="search.php" method="post">
 				                        <fieldset id="body">
 				                            <fieldset>
 				                                <label for="email">邮箱地址</label>
@@ -194,7 +194,7 @@
 							</div>
 							<span><label>2</label></span>
 							<div class="border hide"> </div>
-							<a href="#">与拼车友取得联系</a>
+							<a href="#">与拼友取得联系</a>
 						</div>
 						<div class="top-grid hide">
 							<div class="product-pic">
@@ -269,11 +269,11 @@
 						<div class="footer-grid">
 							<h3>Newsletter</h3>
 							<p>Subscribe to our newsletter to keep up-to-date with all the latest news.</p>
-							<form>
+							<!--form>
 								<input type="text" class="text" value="Your Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Name';}">
 								<input type="text" class="text" value="Your Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Email';}">
 								<input type="submit" value="subscribe" />
-							</form>
+							</form-->
 						</div>
 						<div class="clear"> </div>
 					</div>
