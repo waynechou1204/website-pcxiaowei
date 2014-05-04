@@ -22,7 +22,7 @@ h3{
 
 #search-pad-left{
 	float: left;
-	width: 60%;
+	width: 100%;
 	height: 205px;
 }
 #search-pad-right{
@@ -78,6 +78,7 @@ h3{
 	margin: 18px 0 0 auto;
 }
 
+/*------results-----------*/
 #results{
 	width: 100%;
 	height: auto;
@@ -99,13 +100,86 @@ h3{
 
 .filter-bars input{
 	width: auto;
-	margin: 0 5px 0 10px;
+	margin: 0 2px 0 10px;
 }
 
 #chk-type{
 	float: left;
 }
-#rad-price{
+
+.rad-fil{
 	float: left;
 	margin: 0 0 0 35px;
+}
+
+
+.result{
+	float:left;
+	padding:10px 5px;
+	width:98%;
+}
+
+.result-driver-photo{
+	float:left;
+	width:20%;
+}
+
+.driver-photo{
+	padding:0 0 5px 0;
+	width:50px;
+	height:50px;
+	
+}
+.lab-driver{
+	font-size:14px;
+	color:#369	;
+	text-align:center;
+	
+}
+
+.result-locations{
+	float:right;
+	text-align:left;
+	width:78%;
+	font-size:16px;
+	padding-left:5px;
+}
+.lab-loc{
+	font-weight:bold;
+	float:left;
+}
+.result-time{
+	float:left;
+	padding: 10px 0;
+	font-size:14px;
+}
+
+.result-price-expensive{
+	float:right;
+	margin-right:5px;
+	font:1.2em/1.5em Arial,sans-serif;
+	font-weight:bold;
+	font-size:24px;
+	color:#e3170d;
+	padding:20px 5px 5px 0;
+}
+
+.result-price-normal{
+	float:right;
+	margin-right:5px;
+	font:1.2em/1.5em Arial,sans-serif;
+	font-weight:bold;
+	font-size:24px;
+	color:#ff8c00;
+	padding:20px 5px 5px 0;
+}
+
+.result-price-cheap{
+	float:right;
+	margin-right:5px;
+	font:1.2em/1.5em Arial,sans-serif;
+	font-weight:bold;
+	font-size:24px;
+	color:#669d17;
+	padding:20px 5px 5px 0;
 }

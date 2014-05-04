@@ -58,7 +58,13 @@ img{max-width:100%;}
 /*----//importing-fonts---*/
 body{
 	background:#fff;
-	font-family: 'open_sansregular';
+	/*font-family: 'open_sansregular';*/
+	font-family:Lucida Sans Unicode, Hiragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
+	-webkit-font-soomthong: antialiased;
+	-moz-font-soomthong: antialiased;
+	-ms-font-soomthong: antialiased;
+	-o-font-soomthong: antialiased;
+	font-soomthong: antialiased;
 }
 /*---start-wrap-----*/
 .wrap{
@@ -80,7 +86,7 @@ body{
 .logo a{
 	color: #009fcc;
 	/*font-family: 'open_sanssemibold';*/
-	font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+	font-family:Lucida Sans Unicode, Hiragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
 	font-size: 2.8em;
 }
 .header-right{
