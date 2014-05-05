@@ -1,4 +1,7 @@
 <!DOCTYPE HTML>
+
+<?php session_start(); ?>
+
 <html>
 	<head>
 		<title>拼车晓位 | 首页</title>

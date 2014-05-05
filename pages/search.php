@@ -75,8 +75,8 @@
 						</div>
 						<div class="filter-bars">
 							<div id="chk-type">类型:
-								<input type="checkbox" id="chk-pick" value="pick" checked="checked" />捡人
-								<input type="checkbox" id="chk-gotpicked" value="picked" checked="checked" />被捡
+								<input type="checkbox" id="chk-pick" value="pick" checked="checked" />带人
+								<input type="checkbox" id="chk-gotpicked" value="picked" checked="checked" />乘车
 							</div>
 							
 							<div id="rad-departtime" class="rad-fil">出发时间:

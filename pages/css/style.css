@@ -675,8 +675,24 @@ body{
 	top: -3px;
 	cursor: pointer;
 }
+#logoutButton { 
+    display: inline-block;
+	float: right;
+	position: relative;
+	z-index: 30;
+	top: -3px;
+	cursor: pointer;
+}
 /* Login Button Text */
 #loginButton span {
+  display: block;
+	text-align: center;
+	border-radius: 0.15em;
+	-webkit-border-radius: 0.15em;
+	-moz-border-radius: 0.15em;
+	-o-border-radius: 0.15em;
+}
+#logoutButton span {
   display: block;
 	text-align: center;
 	border-radius: 0.15em;
@@ -822,8 +838,24 @@ input:focus {
 	top: -3px;
 	cursor: pointer;
 }
+#personalButton { 
+    display: inline-block;
+	float: right;
+	position: relative;
+	z-index: 30;
+	top: -3px;
+	cursor: pointer;
+}
 /* Login Button Text */
 #signupButton span {
+  	display: block;
+	text-align: center;
+	border-radius: 0.15em;
+	-webkit-border-radius: 0.15em;
+	-moz-border-radius: 0.15em;
+	-o-border-radius: 0.15em;
+}
+#personalButton span {
   	display: block;
 	text-align: center;
 	border-radius: 0.15em;
