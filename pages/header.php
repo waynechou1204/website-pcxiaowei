@@ -55,27 +55,27 @@
 				            <li id="signupContainer"><a class="signup" id="signupButton" href="#"><span>注册</span></a>
 								<div class="clear"> </div>
 			                	<div id="signupBox">                
-		                    	<form id="signupForm" action="search.php" method="post">
+		                    	<form id="signupForm" action="search.php" method="post" enctype="multipart/form-data" onsubmit="return checkForm();">
 		                        <fieldset id="signupbody">
 		                        	<fieldset>
-		                                <label for="signupusername">真实姓名 <span>*</span></label>
-		                                <input type="text" name="username" id="signupusername" />
+		                                <label for="signupusername">真实姓名 <span><lable id="hint-name" class="hint">*</lable></span></label>
+		                                <input type="text" name="username" id="signupusername" onblur="checkName()"/>
 		                            </fieldset>
 		                            <fieldset>
-		                                <label for="signupemail">邮箱地址 <span>*</span></label>
-		                                <input type="text" name="email" id="signupemail" />
+		                                <label for="signupemail">邮箱地址 <span><lable id="hint-email" class="hint">*</lable></span></label>
+		                                <input type="text" name="email" id="signupemail" onblur="checkEmail()"/>
 		                            </fieldset>
 		                            <fieldset>
-		                                <label for="signupphone">手机号 <span>*</span></label>
-		                                <input type="text" name="phone" id="signupphone" />
+		                                <label for="signupphone">手机号 <span><lable id="hint-phone" class="hint">*</lable></span></label>
+		                                <input type="text" name="phone" id="signupphone" placeholder="11位手机号" onblur="checkPhone()"/>
 		                            </fieldset>
 		                            <fieldset>
-		                                <label for="signuppassword">请输入密码 <span>*</span></label>
-		                                <input type="password" name="password" id="signuppassword" />
+		                                <label for="signuppassword">请输入密码 <span><lable id="hint-pwd" class="hint">*</lable></span></label>
+		                                <input type="password" name="password" id="signuppassword" placeholder="6-14个字母、数字或下划线" onblur="checkPwd()"/>
 		                            </fieldset>
 		                            <fieldset>
-		                                <label for="signuppassword1">确认密码 <span>*</span></label>
-		                                <input type="password" name="password" id="signuppassword1" />
+		                                <label for="signuppassword1">确认密码 <span><lable id="hint-pwdconf" class="hint">*</lable></span></label>
+		                                <input type="password" name="password" id="signuppassword1" onblur="checkPwdConf()"/>
 		                            </fieldset>
 		                            <input type="submit" id="signup" value="立即注册" />
 		                        </fieldset>

@@ -13,6 +13,8 @@
 		<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
+		<script src="js/checkFormat.js" type="text/javascript" language="javascript"></script>
+	    
 	    <!---strat-slider-->
 	    <script type="text/javascript" src="js/jquery.min.js"></script>
 	    <link rel="stylesheet" type="text/css" href="css/slider-style.css" />
