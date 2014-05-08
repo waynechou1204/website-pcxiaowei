@@ -173,3 +173,36 @@ function checkForm()
 	*/
 	return true;
 }
+
+function checkLoginPwd()
+{
+	var login = document.getElementById("email");
+	var pwd = document.getElementById("password");
+	var hint = document.getElementById("hint-loginpwd");
+
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	
+	xmlhttp.onreadystatechange=function()
+	{
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	  {
+	    if(xmlhttp.responseText=="1"){
+	    	hint.innerHTML="*账号或密码错误!";
+	    	pwd.style.borderColor="red";
+	    	return false;
+	    }
+	  }
+	}
+	xmlhttp.open("POST","logincheck.php",true);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send("l="+login.value+"&p="+pwd.value);
+
+}

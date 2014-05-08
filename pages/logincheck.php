@@ -11,9 +11,9 @@
 	} 
 	else 
 	{
-		$useremail=$_POST['email'];
+		$useremail=$_POST['l']; // login
 		//$password=md5($_POST['password']); //$password = md5($posts["password"]); 加密
-		$password=($_POST['password']);
+		$password=md5($_POST['p']);
 
 		$db = mysql_connect("localhost", "xiaowei", "891204") or die("Could not connect: " . mysql_error());
 		mysql_select_db("tongjicovoit",$db) or die ('Can\'t use foo : ' . mysql_error());
@@ -37,15 +37,9 @@
 			
 			$_SESSION['islogin']=true;
 			
-			header("Location:index.php");
+			return "1";
 		}else{
-			echo "<html>";
-			echo "<head>";
-			echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
-			echo '</head>';
-			echo "<body>您输入的用户名或密码错误！！</body>";
-			echo "</html>";
-			//header("Location:index.php");
+			return "0";
 		}
 		
 		mysql_close();

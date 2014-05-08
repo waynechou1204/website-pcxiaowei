@@ -86,14 +86,14 @@
 							<li id="loginContainer"><a class="login" id="loginButton" href="#"><span>登录</span></a>
 								 <div class="clear"> </div>
 					                <div id="loginBox">                
-					                    <form id="loginForm" action="logincheck.php" method="post">
+					                    <form id="loginForm" action="logincheck.php" method="post" enctype="multipart/form-data" onsubmit="return checkLoginPwd();">
 					                        <fieldset id="body">
 					                            <fieldset>
 					                                <label for="email">邮箱地址</label>
 					                                <input type="text" name="email" id="email" />
 					                            </fieldset>
 					                            <fieldset>
-					                                <label for="password">密码</label>
+					                                <label for="password">密码 <span><lable id="hint-loginpwd" class="hint">*</lable></span></label>
 					                                <input type="password" name="password" id="password" />
 					                            </fieldset>
 					                            <label class="remeber" for="checkbox"><input type="checkbox" id="checkbox" />记住我</label>
