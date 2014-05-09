@@ -91,7 +91,7 @@ body{
 }
 .header-right{
 	float:right;
-	width: 50%;
+	width: auto;
 }
 .top-nav ul li{
 	display:inline-block;
@@ -812,13 +812,16 @@ fieldset#body {
 }
 /* Forgot your password */
 #loginForm span {
-    display: block;
+    display: inline-block;
+    font-size: 0.875em;
 	background: #fff;
-	padding: 0px 0px 0px 13px;
+	padding: 0;
+	color: #F36EA7;
 }
 #loginForm span a {
     color: #777;
 	font-size: 0.875em;
+	padding-left: 15px;
 }
 input:focus {
     outline:none;

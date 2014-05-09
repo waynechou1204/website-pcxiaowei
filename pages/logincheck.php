@@ -11,38 +11,42 @@
 	} 
 	else 
 	{
-		$useremail=$_POST['l']; // login
-		//$password=md5($_POST['password']); //$password = md5($posts["password"]); 加密
-		$password=md5($_POST['p']);
+		if (isset($_POST["loginemail"]) && isset($_POST["password"])) 
+		{
+			$useremail=$_POST["loginemail"]; // login
+			//$password=md5($_POST['password']); //$password = md5($posts["password"]); 加密
+			$password=md5($_POST['password']);
 
-		$db = mysql_connect("localhost", "xiaowei", "891204") or die("Could not connect: " . mysql_error());
-		mysql_select_db("tongjicovoit",$db) or die ('Can\'t use foo : ' . mysql_error());
-		mysql_query('SET NAMES UTF8');
-		
-		$sql="select * from CLIENT WHERE EMAIL='$useremail' and PWD='$password'";
-		$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
-		$row=mysql_fetch_array($result);
-		
-		if(mysql_num_rows($result)==1){
+			$db = mysql_connect("localhost", "xiaowei", "891204") or die("Could not connect: " . mysql_error());
+			mysql_select_db("tongjicovoit",$db) or die ('Can\'t use foo : ' . mysql_error());
+			mysql_query('SET NAMES UTF8');
 			
-			$_SESSION["userid"]=$row['id'];
-			$_SESSION["username"]=$row['name'];
-			//$_SESSION['usersex']=$row['sex'];
-			//$_SESSION['userbirthyear']=$row['birthyear'];
-			//$_SESSION["usertype"]=$row['client_type'];
-			$_SESSION['useremail']=$useremail;
-			$_SESSION["userphone"]=$row['telephone'];
-			$_SESSION["userpwd"]=$row['pwd']; // after encryption
-			//$_SESSION["userphoto"]=$row['photo'];
+			$sql="select * from CLIENT WHERE EMAIL='$useremail' and PWD='$password'";
+			$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
+			$row=mysql_fetch_array($result);
 			
-			$_SESSION['islogin']=true;
-			
-			return "1";
-		}else{
-			return "0";
+			if(mysql_num_rows($result)==1){
+				
+				$_SESSION["userid"]=$row['id'];
+				$_SESSION["username"]=$row['name'];
+				//$_SESSION['usersex']=$row['sex'];
+				//$_SESSION['userbirthyear']=$row['birthyear'];
+				//$_SESSION["usertype"]=$row['client_type'];
+				$_SESSION['useremail']=$useremail;
+				$_SESSION["userphone"]=$row['telephone'];
+				$_SESSION["userpwd"]=$row['pwd']; // after encryption
+				//$_SESSION["userphoto"]=$row['photo'];
+				
+				$_SESSION['islogin']=true;
+				
+				echo "1";
+			}else{
+				echo "0";
+			}
+
+			mysql_close();
 		}
 		
-		mysql_close();
 	}
 	
 	

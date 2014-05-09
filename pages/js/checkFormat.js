@@ -1,11 +1,10 @@
-
 function checkEmail()
 {
 	var temp = document.getElementById("signupemail");
 	//对电子邮件的验证
 	var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
 
-	var hint= document.getElementById("hint-email");
+	var hint = document.getElementById("hint-email");
 		
 	if(!myreg.test(temp.value))
 	{
@@ -27,6 +26,8 @@ function checkEmail()
 	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 	}
 	
+	var flag = false;
+
 	xmlhttp.onreadystatechange=function()
 	{
 	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
@@ -34,17 +35,21 @@ function checkEmail()
 	    if(xmlhttp.responseText=="1"){
 	    	hint.innerHTML="*该账号已经存在!";
 	    	temp.style.borderColor="red";
-	    	return false;
+	    	flag = false;
 	    }
+	    else 
+	    {
+	    	hint.innerHTML="";
+			temp.style.borderColor="#00c957";
+			flag = true;
+		}
 	  }
 	}
-	xmlhttp.open("GET","getemailhint.php?q="+temp.value,true);
+
+	xmlhttp.open("GET","getemailhint.php?q="+temp.value,false);
 	xmlhttp.send();
 
-	
-	hint.innerHTML="";
-	temp.style.borderColor="#00c957";
-	return true;
+	return flag;
 }
 
 
@@ -148,17 +153,27 @@ function checkPhone(){
 
 function checkForm()
 {
-	if(!checkName()){return false;}
+	if(!checkName()){
+		return false;
+	}
 
 	//if(!checkBirth()){return false;}
 
-	if(!checkPhone()){return false;}
+	if(!checkPhone()){
+		return false;
+	}
 
-	if(!checkEmail()){return false;}
-	
-	if(!checkPwd()){return false;}
+	if(!checkEmail()){
+		return false;
+	}
 
-	if(!checkPwdConf()){return false;}
+	if(!checkPwd()){
+		return false;
+	}
+
+	if(!checkPwdConf()){
+		return false;
+	}
 	
 	/*var ischecklaw = 0;
 	if(document.getElementById("check-law").checked) 
@@ -171,6 +186,8 @@ function checkForm()
 		return false;
 	}
 	*/
+
+	//location.href = "search.php";
 	return true;
 }
 
@@ -178,7 +195,15 @@ function checkLoginPwd()
 {
 	var login = document.getElementById("email");
 	var pwd = document.getElementById("password");
+
 	var hint = document.getElementById("hint-loginpwd");
+
+	if(!login.value || !pwd.value)
+	{
+		hint.innerHTML=" 账号或密码不能为空！";
+		return false;
+	}
+
 
 	var xmlhttp;
 	if (window.XMLHttpRequest)
@@ -189,20 +214,32 @@ function checkLoginPwd()
 	{// code for IE6, IE5
 	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 	}
+
+	xmlhttp.open("POST","logincheck.php",false);
+
+	var flag = false;
 	
 	xmlhttp.onreadystatechange=function()
 	{
 	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
 	  {
-	    if(xmlhttp.responseText=="1"){
+	    if(xmlhttp.responseText=="0")
+	    {
 	    	hint.innerHTML="*账号或密码错误!";
 	    	pwd.style.borderColor="red";
-	    	return false;
+	    	flag = false;
+	    }
+	    else
+	    {
+	    	hint.innerHTML="";
+			pwd.style.borderColor="#00c957";
+	    	flag = true;
 	    }
 	  }
 	}
-	xmlhttp.open("POST","logincheck.php",true);
-	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-	xmlhttp.send("l="+login.value+"&p="+pwd.value);
 
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send("loginemail="+login.value+"&password="+pwd.value);
+
+	return flag;
 }
