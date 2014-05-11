@@ -198,6 +198,8 @@ function checkLoginPwd()
 
 	var hint = document.getElementById("hint-loginpwd");
 
+	var rememberpwd = document.getElementById("checkbox").checked;
+
 	if(!login.value || !pwd.value)
 	{
 		hint.innerHTML=" 账号或密码不能为空！";
@@ -239,7 +241,14 @@ function checkLoginPwd()
 	}
 
 	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-	xmlhttp.send("loginemail="+login.value+"&password="+pwd.value);
+	xmlhttp.send("loginemail="+login.value+"&password="+pwd.value+"&remember="+rememberpwd);
 
 	return flag;
+}
+
+function checkLoginForm()
+{
+	
+    
+	return checkLoginPwd();
 }

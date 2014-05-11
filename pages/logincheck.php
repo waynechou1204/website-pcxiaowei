@@ -39,6 +39,11 @@
 				
 				$_SESSION['islogin']=true;
 				
+				if ($_POST['remember']) {
+					setcookie("useremail", $useremail, time()+3600*24*7);
+					setcookie("password", $_POST['password'], time()+3600*24*7);
+				}
+
 				echo "1";
 			}else{
 				echo "0";

@@ -1,7 +1,9 @@
+<?php 
+	session_start(); 
+	
+?>
+
 <!DOCTYPE HTML>
-
-<?php session_start(); ?>
-
 <html>
 	<head>
 		<title>拼车晓位 | 首页</title>
@@ -13,10 +15,14 @@
 		<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
+		<!-- my js -->
 		<script src="js/checkFormat.js" type="text/javascript" language="javascript"></script>
 	    
 	    <!---strat-slider-->
-	    <script type="text/javascript" src="js/jquery.min.js"></script>
+	    <!-- jquery -->
+	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	    <!--script src="js/jquery.min.js"></script-->
+
 	    <link rel="stylesheet" type="text/css" href="css/slider-style.css" />
 		<script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
 		<!---//strat-slider-->

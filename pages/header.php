@@ -88,15 +88,29 @@
 							<li id="loginContainer"><a class="login" id="loginButton" href="#"><span>登录</span></a>
 								 <div class="clear"> </div>
 					                <div id="loginBox">                
-					                    <form id="loginForm" action="search.php" method="post" enctype="multipart/form-data" onsubmit="return checkLoginPwd();">
+					                    <form id="loginForm" action="search.php" method="post" enctype="multipart/form-data" onsubmit="return checkLoginForm();">
 					                        <fieldset id="body">
 					                            <fieldset>
 					                                <label for="email">邮箱地址</label>
-					                                <input type="text" name="email" id="email" />
+					                                <?php 
+					                                	if (isset($_COOKIE['useremail'])) {
+					                                		echo '<input type="text" name="email" id="email" value="'.$_COOKIE['useremail'].'"/>';
+					                                	}
+					                                	else{
+					                                		echo '<input type="text" name="email" id="email" />';
+					                                	}
+					                                ?>					                                
 					                            </fieldset>
 					                            <fieldset>
 					                                <label for="password">密码 <span><lable id="hint-loginpwd" class="hint"></lable></span></label>
-					                                <input type="password" name="password" id="password" />
+					                                <?php 
+					                                	if (isset($_COOKIE['password'])) {
+					                                		echo '<input type="password" name="password" id="password" value="'.$_COOKIE['password'].'"/>';
+					                                	}
+					                                	else{
+					                                		echo '<input type="password" name="password" id="password" />';
+					                                	}
+					                                ?>	
 					                            </fieldset>
 					                            <label class="remeber" for="checkbox"><input type="checkbox" id="checkbox" />记住我</label>
 					                            <input type="submit" id="login" value="登录" />

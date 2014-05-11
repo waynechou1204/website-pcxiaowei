@@ -2,7 +2,7 @@
 	session_start();
 	
 	if (!isset($_SESSION['islogin']) || $_SESSION['islogin']!==true) {
-		echo "<script language=javascript>alert ('访问前请先登录。');</script>";
+		echo '<script language=javascript> alert("访问前请先登录"); </script>';
 		echo '<script language=javascript>window.location.href="index.php"</script>'; 
 	}
 ?>
