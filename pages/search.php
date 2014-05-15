@@ -7,6 +7,8 @@
 	}
 ?>
 
+<?php include 'loadSearchData.php'; ?>
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -22,17 +24,19 @@
 			addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
 		</script>
 
-		<script src="js/My97DatePicker/WdatePicker.js" type="text/javascript" language="javascript"></script>
-	    
-	    <!---strat-slider---->
+		<!-- my script -->
+		<script src="js/My97DatePicker/WdatePicker.js"></script>
+	    <script src="js/jquery-ajax-gettrips.js"></script>
+
+	    <!---strat-slider-->
 	    <script type="text/javascript" src="js/jquery.min.js"></script>
 	    <link rel="stylesheet" type="text/css" href="css/slider-style.css" />
 		<script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
-		<!---//strat-slider---->
+		<!---//strat-slider-->
 		<!---start-login-script-->
 		<script src="js/login.js"></script>
 		<!---//End-login-script-->
-		<!-----768px-menu---->
+		<!---768px-menu-->
 		<link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
 		<script type="text/javascript" src="js/jquery.mmenu.js"></script>
 			<script type="text/javascript">
@@ -41,7 +45,7 @@
 					$('nav#menu-left').mmenu();
 				});
 			</script>
-		<!-----//768px-menu---->
+		<!---//768px-menu-->
 	</head>
 
 	<body>
@@ -60,8 +64,24 @@
 								<label class="label_start">
 									出发地：
 								</label>
-								<select id="select_start">
-									<{html_options values=$loc_ids output=$loc_names selected="1"}>
+								<select id="select_start" onchange="gettrips()">
+									<?php 
+										$locations = loadlocations();
+										$type = "0";
+										foreach ($locations as $loc) {
+											if ($loc['LOCATION_TYPE'] != $type) {
+												if ($type != "0") {
+													echo '</optgroup>';
+												}
+												echo '<optgroup label="'.$loc['LOCATION_TYPE'].'">';
+												$type = $loc['LOCATION_TYPE'];
+											} 
+												
+											echo '<option value ="'.$loc['LOCATION_ID'].'">'.$loc['NAME'].'</option>';
+										}
+										echo '</optgroup>';
+										unset($loc);
+									?>
 								</select>
 								<!-- input type="text" class="input_pos" id="input_start" -->
 							</div>
@@ -69,8 +89,24 @@
 								<label class="label_end">
 									目的地：
 								</label>
-								<select id="select_start">
-									<{html_options values=$loc_ids output=$loc_names selected="2"}>
+								<select id="select_end">
+									<?php 
+										$type = "0";
+										foreach ($locations as $loc) {
+											if ($loc['LOCATION_TYPE'] != $type) {
+												if ($type != "0") {
+													echo '</optgroup>';
+												}
+												echo '<optgroup label="'.$loc['LOCATION_TYPE'].'">';
+												$type = $loc['LOCATION_TYPE'];
+											} 
+												
+											echo '<option value ="'.$loc['LOCATION_ID'].'">'.$loc['NAME'].'</option>';
+										}
+										echo '</optgroup>';
+										unset($locations);
+										unset($loc);
+									?>
 								</select>
 							</div>
 						</div>
@@ -79,7 +115,7 @@
 								<label class="label_date">
 									出发时间：
 								</label>
-								<input class="Wdate" onclick="WdatePicker({minDate:'%y-%M-{%d}'})" realValue My97Mark="false">
+								<input class="Wdate" id="departdate" onclick="WdatePicker({minDate:'%y-%M-{%d}'})" realValue My97Mark="false">
 							</div>
 						</div>
 						<div class="filter-bars">
@@ -110,34 +146,10 @@
 							结果中没有找到满意的拼车？<a href="#">主动发布信息！</a>
 					</div>
 					
-					<{foreach $trips_bytime as $trip}>
 					<!-- use php to repeat -->
-					<hr style="border:1px dashed gray;" />
-					<div class="result">
-						<div class="result-driver-photo">
-							<div class="div-photo">
-								<img class="driver-photo" alt="Driver Photo" src="../upload/photo/<{$trip['driverId']}>" onerror="javascript:this.src='../images/default_user.jpg'" width="50" height="50">
-							</div>
-							<div class="div-driver">
-								<lable class="lab-driver"><{$trip['driverName']}></lable>
-							</div>
-						</div>
-						<div class="result-locations">
-							<a class="lab-loc"><{$trip['startName']}>&#8594;<{$trip['endName']}></a>
-						
-							<div class="result-time"><{$trip['timeGo']}></div>
-							
-							<{if $trip['price'] lte 10}>
-							<div class="result-price-cheap">&yen;<label><{$trip['price']}></label></div>
-							<{elseif $trip['price'] gt 30}>
-							<div class="result-price-expensive">&yen;<label><{$trip['price']}></label></div>
-							<{else}>
-							<div class="result-price-normal">&yen;<label><{$trip['price']}></label></div>
-							<{/if}>
-						
-						</div>
+					<div class="result" id="search-results">
+						<!-- results of search, loaded by js -->
 					</div>		
-					<{/foreach}>
 					
 					<div class="divclear"></div>
 				</div>

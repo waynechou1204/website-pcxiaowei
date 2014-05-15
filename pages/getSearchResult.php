@@ -1,0 +1,103 @@
+<?php 
+
+	$start_loc=$_GET["stloc"];
+	$end_loc = $_GET["edloc"];
+	$depart_date=$_GET["deptdate"];
+	$type_takeman=$_GET["typtkm"];
+	$type_bycar=$_GET["typbcar"];
+	$order_indx=$_GET["order"];
+
+	$con = mysql_connect("localhost", "xiaowei", "891204");
+	if (!$con)
+	{
+		die('Could not connect: ' . mysql_error());
+	}
+
+	mysql_select_db("tongjicovoit", $con);
+	mysql_query('SET NAMES UTF8');
+
+	$type_sql = null;
+
+	if($type_takeman==true){
+		if ($type_bycar==true) {
+			$type_sql=" ";
+		} else {
+			$type_sql=" AND TYPE='pickup' ";
+		}
+	}
+	else{
+		if ($type_bycar==true) {
+			$type_sql=" AND TYPE='picked' ";
+		} else {
+			$type_sql=" ";
+		}
+	}
+
+	$order_sql = " ";
+	switch ($order_indx)
+	{
+	case 0:
+		$order_sql = " ORDER BY DEPART_TIME ASC";
+		break;  
+	case 1:
+		$order_sql = " ORDER BY DEPART_TIME DESC";
+		break;
+	case 2:
+		$order_sql = " ORDER BY PRICE_ONEWAY ASC";
+		break;
+	case 3:
+		$order_sql = " ORDER BY PRICE_ONEWAY DESC";
+		break;
+	case 4:
+		$order_sql = " ORDER BY PUB_TIME ASC";
+		break;
+	case 5:
+		$order_sql = " ORDER BY PUB_TIME ASC";
+		break;
+	default:
+	  	break;
+	}
+
+	$sql = "select * from LOCATION WHERE NAME = '".$start_loc."'";
+	$restemp = mysql_query($sql) or die("Invalid query: " . mysql_error());
+	$arrtemp = mysql_fetch_array($restemp); 
+	$start_loc_id = $arrtemp['LOCATION_ID'];
+
+	$sql = "select * from LOCATION WHERE NAME = '".$end_loc."'";
+	$restemp = mysql_query($sql) or die("Invalid query: " . mysql_error());
+	$arrtemp = mysql_fetch_array($restemp);
+	$end_loc_id = $arrtemp['LOCATION_ID'];		
+
+	$sql="select * from TRIP WHERE START_LOCATION= '" .$start_loc_id. "'" . " AND END_LOCATION= '" .$end_loc_id. "'" .
+			 " AND DEPART_DATE= '" .$depart_date. "'" . $type_sql . $order_sql;
+
+	$result = mysql_query($sql) or die("Invalid query: " . mysql_error());
+	$nb = mysql_num_rows($result);
+			
+	//get search results from db
+	if($nb > 0)
+	{
+		while($arr = mysql_fetch_array($result))
+		{
+			echo '<hr style="border:1px dashed gray;" />';
+			echo '<div class="search-result">';
+			echo '	<div class="result-driver-photo">';
+			echo '		<div class="div-photo">';
+			//echo '			<img class="driver-photo" alt="Driver Photo" src="../upload/photo/<{$trip['driverId']}>" onerror="javascript:this.src='../images/default_user.jpg'" width="50" height="50">';
+			echo '		</div>';
+			echo '		<div class="div-driver">';
+			//echo '			<lable class="lab-driver"><{$trip['driverName']}></lable>';
+			echo '		</div>';
+			echo '	</div>';
+			echo '	<div class="result-detail">';
+			echo '		<a class="lab-loc">'.$start_loc.'&#8594;'.$end_loc.'</a>';
+			echo '		<div class="result-time">'.$arr['DEPART_TIME'].'</div>';
+			echo '		<div class="result-price-normal">&yen;<label>'.$arr['PRICE_ONEWAY'].'</label></div>';
+			echo '	</div>';
+			echo "</div>";
+		}
+	}
+
+	mysql_close($con);
+
+?>
