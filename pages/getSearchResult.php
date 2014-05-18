@@ -2,9 +2,12 @@
 
 	$start_loc=$_GET["stloc"];
 	$end_loc = $_GET["edloc"];
+	
 	$depart_date=$_GET["deptdate"];
+	
 	$type_takeman=$_GET["typtkm"];
 	$type_bycar=$_GET["typbcar"];
+
 	$order_indx=$_GET["order"];
 
 	$con = mysql_connect("localhost", "xiaowei", "891204");
@@ -16,22 +19,20 @@
 	mysql_select_db("tongjicovoit", $con);
 	mysql_query('SET NAMES UTF8');
 
-	$type_sql = null;
+	$date_sql = " ";
+	if (!empty($depart_date)) {
+		$date_sql = " AND DEPART_DATE= '".$depart_date."'";
+	}
 
-	if($type_takeman==true){
-		if ($type_bycar==true) {
-			$type_sql=" ";
-		} else {
-			$type_sql=" AND TYPE='pickup' ";
-		}
+
+	$type_sql = " ";
+	if($type_takeman=="true" && $type_bycar=="false"){
+		$type_sql=" AND TYPE='pickup' ";
 	}
-	else{
-		if ($type_bycar==true) {
-			$type_sql=" AND TYPE='picked' ";
-		} else {
-			$type_sql=" ";
-		}
+	else if($type_takeman=="false" && $type_bycar=="true"){
+		$type_sql=" AND TYPE='picked' ";
 	}
+
 
 	$order_sql = " ";
 	switch ($order_indx)
@@ -58,40 +59,53 @@
 	  	break;
 	}
 
-	$sql = "select * from LOCATION WHERE NAME = '".$start_loc."'";
+	$sql = "SELECT * from LOCATION WHERE NAME = '".$start_loc."'";
 	$restemp = mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$arrtemp = mysql_fetch_array($restemp); 
 	$start_loc_id = $arrtemp['LOCATION_ID'];
 
-	$sql = "select * from LOCATION WHERE NAME = '".$end_loc."'";
+	$sql = "SELECT * from LOCATION WHERE NAME = '".$end_loc."'";
 	$restemp = mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$arrtemp = mysql_fetch_array($restemp);
 	$end_loc_id = $arrtemp['LOCATION_ID'];		
 
-	$sql="select * from TRIP WHERE START_LOCATION= '" .$start_loc_id. "'" . " AND END_LOCATION= '" .$end_loc_id. "'" .
-			 " AND DEPART_DATE= '" .$depart_date. "'" . $type_sql . $order_sql;
+	$sql="SELECT * from TRIP WHERE START_LOCATION= '" .$start_loc_id. "'" . " AND END_LOCATION= '" .$end_loc_id. "'" .
+			 $date_sql . $type_sql . $order_sql;
 
 	$result = mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$nb = mysql_num_rows($result);
-			
+	
+
 	//get search results from db
 	if($nb > 0)
 	{
 		while($arr = mysql_fetch_array($result))
 		{
 			echo '<hr style="border:1px dashed gray;" />';
-			echo '<div class="search-result">';
-			echo '	<div class="result-driver-photo">';
-			echo '		<div class="div-photo">';
+			if ($arr['TYPE']=="pickup") { // blue
+				echo '<div class="search-result-pickup" onMouseOver="this.className=\'search-result-mouseover\';" onMouseOut="this.className=\'search-result-pickup\';" onclick="location.href=\'tripdetail.php&id='.$arr['TRIP_ID'].'\';">';
+			}
+			else{ //pink
+				echo '<div class="search-result-picked" onMouseOver="this.className=\'search-result-mouseover\';" onMouseOut="this.className=\'search-result-picked\';" onclick="location.href=\'tripdetail.php&id='.$arr['TRIP_ID'].'\';">';	
+			}
+			
+			echo '	<div class="result-owner">';
+			echo '		<div class="div-owner">';
 			//echo '			<img class="driver-photo" alt="Driver Photo" src="../upload/photo/<{$trip['driverId']}>" onerror="javascript:this.src='../images/default_user.jpg'" width="50" height="50">';
+			$sql= "SELECT * FROM CLIENT WHERE id= '".$arr['OWNER_ID']."'";
+			$restemp = mysql_query($sql) or die("Invalid query: ".mysql_error());
+			$arrtemp = mysql_fetch_array($restemp);
+			$ower_name = $arrtemp['name'];
+			echo 			$ower_name;
 			echo '		</div>';
 			echo '		<div class="div-driver">';
 			//echo '			<lable class="lab-driver"><{$trip['driverName']}></lable>';
 			echo '		</div>';
 			echo '	</div>';
 			echo '	<div class="result-detail">';
-			echo '		<a class="lab-loc">'.$start_loc.'&#8594;'.$end_loc.'</a>';
-			echo '		<div class="result-time">'.$arr['DEPART_TIME'].'</div>';
+			echo '		<div class="result-loc">'.$start_loc.'  &#8594;  '.$end_loc.'</div>';
+			echo '		<div class="result-time">'.$arr['DEPART_DATE']."<br />".$arr['DEPART_TIME'].'</div>';
+			echo '		<div class="result-pubtime">'. "5小时前发布" .'</div>';
 			echo '		<div class="result-price-normal">&yen;<label>'.$arr['PRICE_ONEWAY'].'</label></div>';
 			echo '	</div>';
 			echo "</div>";

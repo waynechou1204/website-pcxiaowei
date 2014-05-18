@@ -48,7 +48,7 @@
 		<!---//768px-menu-->
 	</head>
 
-	<body>
+	<body onload="gettrips()">
 		<?php include 'header.php'; ?>
 			
 		<!--start-banner-->
@@ -89,9 +89,10 @@
 								<label class="label_end">
 									目的地：
 								</label>
-								<select id="select_end">
+								<select id="select_end" onchange="gettrips()">
 									<?php 
 										$type = "0";
+										$i=0;
 										foreach ($locations as $loc) {
 											if ($loc['LOCATION_TYPE'] != $type) {
 												if ($type != "0") {
@@ -100,8 +101,14 @@
 												echo '<optgroup label="'.$loc['LOCATION_TYPE'].'">';
 												$type = $loc['LOCATION_TYPE'];
 											} 
-												
-											echo '<option value ="'.$loc['LOCATION_ID'].'">'.$loc['NAME'].'</option>';
+											if ($i==1) 
+											{
+												echo '<option value ="'.$loc['LOCATION_ID'].'"selected="selected">'.$loc['NAME'].'</option>';
+											}
+											else{
+												echo '<option value ="'.$loc['LOCATION_ID'].'">'.$loc['NAME'].'</option>';	
+											}	
+											$i++;
 										}
 										echo '</optgroup>';
 										unset($locations);
@@ -115,26 +122,26 @@
 								<label class="label_date">
 									出发时间：
 								</label>
-								<input class="Wdate" id="departdate" onclick="WdatePicker({minDate:'%y-%M-{%d}'})" realValue My97Mark="false">
+								<input class="Wdate" id="departdate" onchange="gettrips()" onclick="WdatePicker({minDate:'%y-%M-{%d}'})" realValue My97Mark="false">
 							</div>
 						</div>
 						<div class="filter-bars">
 							<div id="chk-type">类型:
-								<input type="checkbox" id="chk-pick" value="pick" checked="checked" />带人
-								<input type="checkbox" id="chk-gotpicked" value="picked" checked="checked" />乘车
+								<input type="checkbox" id="chk-pick" value="pick" checked="checked" onclick="gettrips()"/>出车
+								<input type="checkbox" id="chk-gotpicked" value="picked" checked="checked" onclick="gettrips()"/>求车
 							</div>
 							
 							<div id="rad-departtime" class="rad-fil">出发时间:
-								<input type="radio" name="rad-filter" value="asc" checked="checked"/> 最早
-								<input type="radio" name="rad-filter" value="des" /> 最晚
+								<input type="radio" name="rad-filter" value="asc" checked="checked" onchange="gettrips()"/> 最早
+								<input type="radio" name="rad-filter" value="des" onchange="gettrips()"/> 最晚
 							</div>
 							<div id="rad-price" class="rad-fil">价格:
-								<input type="radio" name="rad-filter" value="asc" /> 升序
-								<input type="radio" name="rad-filter" value="des" /> 降序
+								<input type="radio" name="rad-filter" value="asc" onchange="gettrips()"/> 升序
+								<input type="radio" name="rad-filter" value="des" onchange="gettrips()"/> 降序
 							</div>
 							<div id="rad-pubtime" class="rad-fil">发布时间:
-								<input type="radio" name="rad-filter" value="asc" /> 最早
-								<input type="radio" name="rad-filter" value="des" /> 最晚
+								<input type="radio" name="rad-filter" value="asc" onchange="gettrips()"/> 最早
+								<input type="radio" name="rad-filter" value="des" onchange="gettrips()"/> 最新
 							</div>
 							
 						</div>
@@ -142,12 +149,14 @@
 					
 				</div>
 				<div id="results">
-					<div id="search-pad-right">
+					<div id="result-pad-right">
 							结果中没有找到满意的拼车？<a href="#">主动发布信息！</a>
+							<label style="background:#f0ffff">出车</label>
+							<label style="background:#fffafa">求车</label>
 					</div>
 					
 					<!-- use php to repeat -->
-					<div class="result" id="search-results">
+					<div id="search-results">
 						<!-- results of search, loaded by js -->
 					</div>		
 					

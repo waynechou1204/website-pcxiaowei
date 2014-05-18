@@ -25,12 +25,6 @@ h3{
 	width: 100%;
 	height: 205px;
 }
-#search-pad-right{
-	float: right;
-	width: auto;
-	height: 100%;
-	text-align: middle;
-}
 
 .searcher-pad select,input{
 	width:97%;
@@ -81,6 +75,7 @@ h3{
 /*------results-----------*/
 #results{
 	width: 100%;
+	min-height: 200px;
 	height: auto;
 	margin: 15px;
 	padding: 15px;
@@ -91,6 +86,75 @@ h3{
 	border: 1px solid #a4a4a4;
 	text-align:left;
 }
+#result-pad-right{
+	width: auto;
+	height: 100%;
+	text-align: middle;
+	padding:0 5px;
+}
+#search-results{
+	padding:10px 5px;
+	width:98%;
+	height: 100%;
+}
+.search-result-pickup{
+	width: 100%;
+	min-height: 80px;
+	height: auto;
+	background-color: #f0ffff;
+}
+.search-result-picked{
+	width: 100%;
+	min-height: 80px;
+	height: auto;
+	background-color: #fffafa;
+}
+.search-result-mouseover{
+	width: 100%;
+	min-height: 80px;
+	height: auto;
+	background-color: #eeffbb;
+}
+
+
+.result-owner{
+	width: 15%;
+	top: 50%;
+	padding: 5px;
+	float: left;
+	height: 100%
+}
+.result-detail{
+	width: 80%;
+	padding: 5px 5px 5px 0;
+	float: left;
+	height: 100%; 
+}
+.result-loc{
+	float: left;
+	padding: 5px;
+	width: 45%;
+	height: auto;
+}
+.result-time{
+	float:left;
+	padding: 5px;
+	width: 20%;
+}
+.result-pubtime{
+	float: left;
+	padding: 5px;
+}
+.result-price-normal{
+	float:right;
+	margin-right:5px;
+	font:1.2em/1.5em Arial,sans-serif;
+	font-weight:bold;
+	font-size:24px;
+	color:#ff8c00;
+	padding:5px;
+}
+
 
 .filter-bars{
 	height: 20px;
@@ -113,46 +177,9 @@ h3{
 }
 
 
-.result{
-	float:left;
-	padding:10px 5px;
-	width:98%;
-}
 
-.result-driver-photo{
-	float:left;
-	width:20%;
-}
 
-.driver-photo{
-	padding:0 0 5px 0;
-	width:50px;
-	height:50px;
-	
-}
-.lab-driver{
-	font-size:14px;
-	color:#369	;
-	text-align:center;
-	
-}
 
-.result-locations{
-	float:right;
-	text-align:left;
-	width:78%;
-	font-size:16px;
-	padding-left:5px;
-}
-.lab-loc{
-	font-weight:bold;
-	float:left;
-}
-.result-time{
-	float:left;
-	padding: 10px 0;
-	font-size:14px;
-}
 
 .result-price-expensive{
 	float:right;
@@ -164,15 +191,6 @@ h3{
 	padding:20px 5px 5px 0;
 }
 
-.result-price-normal{
-	float:right;
-	margin-right:5px;
-	font:1.2em/1.5em Arial,sans-serif;
-	font-weight:bold;
-	font-size:24px;
-	color:#ff8c00;
-	padding:20px 5px 5px 0;
-}
 
 .result-price-cheap{
 	float:right;
