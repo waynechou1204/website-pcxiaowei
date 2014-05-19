@@ -12,9 +12,9 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>拼车晓位 | 搜索</title>
+		<title>拼车晓位 | 发布</title>
 		<link href="css/style.css" rel='stylesheet' type='text/css' />
-		<link rel="stylesheet" href="css/search.css" type='text/css'/>
+		<link rel="stylesheet" href="css/publish.css" type='text/css'/>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -27,7 +27,7 @@
 		<!-- my script -->
 		<script src="js/My97DatePicker/WdatePicker.js"></script>
 	    <script src="js/jquery-ajax-gettrips.js"></script>
-
+		<script src="js/checkFormat.js"></script>
 	    <!---strat-slider-->
 	    <script type="text/javascript" src="js/jquery.min.js"></script>
 	    <link rel="stylesheet" type="text/css" href="css/slider-style.css" />
@@ -48,7 +48,7 @@
 		<!---//768px-menu-->
 	</head>
 
-	<body onload="gettrips()">
+	<body>
 		<?php include 'header.php'; ?>
 			
 		<!--start-banner-->
@@ -56,15 +56,22 @@
 			<div class="main">
 				<div class="searcher-pad">
 					<div id="search-pad-left">
+						<form action="dopublish.php" method="get" onsubmit="return checkPublishForm();">
 						<h3>
-							搜索栏
+							发布栏
 						</h3>	
-						<div class="search-bars">
+						<div class="publish-bars">
+							<div id="rad-fil">类型:
+								<input type="radio" class="rad-type" name="radtype" checked="checked"/>出车
+								<input type="radio" class="rad-type" name="radtype"/>求车
+							</div>
+						</div>
+						<div class="publish-bars">
 							<div class="start_pos">
 								<label class="label_start">
 									出发地：
 								</label>
-								<select id="select_start" onchange="gettrips()">
+								<select id="select_start">
 									<?php 
 										$locations = loadlocations();
 										$type = "0";
@@ -89,7 +96,7 @@
 								<label class="label_end">
 									目的地：
 								</label>
-								<select id="select_end" onchange="gettrips()">
+								<select id="select_end">
 									<?php 
 										$type = "0";
 										$i=0;
@@ -116,54 +123,63 @@
 									?>
 								</select>
 							</div>
+							<div style="clear:both"></div> 
 						</div>
-						<div class="search-bars">
+						<div class="publish-bars">
 							<div class="go_date">
 								<label class="label_date">
-									出发时间：
+									出发日期：
 								</label>
-								<input class="Wdate" id="departdate" onchange="gettrips()" onclick="WdatePicker({minDate:'%y-%M-{%d}'})" realValue My97Mark="false">
+								<input class="Wdate" id="departdate" onclick="WdatePicker({minDate:'%y-%M-{%d}'})" realValue My97Mark="false">
+							</div>
+							<div style="clear:both"></div> 
+						</div>
+						<div class="publish-bars">
+							<div id="select-departtime">出发时间:
+								<select id="select_departtime_hour">
+									<?php 
+										for ($i=0; $i <24 ; $i++) { 
+											echo '<option value="'.$i.'">'.$i.'</option>';
+										}
+									?>
+								</select>
+								时
+								<select id="select_departtime_min">
+									<?php 
+										for ($i=0; $i <60 ; $i=$i+5) { 
+											echo '<option value="'.$i.'">'.$i.'</option>';
+										}
+									?>
+								</select>
+								分
 							</div>
 						</div>
-						<div class="filter-bars">
-							<div id="chk-type">类型:
-								<input type="checkbox" id="chk-pick" value="pick" checked="checked" onclick="gettrips()"/>出车
-								<input type="checkbox" id="chk-gotpicked" value="picked" checked="checked" onclick="gettrips()"/>求车
-							</div>
-							
-							<div id="rad-departtime" class="rad-fil">出发时间:
-								<input type="radio" name="rad-filter" value="asc" checked="checked" onchange="gettrips()"/> 最早
-								<input type="radio" name="rad-filter" value="des" onchange="gettrips()"/> 最晚
-							</div>
-							<div id="rad-price" class="rad-fil">价格:
-								<input type="radio" name="rad-filter" value="asc" onchange="gettrips()"/> 升序
-								<input type="radio" name="rad-filter" value="des" onchange="gettrips()"/> 降序
-							</div>
-							<div id="rad-pubtime" class="rad-fil">发布时间:
-								<input type="radio" name="rad-filter" value="asc" onchange="gettrips()"/> 最早
-								<input type="radio" name="rad-filter" value="des" onchange="gettrips()"/> 最新
-							</div>
-							
+						
+						<!--div id="div-freeseats" class="publish-bars">空余座位:
+							<select id="select_free_seats">
+								<?php 
+									for ($i=1; $i <12 ; $i++) { 
+										echo '<option value="'.$i.'">'.$i.'</option>';
+									}
+								?>
+							</select>
+						</div-->
+
+						<div id="div-price" class="publish-bars">单人价格:
+							<input id="inp-price" onkeyup="checkPriceInput()" onafterpaste="checkPriceInput()"></input>
+							<label> 建议价格为每位乘客(不含司机)支付: (单程油费+高速路费)/3 </label>
 						</div>
+
+						<div id="div-submit" class="publish-bars">
+							<input type="submit" id="sub-publish" value="发布"/>
+						</div>
+						</form>
 					</div>
 					
-				</div>
-				<div id="results">
-					<div id="result-pad-right">
-							结果中没有找到满意的拼车？<a href="publish.php">主动发布信息！</a>
-							<label style="background:#f0ffff">出车</label>
-							<label style="background:#fffafa">求车</label>
-					</div>
-					
-					<!-- use php to repeat -->
-					<div id="search-results">
-						<!-- results of search, loaded by js -->
-					</div>		
-					
-					<div class="divclear"></div>
 				</div>
 			</div>
 		</div>
+		
 		<!---//End-mid-grids-->
 		
 		<!---start-bottom-footer-grids-->

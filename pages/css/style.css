@@ -78,6 +78,7 @@ body{
 .header {
 	padding: 0.3em 0 0em;
 	border-bottom: 1px solid #eee;
+	min-width: 1043px;
 }
 .header-left{
 	float:left;
@@ -91,7 +92,7 @@ body{
 }
 .header-right{
 	float:right;
-	width: auto;
+	min-width: 651px;
 }
 .top-nav ul li{
 	display:inline-block;

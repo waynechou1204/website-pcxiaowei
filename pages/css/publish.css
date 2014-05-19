@@ -1,0 +1,86 @@
+.main{
+	margin: 0 auto;
+	width: 960px;
+}
+
+h3{
+	font-family: "heiti";
+	font-style: bold;
+	font-size: 2em;
+	color: #848484;
+	margin-bottom: 5px; 
+}
+
+.searcher-pad{
+	width: 100%;
+	text-align:left;
+	border: 1px solid #a4a4a4;
+	margin: 15px;
+	padding: 15px;
+	min-height: 200px;
+}
+
+#search-pad-left{
+	width: 100%;
+	min-height: 205px;
+}
+
+.publish-bars{
+	padding:5px 0 5px 0;
+	width:100%;
+}
+
+input.rad-type{
+	margin: 0 5px 0 15px;
+}
+
+.start_pos{
+	float:left;
+	height: auto;
+	padding: 0 20px 0 0;
+}
+
+.end_pos{
+	float:left;
+}
+
+.go_date{
+	float:left;
+}
+
+.input_date{
+	height:32px;
+}
+
+#inp-price{
+	text-align: right;
+	margin-right: 20px;
+}
+
+#sub-publish{
+	color: #fff;
+	font-size: 0.875em;
+	font-weight: normal;
+	padding: 10px 15px;
+	text-transform: uppercase;
+	background:#00aa55;
+	display: inline-block;
+	min-width: 88px;
+	cursor:pointer;
+	margin: 1em 0 0 0;
+	border: none;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+	border-radius: 0.15em;
+	-webkit-border-radius: 0.15em;
+	-moz-border-radius: 0.15em;
+	-o-border-radius: 0.15em;
+}
+
+
+
+
+

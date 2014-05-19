@@ -92,7 +92,7 @@
 			echo '	<div class="result-owner">';
 			echo '		<div class="div-owner">';
 			//echo '			<img class="driver-photo" alt="Driver Photo" src="../upload/photo/<{$trip['driverId']}>" onerror="javascript:this.src='../images/default_user.jpg'" width="50" height="50">';
-			$sql= "SELECT * FROM CLIENT WHERE id= '".$arr['OWNER_ID']."'";
+			$sql = "SELECT * FROM CLIENT WHERE id= '".$arr['OWNER_ID']."'";
 			$restemp = mysql_query($sql) or die("Invalid query: ".mysql_error());
 			$arrtemp = mysql_fetch_array($restemp);
 			$ower_name = $arrtemp['name'];

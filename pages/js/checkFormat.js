@@ -248,7 +248,32 @@ function checkLoginPwd()
 
 function checkLoginForm()
 {
-	
-    
 	return checkLoginPwd();
+}
+
+function checkPriceInput()
+{
+	var p = document.getElementById("inp-price");
+	p.value = p.value.replace(/\D/g,"");
+}
+
+function checkPublishForm()
+{
+	var date = document.getElementById("departdate");
+	if(!date.value)
+	{
+		date.style.borderColor="red";
+		return false;
+	}
+	
+	var types = document.getElementsByName("rad-type");
+	if (types[0].checked) {
+		var p = document.getElementById("inp-price");
+		if (!p.value) 
+		{
+			p.style.borderColor="red";
+			return false;
+		}
+	}
+	return true;
 }
