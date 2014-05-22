@@ -20,8 +20,8 @@
 	    
 	    <!---strat-slider-->
 	    <!-- jquery -->
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-	    <!--script src="js/jquery.min.js"></script-->
+	    <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script-->
+	    <script src="js/jquery.min.js"></script>
 
 	    <link rel="stylesheet" type="text/css" href="css/slider-style.css" />
 		<script type="text/javascript" src="js/modernizr.custom.28468.js"></script>

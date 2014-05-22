@@ -26,7 +26,7 @@ h3{
 }
 
 .publish-bars{
-	padding:5px 0 5px 0;
+	padding:5px 0 10px 0;
 	width:100%;
 }
 
@@ -55,6 +55,11 @@ input.rad-type{
 #inp-price{
 	text-align: right;
 	margin-right: 20px;
+}
+
+#div-price span{
+	font-size: 0.85em;
+	color: gray;
 }
 
 #sub-publish{

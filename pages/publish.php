@@ -48,7 +48,7 @@
 		<!---//768px-menu-->
 	</head>
 
-	<body>
+	<body onload="showFormByType(1)">
 		<?php include 'header.php'; ?>
 			
 		<!--start-banner-->
@@ -62,14 +62,14 @@
 						</h3>	
 						<div class="publish-bars">
 							<div id="rad-fil">类型:
-								<input type="radio" class="rad-type" name="radtype" checked="checked"/>出车
-								<input type="radio" class="rad-type" name="radtype"/>求车
+								<input type="radio" class="rad-type" name="radtype" checked="checked" onchange="showFormByType(1)"/>出车
+								<input type="radio" class="rad-type" name="radtype" onchange="showFormByType(2)"/>求车
 							</div>
 						</div>
 						<div class="publish-bars">
 							<div class="start_pos">
 								<label class="label_start">
-									出发地：
+									出发地:
 								</label>
 								<select id="select_start">
 									<?php 
@@ -94,7 +94,7 @@
 							</div>
 							<div class="end_pos">
 								<label class="label_end">
-									目的地：
+									目的地:
 								</label>
 								<select id="select_end">
 									<?php 
@@ -128,14 +128,15 @@
 						<div class="publish-bars">
 							<div class="go_date">
 								<label class="label_date">
-									出发日期：
+									出发日期:
 								</label>
 								<input class="Wdate" id="departdate" onclick="WdatePicker({minDate:'%y-%M-{%d}'})" realValue My97Mark="false">
 							</div>
 							<div style="clear:both"></div> 
 						</div>
 						<div class="publish-bars">
-							<div id="select-departtime">出发时间:
+							<div id="select-departtime">
+								<label>出发时间:</label>
 								<select id="select_departtime_hour">
 									<?php 
 										for ($i=0; $i <24 ; $i++) { 
@@ -155,19 +156,12 @@
 							</div>
 						</div>
 						
-						<!--div id="div-freeseats" class="publish-bars">空余座位:
-							<select id="select_free_seats">
-								<?php 
-									for ($i=1; $i <12 ; $i++) { 
-										echo '<option value="'.$i.'">'.$i.'</option>';
-									}
-								?>
-							</select>
-						</div-->
+						<div id="div-freeseats" class="publish-bars">
+							<!-- done by JS -->
+						</div>
 
-						<div id="div-price" class="publish-bars">单人价格:
-							<input id="inp-price" onkeyup="checkPriceInput()" onafterpaste="checkPriceInput()"></input>
-							<label> 建议价格为每位乘客(不含司机)支付: (单程油费+高速路费)/3 </label>
+						<div id="div-price" class="publish-bars">
+							<!-- done by JS -->
 						</div>
 
 						<div id="div-submit" class="publish-bars">

@@ -106,6 +106,16 @@
 			echo '		<div class="result-loc">'.$start_loc.'  &#8594;  '.$end_loc.'</div>';
 			echo '		<div class="result-time">'.$arr['DEPART_DATE']."<br />".$arr['DEPART_TIME'].'</div>';
 			echo '		<div class="result-pubtime">'. "5小时前发布" .'</div>';
+			if ($arr['TYPE']=="pickup") {
+			echo '		<div class="result-seats">' ."可乘坐3人".
+							'<div class="result-reserv">'."有6人感兴趣".'</div>'.
+						'</div>'; 
+			}
+			else{
+				echo '	<div class="result-seats">'. 
+							'<div class="result-reserv">'."有6人感兴趣".'</div>'.
+						'</div>'; 
+			}
 			echo '		<div class="result-price-normal">&yen;<label>'.$arr['PRICE_ONEWAY'].'</label></div>';
 			echo '	</div>';
 			echo "</div>";
