@@ -1,0 +1,31 @@
+.main{
+	margin: 0 auto;
+	width: 960px;
+	padding: 30px;
+}
+
+h3{
+	font-family: "heiti";
+	font-style: bold;
+	font-size: 2em;
+	color: #000000;
+	padding: 15px 0 10px 0;
+}
+
+h4{
+	font-family: "heiti";
+	font-style: bold;
+	font-size: 1.5em;
+	color: #848484;
+	padding: 5px 0 5px 0;
+}
+
+p{
+	padding: 0 0 10px 0;
+	font-size: 1.2em;
+}
+
+b{
+	font-style: bold;
+}
+

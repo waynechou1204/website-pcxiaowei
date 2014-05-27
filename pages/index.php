@@ -52,17 +52,17 @@
 						<div class="da-slide">
 							<h2>出发！</h2>
 							<p> 风景总在路上</p>
-							<a href="about.html" class="da-link">开始使用</a>
+							<a href="about.php" class="da-link">关于网站</a>
 						</div>
 						<div class="da-slide">
 							<h2>宗旨</h2>
 							<p> 方便，环保，交友</p>
-							<a href="about.html" class="da-link">开始使用</a>
+							<!--a href="about.html" class="da-link">开始使用</a-->
 						</div>
 						<div class="da-slide">
 							<h2>通告</h2>
 							<p> 网站即将上线...</p>
-							<a href="about.html" class="da-link">开始使用</a>
+							<!--a href="about.html" class="da-link">开始使用</a-->
 						</div>
 						<nav class="da-arrows">
 							<span class="da-arrows-prev"></span>
@@ -95,7 +95,7 @@
 						</div>
 						<span><label>1</label></span>
 						<div class="border"> </div>
-						<a href="#">发布/搜索拼车信息</a>
+						<a href="search.php">发布/搜索拼车信息</a>
 					</div>
 					<div class="top-grid">
 						<div class="product-pic">
@@ -103,14 +103,14 @@
 						</div>
 						<span><label>2</label></span>
 						<div class="border hide"> </div>
-						<a href="#">与拼友取得联系</a>
+						<a href="search.php">与拼友取得联系</a>
 					</div>
 					<div class="top-grid hide">
 						<div class="product-pic">
 							<img src="images/sharecar.jpg" title="sharecar" alt="share the car"/>
 						</div>
 						<span><label>3</label></span>
-						<a href="#">按计划出发</a>
+						<a href="search.php">按计划出发</a>
 					</div>
 					<div class="clear"> </div>
 				</div>
