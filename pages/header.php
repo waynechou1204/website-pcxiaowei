@@ -40,7 +40,7 @@
 				        ?> 
 							<li id="signupContainer">
 								<a class="signup" id="personalButton" href="#">
-									<span>个人</span>
+									<span><?php echo $_SESSION['username']; ?></span>
 								</a>
 							</li>
 							<li id="loginContainer">
@@ -57,7 +57,7 @@
 				            <li id="signupContainer"><a class="signup" id="signupButton" href="#"><span>注册</span></a>
 								<div class="clear"> </div>
 			                	<div id="signupBox">                
-		                    	<form id="signupForm" action="search.php" method="post" enctype="multipart/form-data" onsubmit="return checkForm();">
+		                    	<form id="signupForm" action="register.php" method="post" enctype="multipart/form-data" onsubmit="return checkForm();">
 		                        <fieldset id="signupbody">
 		                        	<fieldset>
 		                                <label for="signupusername">真实姓名 <span><lable id="hint-name" class="hint">*</lable></span></label>

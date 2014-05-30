@@ -59,21 +59,23 @@ function showFormByType(type){
 	var sethint = document.getElementById("div-price");
 	
 	if (type==1) {
-		var seathtml = '<label>空余座位: </label><select id="select_free_seats">';
-		for (var i = 0; i < 12; i++) {
+		var seathtml = '<label>空余座位: </label><select id="select_free_seats"  name="freeseat">';
+		for (var i = 1; i < 12; i++) {
 			seathtml += '<option value="'+i+'">'+i+'</option>';
 		}
 		seathtml += "</select>";
 		setseat.innerHTML=seathtml;
 		
-		sethint.innerHTML='<label>单人价格: </label><input id="inp-price" onkeyup="checkPriceInput()" onafterpaste="checkPriceInput()"></input><span> 建议价格为每位乘客(不含司机)支付: (单程油费+高速路费)/3 </span>';
+		sethint.innerHTML='<label>乘客单人价格: </label><input id="inp-price" name="price" onkeyup="checkPriceInput()" onafterpaste="checkPriceInput()"></input><span> 建议定价为每位乘客(不含司机)支付: (单程油费+高速路费)/3 </span>';
 	}
 	else{
-		var seathtml = '<label>乘坐人数: </label><select id="select_free_seats">';
-		for (var i = 0; i < 12; i++) {
+		var seathtml = '<label>乘坐人数: </label><select id="select_free_seats"  name="freeseat">';
+		for (var i = 1; i < 12; i++) {
 			seathtml += '<option value="'+i+'">'+i+'</option>';
 		}
 		seathtml += "</select>";
-		setseat.innerHTML=seathtml;sethint.innerHTML='<lable>单人价格: </lable><input id="inp-price" onkeyup="checkPriceInput()" onafterpaste="checkPriceInput()"></input><span> 建议与车辆提供者协商价格后，乘客均摊 </span>';
+		setseat.innerHTML=seathtml;
+
+		sethint.innerHTML='<lable>期望单人价格: </lable><input id="inp-price" name="price" onkeyup="checkPriceInput()" onafterpaste="checkPriceInput()"></input><span> 建议乘客均摊出行成本 </span>';
 	}
 }

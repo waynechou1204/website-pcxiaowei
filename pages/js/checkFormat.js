@@ -266,7 +266,7 @@ function checkPublishForm()
 		return false;
 	}
 	
-	var types = document.getElementsByName("rad-type");
+	var types = document.getElementsByName("radtype");
 	if (types[0].checked) {
 		var p = document.getElementById("inp-price");
 		if (!p.value) 
@@ -275,5 +275,14 @@ function checkPublishForm()
 			return false;
 		}
 	}
+
+	var start = document.getElementById("select_start");
+	var end = document.getElementById("select_end");
+	if(start.value == end.value){
+		var hint = document.getElementById("position-hint")
+		hint.innerHTML = "* 出发地与目的地不能相同";
+		return false;
+	}
+
 	return true;
 }

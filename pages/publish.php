@@ -62,16 +62,16 @@
 						</h3>	
 						<div class="publish-bars">
 							<div id="rad-fil">类型:
-								<input type="radio" class="rad-type" name="radtype" checked="checked" onchange="showFormByType(1)"/>出车
-								<input type="radio" class="rad-type" name="radtype" onchange="showFormByType(2)"/>求车
+								<input type="radio" class="rad-type" name="radtype" value="pickup" checked="checked" onchange="showFormByType(1)"/>出车
+								<input type="radio" class="rad-type" name="radtype" value="picked" onchange="showFormByType(2)"/>求车
 							</div>
 						</div>
-						<div class="publish-bars">
+						<div id="div-start-end" class="publish-bars">
 							<div class="start_pos">
 								<label class="label_start">
 									出发地:
 								</label>
-								<select id="select_start">
+								<select id="select_start" name="position_start">
 									<?php 
 										$locations = loadlocations();
 										$type = "0";
@@ -96,7 +96,7 @@
 								<label class="label_end">
 									目的地:
 								</label>
-								<select id="select_end">
+								<select id="select_end" name="position_end">
 									<?php 
 										$type = "0";
 										$i=0;
@@ -123,6 +123,7 @@
 									?>
 								</select>
 							</div>
+							<span id="position-hint"> </span>
 							<div style="clear:both"></div> 
 						</div>
 						<div class="publish-bars">
@@ -130,14 +131,14 @@
 								<label class="label_date">
 									出发日期:
 								</label>
-								<input class="Wdate" id="departdate" onclick="WdatePicker({minDate:'%y-%M-{%d}'})" realValue My97Mark="false">
+								<input class="Wdate" id="departdate" name="departdate" onclick="WdatePicker({minDate:'%y-%M-{%d}'})" realValue My97Mark="false">
 							</div>
 							<div style="clear:both"></div> 
 						</div>
 						<div class="publish-bars">
 							<div id="select-departtime">
 								<label>出发时间:</label>
-								<select id="select_departtime_hour">
+								<select id="select_departtime_hour" name="hour">
 									<?php 
 										for ($i=0; $i <24 ; $i++) { 
 											echo '<option value="'.$i.'">'.$i.'</option>';
@@ -145,7 +146,7 @@
 									?>
 								</select>
 								时
-								<select id="select_departtime_min">
+								<select id="select_departtime_min" name="minite">
 									<?php 
 										for ($i=0; $i <60 ; $i=$i+5) { 
 											echo '<option value="'.$i.'">'.$i.'</option>';

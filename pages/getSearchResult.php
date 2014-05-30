@@ -107,8 +107,8 @@
 			echo '		<div class="result-time">'.$arr['DEPART_DATE']."<br />".$arr['DEPART_TIME'].'</div>';
 			echo '		<div class="result-pubtime">'. "5小时前发布" .'</div>';
 			if ($arr['TYPE']=="pickup") {
-			echo '		<div class="result-seats">' ."可乘坐3人".
-							'<div class="result-reserv">'."有6人感兴趣".'</div>'.
+			echo '		<div class="result-seats">' ."可搭乘".$arr['SEAT_NUM']."人".
+							'<div class="result-reserv">'."有".$arr['INTEREST_NUM']."人感兴趣".'</div>'.
 						'</div>'; 
 			}
 			else{

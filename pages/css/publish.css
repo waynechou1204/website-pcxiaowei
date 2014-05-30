@@ -44,6 +44,12 @@ input.rad-type{
 	float:left;
 }
 
+#div-start-end span{
+	font-size: 0.85em;
+	color: red;
+	padding-left: 10px;
+}
+
 .go_date{
 	float:left;
 }
