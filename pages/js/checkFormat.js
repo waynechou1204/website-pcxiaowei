@@ -286,3 +286,13 @@ function checkPublishForm()
 
 	return true;
 }
+
+function checkMessageContent(){
+	var msg = document.getElementById("message");
+	if (!msg.value || msg.value=='请输入正文') {
+		msg.style.borderColor="red";
+		return false;
+	}
+	document.getElementById('ContactForm').submit();
+	return true;
+}

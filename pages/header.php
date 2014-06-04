@@ -4,9 +4,9 @@
 	</div>
 	<nav id="menu-left">
 		<ul>
-			<li><a href="index.html">首  页</a></li>
+			<li><a href="index.php">首  页</a></li>
 			<li><a href="about.php">关于网站</a></li>
-			<li><a href="features.html">联系我们</a></li>
+			<li><a href="contact.php">联系我们</a></li>
 		</ul>
 	</nav>
 	<div class="clear"> </div>
@@ -30,7 +30,7 @@
 				    <li><a href="search.php">搜索</a></li>
 				    <li><a href="publish.php">发布</a></li>
 				    <li><a href="about.php">关于网站</a></li>
-					<li><a href="contactus.php">联系我们</a></li>
+					<li><a href="contact.php">联系我们</a></li>
 				</ul>
 			</div>
 			<div class="sign-ligin-btns">
