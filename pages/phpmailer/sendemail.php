@@ -11,7 +11,7 @@
 	    $mail->Username = "pcxiaowei@sina.com";     // SMTP username  注意：普通邮件认证不需要加 @域名    
 	    $mail->Password = "891204"; // SMTP password    
 	    $mail->From = "pcxiaowei@sina.com";      // 发件人邮箱    
-	    $mail->FromName =  "Client";  // 发件人    
+	    $mail->FromName =  "拼车晓位";  // 发件人    
 	  
 	    $mail->CharSet = "utf-8";   // 这里指定字符集！    
 	    $mail->Encoding = "base64";    
@@ -29,15 +29,36 @@
 
 	    if(!$mail->Send())    
 	    {    
-	        echo '<script>alert("Error, please try later");location.href="../search.php";</script>';
+	        echo '<script>alert("Error, please try later");location.href="../index.php";</script>';
 	        exit;    
 	    }    
 	    else {    
-	        echo '<script>alert("OK!");location.href="../search.php";</script>';
+	        echo '<script>alert("OK!");location.href="../index.php";</script>';
 	    }    
 	}    
 	
 	// 参数说明(发送到, 邮件主题, 邮件内容, 用户邮箱, 用户名)    
-	smtp_mail("admin@pcxiaowei.com", "Suggestion", $_POST['textarea'], $_SESSION['useremail'], $_SESSION['username']);  
+	if(!isset($_GET['claimemail']))
+	{
+		smtp_mail("admin@pcxiaowei.com", "Suggestion", $_POST['textarea'], $_SESSION['useremail'], $_SESSION['username']);  
+	}
+	else{
+		$db = mysql_connect("localhost", "xiaowei", "891204") or die("Could not connect: " . mysql_error());
+		mysql_select_db("tongjicovoit",$db) or die ('Can\'t use foo : ' . mysql_error());
+		mysql_query('SET NAMES UTF8');
+	
+		// change pwd
+		$password = substr(md5(time()), 0, 6);// new random password
+		$email = $_GET['claimemail'];
+		$encryp = md5($password);
 
+		$str = "UPDATE CLIENT SET PWD = \"$encryp\" WHERE EMAIL=\"$email\"";
+
+		$result=mysql_query($str) or die("Invalid query: " . mysql_error());
+		
+		$str = "拼车晓位网用户，您好! <br /><br /> 您的密码已经重置为：" . $password . 
+		"<br />请及时登录<a href=\"http://www.pcxiaowei.com\">拼车晓位</a>进行修改! <br /><br /> 祝您度过美好的一天！<br />拼车晓位管理员";
+
+		smtp_mail($_GET['claimemail'], "账户安全提醒：密码重置", $str, "admin@pcxiaowei.com", "拼车晓位管理员");  	
+	}
 ?>

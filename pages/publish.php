@@ -69,7 +69,7 @@
 						<div id="div-start-end" class="publish-bars">
 							<div class="start_pos">
 								<label class="label_start">
-									出发地:
+									出发地点:
 								</label>
 								<select id="select_start" name="position_start">
 									<?php 
@@ -94,7 +94,7 @@
 							</div>
 							<div class="end_pos">
 								<label class="label_end">
-									目的地:
+									目的地点:
 								</label>
 								<select id="select_end" name="position_end">
 									<?php 

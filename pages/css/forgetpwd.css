@@ -1,0 +1,63 @@
+.main{
+	margin: 0 auto;
+	width: 960px;
+	padding: 20px;
+}
+
+h3{
+	font-family: "heiti";
+	font-style: bold;
+	font-size: 2em;
+	color: #848484;
+	margin-bottom: 5px; 
+}
+.pad{
+	width: 100%;
+	border: 1px solid #a4a4a4;
+	margin: 15px;
+	padding: 15px;
+}
+.box{
+	margin: 0 auto;
+	width: 400px;
+	padding: 100px 25px;
+	
+}
+
+.mail{
+	padding: 10px 0 45px 0;
+}
+.button{
+	margin: 0 auto;
+	width: 105px;
+	padding-top: 20px;
+}
+#ClaimpwdForm span {
+    float: left;
+    line-height: 20px;
+    width: 111px;
+    padding-right: 20px;
+    font-size: 1.2em;
+    font-family: "heiti" ;
+}
+
+#ClaimpwdForm input{
+	width: 200px;
+	height: 20px;
+	font-size: 14px;
+	font-family: 'open_sansregular';
+	padding: 1px 5px;
+}
+
+#ClaimpwdForm a {
+    margin: 0 auto; 
+}
+.button1 {
+    background: none repeat scroll 0 0 #0080ff;
+    color: #FAF3ED;
+    display: inline-block;
+    font-size: 1.2em;
+    letter-spacing: -1px;
+    line-height: 34px;
+    padding: 0 15px;
+}

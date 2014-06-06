@@ -115,7 +115,7 @@
 					                            <label class="remeber" for="checkbox"><input type="checkbox" id="checkbox" />记住我</label>
 					                            <input type="submit" id="login" value="登录" />
 					                        </fieldset>
-					                        <span><a href="#">忘记密码？</a></span>
+					                        <span><a href="forgetpwd.php">忘记密码？</a></span>
 					                    </form>
 					                </div>
 					            <!-- Login Ends Here -->

@@ -296,3 +296,42 @@ function checkMessageContent(){
 	document.getElementById('ContactForm').submit();
 	return true;
 }
+
+function checkClaimPwdEmail()
+{
+	var temp = document.getElementById("claimemail").value;
+	
+	/*USE AJAX TO CHECK EXISTING EMAIL*/
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	
+	var flag = false;
+
+	xmlhttp.onreadystatechange=function()
+	{
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	  {
+	    if(xmlhttp.responseText=="1"){
+	    	document.getElementById('ClaimpwdForm').submit();
+			flag = true;
+	    }
+	    else 
+	    {
+	    	alert("该账户不存在！");
+	    	flag = false;
+		}
+	  }
+	}
+
+	xmlhttp.open("GET","getemailhint.php?q="+temp,false);
+	xmlhttp.send();
+
+	return flag;
+}
