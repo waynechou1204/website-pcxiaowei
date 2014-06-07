@@ -83,10 +83,10 @@
 		{
 			echo '<hr style="border:1px dashed gray;" />';
 			if ($arr['TYPE']=="pickup") { // blue
-				echo '<div class="search-result-pickup" onMouseOver="this.className=\'search-result-mouseover\';" onMouseOut="this.className=\'search-result-pickup\';" onclick="location.href=\'tripdetail.php&id='.$arr['TRIP_ID'].'\';">';
+				echo '<div class="search-result-pickup" onMouseOver="this.className=\'search-result-mouseover\';" onMouseOut="this.className=\'search-result-pickup\';" onclick="location.href=\'trip.php?tripid='.$arr['TRIP_ID'].'\';">';
 			}
 			else{ //pink
-				echo '<div class="search-result-picked" onMouseOver="this.className=\'search-result-mouseover\';" onMouseOut="this.className=\'search-result-picked\';" onclick="location.href=\'tripdetail.php&id='.$arr['TRIP_ID'].'\';">';	
+				echo '<div class="search-result-picked" onMouseOver="this.className=\'search-result-mouseover\';" onMouseOut="this.className=\'search-result-picked\';" onclick="location.href=\'trip.php?tripid='.$arr['TRIP_ID'].'\';">';	
 			}
 			
 			echo '	<div class="result-owner">';
@@ -105,7 +105,7 @@
 			echo '	<div class="result-detail">';
 			echo '		<div class="result-loc">'.$start_loc.'  &#8594;  '.$end_loc.'</div>';
 			echo '		<div class="result-time">'.$arr['DEPART_DATE']."<br />".$arr['DEPART_TIME'].'</div>';
-			echo '		<div class="result-pubtime">'. "5小时前发布" .'</div>';
+			echo '		<div class="result-pubtime">发布时间'. $arr['PUB_TIME'] .'</div>';
 			if ($arr['TYPE']=="pickup") {
 			echo '		<div class="result-seats">' ."可搭乘".$arr['SEAT_NUM']."人".
 							'<div class="result-reserv">'."有".$arr['INTEREST_NUM']."人感兴趣".'</div>'.
@@ -113,7 +113,7 @@
 			}
 			else{
 				echo '	<div class="result-seats">'. 
-							'<div class="result-reserv">'."有6人感兴趣".'</div>'.
+							'<div class="result-reserv">'."有".$arr['INTEREST_NUM']."人感兴趣".'</div>'.
 						'</div>'; 
 			}
 			echo '		<div class="result-price-normal">&yen;<label>'.$arr['PRICE_ONEWAY'].'</label></div>';

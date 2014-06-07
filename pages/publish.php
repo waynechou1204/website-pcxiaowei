@@ -148,7 +148,7 @@
 								时
 								<select id="select_departtime_min" name="minite">
 									<?php 
-										for ($i=0; $i <60 ; $i=$i+5) { 
+										for ($i="00"; $i <"60" ; $i=$i+10) { 
 											echo '<option value="'.$i.'">'.$i.'</option>';
 										}
 									?>

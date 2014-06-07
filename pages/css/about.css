@@ -1,28 +1,32 @@
 .main{
 	margin: 0 auto;
-	width: 960px;
+	width: 760px;
 	padding: 30px;
 }
-
+html{
+	font-family: cambria,georgia,times,serif;
+    font-size: 17px;
+    line-height: 1.7;
+}
 h3{
-	font-family: "kaiti";
-	font-style: bold;
-	font-size: 2em;
-	color: #000000;
-	padding: 15px 0 10px 0;
+	color: #111111;
+    font-family: 'Vollkorn',cambria,georgia,times,serif;
+    font-weight: normal;
+    line-height: 1.1;
+    word-wrap: break-word;
+	font-size: 2.0em;
 }
 
 h4{
-	font-family: "heiti";
+	font-family: "kaiti";
 	font-style: bold;
-	font-size: 1.5em;
+	font-size: 1.4em;
 	color: #848484;
-	padding: 5px 0 5px 0;
 }
 
 p{
-	padding: 0 0 10px 0;
-	font-size: 1.2em;
+	margin: .5em 0 1.5em 0;
+    word-wrap: break-word;
 }
 
 b{
