@@ -105,7 +105,27 @@
 			echo '	<div class="result-detail">';
 			echo '		<div class="result-loc">'.$start_loc.'  &#8594;  '.$end_loc.'</div>';
 			echo '		<div class="result-time">'.$arr['DEPART_DATE']."<br />".$arr['DEPART_TIME'].'</div>';
-			echo '		<div class="result-pubtime">发布时间'. $arr['PUB_TIME'] .'</div>';
+			
+			date_default_timezone_set('PRC');
+			$currenttime = date("Y-m-d H:i:s");
+			$pubtime = $arr['PUB_TIME'];
+			$date=floor((strtotime($currenttime)-strtotime($pubtime))/86400);
+			$hour=floor((strtotime($currenttime)-strtotime($pubtime))%86400/3600);
+			$minute=floor((strtotime($currenttime)-strtotime($pubtime))%86400/60);
+			$second=floor((strtotime($currenttime)-strtotime($pubtime))%86400%60);
+			if ($date!=0) {
+				$timegap = $date."天";
+			}
+			else if ($hour!=0) {
+				$timegap = $hour."小时";
+			} else if ($minute !=0){
+				$timegap = $minute."分钟";
+			} else {
+				$timegap = $second."秒";
+			}
+			
+			echo '		<div class="result-pubtime">'. $timegap .'前发布</div>';
+			
 			if ($arr['TYPE']=="pickup") {
 			echo '		<div class="result-seats">' ."可搭乘".$arr['SEAT_NUM']."人".
 							'<div class="result-reserv">'."有".$arr['INTEREST_NUM']."人感兴趣".'</div>'.
