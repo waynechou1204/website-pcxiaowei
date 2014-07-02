@@ -39,7 +39,7 @@
 						if (isset($_SESSION['islogin']) && $_SESSION['islogin']===true) {
 				        ?> 
 							<li id="signupContainer">
-								<a class="signup" id="personalButton" href="#">
+								<a class="signup" id="personalButton" href="personal.php?userid=<?php echo $_SESSION['userid'];?>">
 									<span><?php echo $_SESSION['username']; ?></span>
 								</a>
 							</li>
