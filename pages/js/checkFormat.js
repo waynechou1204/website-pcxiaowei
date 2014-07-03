@@ -1,4 +1,4 @@
-function checkEmail()
+function checkEmail(originVar)
 {
 	var temp = document.getElementById("signupemail");
 	//对电子邮件的验证
@@ -14,6 +14,9 @@ function checkEmail()
 		return false;
 	}
 	
+	if (temp.value == originVar) {
+		return true;
+	};
 
 	/*USE AJAX TO CHECK EXISTING EMAIL*/
 	var xmlhttp;
@@ -151,7 +154,7 @@ function checkPhone(){
 	return true;
 }
 
-function checkForm()
+function checkForm(varemail)
 {
 	if(!checkName()){
 		return false;
@@ -163,7 +166,7 @@ function checkForm()
 		return false;
 	}
 
-	if(!checkEmail()){
+	if(!checkEmail(varemail)){
 		return false;
 	}
 

@@ -64,21 +64,21 @@
 								<input type="radio" name="tabs" id="tab1" checked />
 								<label for="tab1">个人信息</label>
 								<div id="tab-content-info" class="tab-content">
-									<form id="signupForm" action="register.php" method="post" enctype="multipart/form-data" onsubmit="return checkForm();">
+									<form id="signupForm" action="doModifyInfo.php" method="get" enctype="multipart/form-data" onsubmit="return checkForm('<?php echo $_SESSION['useremail'];?>');">
 			                        	<div class="inp">
 				                            姓名 <lable id="hint-name" class="hint">*</lable>
 				                            <input type="text" name="username" id="signupusername" value="<?php echo $_SESSION['username'];?>" onblur="checkName()"/>
 				                        </div>
 			                            <div class="inp">
 			                                邮箱地址 <lable id="hint-email" class="hint">*</lable>
-			                                <input type="text" name="email" id="signupemail" value="<?php echo $_SESSION['useremail'];?>"onblur="checkEmail()"/>
+			                                <input type="text" name="email" id="signupemail" value="<?php echo $_SESSION['useremail'];?>"onblur="checkEmail('<?php echo $_SESSION['useremail'];?>')"/>
 			                            </div>
 			                            <div class="inp">
 			                                手机号 <lable id="hint-phone" class="hint">*</lable>
 			                                <input type="text" name="phone" id="signupphone" value="<?php echo $_SESSION['userphone'];?>" onblur="checkPhone()"/>
 			                            </div>
 			                           
-			                            <input type="submit" id="modify" value="修改" />
+			                            <input type="submit" id="modifybutton" value="修改" />
 			                        	
 			                    	</form>
 								</div>

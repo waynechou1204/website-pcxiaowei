@@ -157,7 +157,7 @@
 					
 					<!-- use php to repeat -->
 					<div id="search-results">
-						<!-- results of search, loaded by js -->
+						<!-- results of search, loaded by jquery-ajax-gettrips gettrips() -->
 					</div>		
 					
 					<div class="divclear"></div>
