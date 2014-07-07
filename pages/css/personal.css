@@ -45,15 +45,28 @@ h3{
   border: none;
 }
 
+#deletebutton{
+  color: #fff;
+  font-size: 0.875em;
+  font-weight: normal;
+  text-transform: uppercase;
+  background: red;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  margin: 1em 0 0 1em;
+  border: none;
+}
 
 
-
-
+/*------------ tabs ------------*/
 .tabs {
-  width: 650px;
+  width: 90%;
   position: relative;
   margin: 10px 0 0 10px;
   text-align: left;
+
 }
 .tabs li {
   float: left;
@@ -66,7 +79,7 @@ h3{
 }
 .tabs label {
   display: block;
-  padding: 14px 21px;
+  padding: 17px 21px;
   border-radius: 2px 2px 0 0;
   font-size: 20px;
   font-weight: normal;
@@ -104,4 +117,96 @@ h3{
 }
 .tabs [id^="tab"]:checked ~ [id^="tab-content"] {
   display: block;
+}
+
+
+/*------results-----------*/
+#results{
+  width: 100%;
+  min-height: 200px;
+  height: auto;
+  margin: 15px;
+  padding: 15px;
+  -webkit-border: 1px solid #a4a4a4;
+  -moz-border: 1px solid #a4a4a4;
+  -ms-border: 1px solid #a4a4a4;
+  -o-border: 1px solid #a4a4a4;
+  border: 1px solid #a4a4a4;
+  text-align:left;
+}
+#result-pad-right{
+  width: auto;
+  height: 100%;
+  text-align: middle;
+  padding:0 5px;
+}
+#search-results{
+  padding:10px 5px;
+  width:98%;
+  height: 100%;
+}
+.search-result-pickup{
+  width: 100%;
+  height: 80px;
+  background-color: #f0ffff;
+}
+.search-result-picked{
+  width: 100%;
+  height: 80px;
+  background-color: #fffafa;
+}
+.search-result-mouseover{
+  width: 100%;
+  height: 80px;
+  background-color: #eeffbb;
+  cursor:pointer;
+}
+
+
+.result-detail{
+  width: 100%;
+  padding: 5px 5px 5px 0;
+  float: left;
+  height: 100%; 
+}
+.result-loc{
+  float: left;
+  padding: 5px;
+  width: 40%;
+  height: auto;
+}
+.result-time{
+  float:left;
+  padding: 5px;
+  width: auto;
+  width: 15%;
+}
+.result-pubtime{
+  float: left;
+  padding: 5px;
+  width: 15%;
+}
+.result-seats{
+  float: left;
+  padding: 5px;
+  width: 12%;
+}
+.result-reserv{
+  font-size: 0.85em;
+  color: gray;
+}
+
+.result-price-normal{
+  float:left;
+  font:1.2em/1.5em Arial,sans-serif;
+  font-weight:bold;
+  font-size:24px;
+  color:#ff8c00;
+  padding:5px;
+
+}
+
+.result-price-normal label{
+  padding: 0;
+  background-color: transparent;
 }

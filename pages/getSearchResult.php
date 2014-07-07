@@ -53,7 +53,7 @@
 		$order_sql = " ORDER BY PUB_TIME ASC";
 		break;
 	case 5:
-		$order_sql = " ORDER BY PUB_TIME ASC";
+		$order_sql = " ORDER BY PUB_TIME DESC";
 		break;
 	default:
 	  	break;

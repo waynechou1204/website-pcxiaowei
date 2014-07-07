@@ -178,19 +178,6 @@ function checkForm(varemail)
 		return false;
 	}
 	
-	/*var ischecklaw = 0;
-	if(document.getElementById("check-law").checked) 
-	{ 
-		ischecklaw = document.getElementById("check-law").value; 
-	}
-	if(ischecklaw==0)
-	{
-	//	alert('提示\n请接收使用协议！');
-		return false;
-	}
-	*/
-
-	//location.href = "search.php";
 	return true;
 }
 
@@ -337,4 +324,19 @@ function checkClaimPwdEmail()
 	xmlhttp.send();
 
 	return flag;
+}
+
+function checkNameEmailPhone(varemail){
+	if(!checkName()){
+		return false;
+	}
+
+	if(!checkPhone()){
+		return false;
+	}
+
+	if(!checkEmail(varemail)){
+		return false;
+	}
+
 }

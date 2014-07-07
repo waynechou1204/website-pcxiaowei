@@ -58,13 +58,20 @@
 					<h3>
 						行程
 					</h3>	
-					<div id="person-info-pad">
+					<?php 
+						$trips = loadUserTrips($_SESSION['userid']);
+						$trip_nb = count($trips);
+						$hi = 82.5+$trip_nb*112.5;
+			  echo '<div id="person-info-pad" style="height:'.$hi.'px" >';
+					?>
 						<ul class="tabs">
 							<li>
 								<input type="radio" name="tabs" id="tab1" checked />
 								<label for="tab1">个人信息</label>
 								<div id="tab-content-info" class="tab-content">
-									<form id="signupForm" action="doModifyInfo.php" method="get" enctype="multipart/form-data" onsubmit="return checkForm('<?php echo $_SESSION['useremail'];?>');">
+									<form id="signupForm" action="doModifyInfo.php" method="post" enctype="multipart/form-data" onsubmit="return checkFormNameEmailPhone('<?php echo $_SESSION['useremail'];?>');">
+			                        	<input type="hidden" name="item" value="info" />  
+			                        	
 			                        	<div class="inp">
 				                            姓名 <lable id="hint-name" class="hint">*</lable>
 				                            <input type="text" name="username" id="signupusername" value="<?php echo $_SESSION['username'];?>" onblur="checkName()"/>
@@ -87,27 +94,99 @@
 							<li>
 								<input type="radio" name="tabs" id="tab2" />
 								<label for="tab2">修改密码</label>
-								<div id="tab-content1" class="tab-content">
-									<p>pwd</p>
+								<div id="tab-content-password" class="tab-content">
+									<form id="signupForm" action="doModifyInfo.php" method="post" enctype="multipart/form-data" onsubmit="return checkPwd();">
+			                        	<input type="hidden" name="item" value="pwd" /> 
+			                        	
+			                        	<div class="inp">
+				                            新密码 <lable id="hint-pwd" class="hint">*</lable>
+				                            <input type="password" name="password" id="signuppassword" placeholder="6-14个字母、数字或下划线" onblur="checkPwd()"/>
+				                        </div>
+			                            <div class="inp">
+			                                确认密码 <lable id="hint-pwdconf" class="hint">*</lable>
+			                               <input type="password" name="password" id="signuppassword1" onblur="checkPwdConf()"/>
+			                            </div>
+			                           
+			                            <input type="submit" id="modifybutton" value="修改" />
+			                        	
+			                    	</form>
 								</div>
 							</li>
 							<li>
 								<input type="radio" name="tabs" id="tab3" />
 								<label for="tab3">发布的行程</label>
-								<div id="tab-content1" class="tab-content">
-									<p></p>
+								<div id="tab-content-trips" class="tab-content">
+									<!-- use php to repeat -->
+									<?php 
+										
+										foreach ($trips as $arr) {
+											if ($arr['TYPE']=="pickup") { // blue
+												echo '<div class="search-result-pickup" onMouseOver="this.className=\'search-result-mouseover\';" onMouseOut="this.className=\'search-result-pickup\';" onclick="location.href=\'trip.php?tripid='.$arr['TRIP_ID'].'\';">';
+											}
+											else{ //pink
+												echo '<div class="search-result-picked" onMouseOver="this.className=\'search-result-mouseover\';" onMouseOut="this.className=\'search-result-picked\';" onclick="location.href=\'trip.php?tripid='.$arr['TRIP_ID'].'\';">';	
+											}
+											
+											echo '	<div class="result-detail">';
+											echo '		<div class="result-loc">'.(loadLocationName($arr['START_LOCATION'])).'  &#8594;  '.
+																			 	  (loadLocationName($arr['END_LOCATION'])).
+														'</div>';
+											echo '		<div class="result-time">'.$arr['DEPART_DATE']."<br />".$arr['DEPART_TIME'].'</div>';
+											
+											date_default_timezone_set('PRC');
+											$currenttime = date("Y-m-d H:i:s");
+											$pubtime = $arr['PUB_TIME'];
+											$date=floor((strtotime($currenttime)-strtotime($pubtime))/86400);
+											$hour=floor((strtotime($currenttime)-strtotime($pubtime))%86400/3600);
+											$minute=floor((strtotime($currenttime)-strtotime($pubtime))%86400/60);
+											$second=floor((strtotime($currenttime)-strtotime($pubtime))%86400%60);
+											if ($date!=0) {
+												$timegap = $date."天";
+											}
+											else if ($hour!=0) {
+												$timegap = $hour."小时";
+											} else if ($minute !=0){
+												$timegap = $minute."分钟";
+											} else {
+												$timegap = $second."秒";
+											}
+											
+											echo '		<div class="result-pubtime">'. $timegap .'前发布</div>';
+											
+											if ($arr['TYPE']=="pickup") {
+											echo '		<div class="result-seats">' ."可搭乘".$arr['SEAT_NUM']."人".
+															'<div class="result-reserv">'."有".$arr['INTEREST_NUM']."人感兴趣".'</div>'.
+														'</div>'; 
+											}
+											else{
+													echo '	<div class="result-seats">'. 
+																'<div class="result-reserv">'."有".$arr['INTEREST_NUM']."人感兴趣".'</div>'.
+															'</div>'; 
+											}
+											echo '		<div class="result-price-normal"><label>&yen;'.$arr['PRICE_ONEWAY'].'</label></div>';
+											echo '<form action="doDeleteTrip.php" method="POST" enctype="multipart/form-data" onsubmit="return confirm(\'确定删除吗？\');"> ';
+												echo '<input type="hidden" name="tripid" value="'.$arr['TRIP_ID'].'" />';
+												echo '<input type="submit" id="deletebutton" value="删除" />';
+											echo'</form>';
+											echo '	</div>';
+											echo "</div>";
+
+
+											echo '<hr style="border:1px dashed gray;" />';
+											
+										}
+										unset($trips);
+
+									?>
+									
 								</div>
+
 							</li>
-							<li>
-								<input type="radio" name="tabs" id="tab4" />
-								<label for="tab4">XXXX</label>
-								<div id="tab-content2" class="tab-content">
-									<p>选项卡内容 2</p>
-								</div>
-								</li>
-							</ul>
+							<div style="clear:both;"></div>
+						</ul>
+
 					</div>
-					<div style="clear:both"></div> 
+
 				</div>
 			</div>
 		</div>
