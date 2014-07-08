@@ -120,6 +120,8 @@
 									<?php 
 										
 										foreach ($trips as $arr) {
+											echo '<hr style="border:1px dashed gray;" />';
+											
 											if ($arr['TYPE']=="pickup") { // blue
 												echo '<div class="search-result-pickup" onMouseOver="this.className=\'search-result-mouseover\';" onMouseOut="this.className=\'search-result-pickup\';" onclick="location.href=\'trip.php?tripid='.$arr['TRIP_ID'].'\';">';
 											}
@@ -127,7 +129,6 @@
 												echo '<div class="search-result-picked" onMouseOver="this.className=\'search-result-mouseover\';" onMouseOut="this.className=\'search-result-picked\';" onclick="location.href=\'trip.php?tripid='.$arr['TRIP_ID'].'\';">';	
 											}
 											
-											echo '	<div class="result-detail">';
 											echo '		<div class="result-loc">'.(loadLocationName($arr['START_LOCATION'])).'  &#8594;  '.
 																			 	  (loadLocationName($arr['END_LOCATION'])).
 														'</div>';
@@ -168,19 +169,14 @@
 												echo '<input type="hidden" name="tripid" value="'.$arr['TRIP_ID'].'" />';
 												echo '<input type="submit" id="deletebutton" value="删除" />';
 											echo'</form>';
-											echo '	</div>';
 											echo "</div>";
-
-
-											echo '<hr style="border:1px dashed gray;" />';
-											
 										}
 										unset($trips);
 
 									?>
 									
 								</div>
-
+								<div class="divclear"></div>
 							</li>
 							<div style="clear:both;"></div>
 						</ul>
