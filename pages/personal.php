@@ -78,7 +78,7 @@
 				                        </div>
 			                            <div class="inp">
 			                                邮箱地址 <lable id="hint-email" class="hint">*</lable>
-			                                <input type="text" name="email" id="signupemail" value="<?php echo $_SESSION['useremail'];?>"onblur="checkEmail('<?php echo $_SESSION['useremail'];?>')"/>
+			                                <input type="text" name="email" id="signupemail" value="<?php echo $_SESSION['useremail'];?>" onblur="checkEmail('<?php echo $_SESSION['useremail'];?>')"/>
 			                            </div>
 			                            <div class="inp">
 			                                手机号 <lable id="hint-phone" class="hint">*</lable>

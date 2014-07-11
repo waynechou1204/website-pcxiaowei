@@ -110,7 +110,7 @@
 											} 
 											if ($i==1) 
 											{
-												echo '<option value ="'.$loc['LOCATION_ID'].'"selected="selected">'.$loc['NAME'].'</option>';
+												echo '<option value ="'.$loc['LOCATION_ID'].'" selected="selected">'.$loc['NAME'].'</option>';
 											}
 											else{
 												echo '<option value ="'.$loc['LOCATION_ID'].'">'.$loc['NAME'].'</option>';	
@@ -131,7 +131,7 @@
 								<label class="label_date">
 									出发日期:
 								</label>
-								<input class="Wdate" id="departdate" name="departdate" onclick="WdatePicker({minDate:'%y-%M-{%d}'})" realValue My97Mark="false">
+								<input class="Wdate" id="departdate" name="departdate" onclick="WdatePicker({minDate:'%y-%M-{%d}'})" realValue My97Mark="false" />
 							</div>
 							<div style="clear:both"></div> 
 						</div>
