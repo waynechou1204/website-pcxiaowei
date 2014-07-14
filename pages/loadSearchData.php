@@ -87,7 +87,7 @@ function loadUserTrips($userid){
 	mysql_select_db("tongjicovoit",$db) or die ('Can\'t use foo : ' . mysql_error());
 	mysql_query('SET NAMES UTF8');
 	
-	$sql="SELECT * FROM TRIP WHERE OWNER_ID=\"$userid\" ";
+	$sql="SELECT * FROM TRIP WHERE OWNER_ID=\"$userid\" ORDER BY DEPART_DATE DESC, DEPART_TIME DESC";
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$nb = mysql_num_rows($result);
 	

@@ -38,10 +38,10 @@
 	switch ($order_indx)
 	{
 	case 0:
-		$order_sql = " ORDER BY DEPART_TIME ASC";
+		$order_sql = " ORDER BY DEPART_DATE ASC, DEPART_TIME ASC";
 		break;  
 	case 1:
-		$order_sql = " ORDER BY DEPART_TIME DESC";
+		$order_sql = " ORDER BY DEPART_DATE DESC, DEPART_TIME DESC";
 		break;
 	case 2:
 		$order_sql = " ORDER BY PRICE_ONEWAY ASC";
