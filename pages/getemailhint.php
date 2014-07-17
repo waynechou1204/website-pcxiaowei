@@ -1,14 +1,10 @@
 <?php
+
+	include 'setDB.php';
+
 	$q=$_GET["q"];
 
-	$con = mysql_connect("localhost", "xiaowei", "891204");
-	if (!$con)
-	{
-		die('Could not connect: ' . mysql_error());
-	}
-
-	mysql_select_db("tongjicovoit", $con);
-	mysql_query('SET NAMES UTF8');
+	connectDB();
 
 	$sql="select * from CLIENT WHERE EMAIL= '" .$q. "'";
 
@@ -22,5 +18,5 @@
 		echo "0";
 	}
 
-	mysql_close($con);	
+	mysql_close();	
 ?>

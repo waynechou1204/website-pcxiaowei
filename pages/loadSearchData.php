@@ -1,11 +1,11 @@
 <?php 
 
+include 'setDB.php';
+
 function loadlocations()
 {
 
-	$db = mysql_connect("localhost", "xiaowei", "891204") or die("Could not connect: " . mysql_error());
-	mysql_select_db("tongjicovoit",$db) or die ('Can\'t use foo : ' . mysql_error());
-	mysql_query('SET NAMES UTF8');
+	connectDB();
 	
 	$sql='SELECT * from LOCATION ORDER BY LOCATION_TYPE';
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
@@ -29,9 +29,7 @@ function loadlocations()
 }
 
 function loadTripData($tripid){
-	$db = mysql_connect("localhost", "xiaowei", "891204") or die("Could not connect: " . mysql_error());
-	mysql_select_db("tongjicovoit",$db) or die ('Can\'t use foo : ' . mysql_error());
-	mysql_query('SET NAMES UTF8');
+	connectDB();
 	
 	$sql="SELECT * FROM TRIP WHERE TRIP_ID=\"$tripid\" ";
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
@@ -47,9 +45,7 @@ function loadTripData($tripid){
 }
 
 function loadLocationData($locid){
-	$db = mysql_connect("localhost", "xiaowei", "891204") or die("Could not connect: " . mysql_error());
-	mysql_select_db("tongjicovoit",$db) or die ('Can\'t use foo : ' . mysql_error());
-	mysql_query('SET NAMES UTF8');
+	connectDB();
 	
 	$sql="SELECT * FROM LOCATION WHERE LOCATION_ID=\"$locid\" ";
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
@@ -65,9 +61,7 @@ function loadLocationData($locid){
 }
 
 function loadOwnerData($ownerid){
-	$db = mysql_connect("localhost", "xiaowei", "891204") or die("Could not connect: " . mysql_error());
-	mysql_select_db("tongjicovoit",$db) or die ('Can\'t use foo : ' . mysql_error());
-	mysql_query('SET NAMES UTF8');
+	connectDB();
 	
 	$sql="SELECT * FROM CLIENT WHERE ID=\"$ownerid\" ";
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
@@ -83,9 +77,7 @@ function loadOwnerData($ownerid){
 }
 
 function loadUserTrips($userid){
-	$db = mysql_connect("localhost", "xiaowei", "891204") or die("Could not connect: " . mysql_error());
-	mysql_select_db("tongjicovoit",$db) or die ('Can\'t use foo : ' . mysql_error());
-	mysql_query('SET NAMES UTF8');
+	connectDB();
 	
 	$sql="SELECT * FROM TRIP WHERE OWNER_ID=\"$userid\" ORDER BY DEPART_DATE DESC, DEPART_TIME DESC";
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
@@ -108,9 +100,7 @@ function loadUserTrips($userid){
 }
 
 function loadLocationName($locid){
-	$db = mysql_connect("localhost", "xiaowei", "891204") or die("Could not connect: " . mysql_error());
-	mysql_select_db("tongjicovoit",$db) or die ('Can\'t use foo : ' . mysql_error());
-	mysql_query('SET NAMES UTF8');
+	connectDB();
 	
 	$sql="SELECT * FROM LOCATION WHERE LOCATION_ID=\"$locid\" ";
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());

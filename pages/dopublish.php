@@ -1,5 +1,7 @@
 <?php 
 
+	include 'setDB.php';
+
 	session_start();
 
 	if (!isset($_SESSION['userid']) || !isset($_GET['radtype']) || !isset($_GET['position_start'])) {
@@ -21,9 +23,7 @@
 	$prix = $_GET['price'];
 
 	
-	$db = mysql_connect("localhost", "xiaowei", "891204") or die("Could not connect: " . mysql_error());
-	mysql_select_db("tongjicovoit",$db) or die ('Can\'t use foo : ' . mysql_error());
-	mysql_query('SET NAMES UTF8');
+	connectDB();
 	
 	// add trip
 	//$str="INSERT INTO CLIENT(NAME, SEX, BIRTHYEAR, CLIENT_TYPE, EMAIL, TELEPHONE, PWD) VALUES(\"$name\", \"$sex\", $yob, \"$type\", \"$email\", \"$phone\", \"$pwd\")";

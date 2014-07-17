@@ -1,14 +1,14 @@
 <?php
+
+	include 'setDB.php';
+
     session_start();
 
 	$tripid = $_POST['tripid'];
 
-	$db = mysql_connect("localhost", "xiaowei", "891204") or die("Could not connect: " . mysql_error());
-	mysql_select_db("tongjicovoit",$db) or die ('Can\'t use foo : ' . mysql_error());
-	mysql_query('SET NAMES UTF8');
+	connectDB();
 	
 	$sql="DELETE FROM TRIP WHERE TRIP_ID=\"$tripid\" ";
-    
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
 	
 	mysql_close();

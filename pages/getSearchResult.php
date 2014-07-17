@@ -1,5 +1,7 @@
 <?php 
 
+	include 'setDB.php';
+
 	$start_loc=$_GET["stloc"];
 	$end_loc = $_GET["edloc"];
 	
@@ -10,15 +12,8 @@
 
 	$order_indx=$_GET["order"];
 
-	$con = mysql_connect("localhost", "xiaowei", "891204");
-	if (!$con)
-	{
-		die('Could not connect: ' . mysql_error());
-	}
-
-	mysql_select_db("tongjicovoit", $con);
-	mysql_query('SET NAMES UTF8');
-
+	connectDB();
+	
 	$date_sql = " ";
 	if (!empty($depart_date)) {
 		$date_sql = " AND DEPART_DATE= '".$depart_date."'";
@@ -142,6 +137,6 @@
 		}
 	}
 
-	mysql_close($con);
+	mysql_close();
 
 ?>
