@@ -6,5 +6,4 @@ function connectDB(){
 	mysql_query('SET NAMES UTF8');
 }
 
-
 ?>
