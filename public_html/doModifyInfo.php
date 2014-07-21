@@ -16,14 +16,14 @@
 	connectDB();
 	
 	if ($form=="info") {
-    	$sql="UPDATE CLIENT SET NAME=\"$name\", EMAIL=\"$email\", TELEPHONE=\"$phone\" WHERE ID=\"$uid\" ";
+    	$sql="UPDATE client SET NAME=\"$name\", EMAIL=\"$email\", TELEPHONE=\"$phone\" WHERE ID=\"$uid\" ";
 		$_SESSION["username"]=$name;
 		$_SESSION['useremail']=$email;
 		$_SESSION["userphone"]=$phone;
     } 
     elseif ($form=="pwd") {
     	$md5pwd = md5($pwd);
-    	$sql="UPDATE CLIENT SET PWD=\"$md5pwd\" WHERE ID=\"$uid\" ";
+    	$sql="UPDATE client SET PWD=\"$md5pwd\" WHERE ID=\"$uid\" ";
     }
 
 

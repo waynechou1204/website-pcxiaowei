@@ -215,17 +215,17 @@ function checkLoginPwd()
 	{
 	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
 	  {
-	    if(xmlhttp.responseText=="0")
-	    {
-	    	hint.innerHTML="*账号或密码错误!";
-	    	pwd.style.borderColor="red";
-	    	flag = false;
-	    }
-	    else
+	    if(xmlhttp.responseText=="1")
 	    {
 	    	hint.innerHTML="";
 			pwd.style.borderColor="#00c957";
 	    	flag = true;
+	    }
+	    else
+	    {
+	    	hint.innerHTML="*账号或密码错误!";
+	    	pwd.style.borderColor="red";
+	    	flag = false;
 	    }
 	  }
 	}

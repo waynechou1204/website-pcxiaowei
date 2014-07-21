@@ -27,7 +27,7 @@
 	
 	// add trip
 	//$str="INSERT INTO CLIENT(NAME, SEX, BIRTHYEAR, CLIENT_TYPE, EMAIL, TELEPHONE, PWD) VALUES(\"$name\", \"$sex\", $yob, \"$type\", \"$email\", \"$phone\", \"$pwd\")";
-	$str="INSERT INTO TRIP(START_LOCATION, END_LOCATION, OWNER_ID, DEPART_DATE, DEPART_TIME, PUB_TIME, SEAT_NUM, PRICE_ONEWAY, TYPE) VALUES(\"$start\", \"$end\", \"$owner\", \"$date\", \"$time\", \"$pubtime\", \"$seats\", \"$prix\", \"$type\")";
+	$str="INSERT INTO trip(START_LOCATION, END_LOCATION, OWNER_ID, DEPART_DATE, DEPART_TIME, PUB_TIME, SEAT_NUM, PRICE_ONEWAY, TYPE) VALUES(\"$start\", \"$end\", \"$owner\", \"$date\", \"$time\", \"$pubtime\", \"$seats\", \"$prix\", \"$type\")";
 	$result=mysql_query($str) or die("Invalid query: " . mysql_error());
 	
 	mysql_close($db);

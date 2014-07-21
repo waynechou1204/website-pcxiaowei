@@ -2,7 +2,8 @@
 	session_start();
 
 	require_once "class.phpmailer.php";
-	
+	require_once "setDB.php";
+
 	function smtp_mail( $sendto_email, $subject, $body, $extra_hdrs, $user_name){    
 	    $mail = new PHPMailer();    
 	    $mail->IsSMTP();                  // send via SMTP    
@@ -43,9 +44,7 @@
 		smtp_mail("admin@pcxiaowei.com", "Suggestion", $_POST['textarea'], $_SESSION['useremail'], $_SESSION['username']);  
 	}
 	else{
-		$db = mysql_connect("localhost", "xiaowei", "891204") or die("Could not connect: " . mysql_error());
-		mysql_select_db("tongjicovoit",$db) or die ('Can\'t use foo : ' . mysql_error());
-		mysql_query('SET NAMES UTF8');
+		connectDB();
 	
 		// change pwd
 		$password = substr(md5(time()), 0, 6);// new random password

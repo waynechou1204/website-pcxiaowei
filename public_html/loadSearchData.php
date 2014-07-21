@@ -7,7 +7,7 @@ function loadlocations()
 
 	connectDB();
 	
-	$sql='SELECT * from LOCATION ORDER BY LOCATION_TYPE';
+	$sql='SELECT * from location ORDER BY LOCATION_TYPE';
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$nb = mysql_num_rows($result);
 	
@@ -31,7 +31,7 @@ function loadlocations()
 function loadTripData($tripid){
 	connectDB();
 	
-	$sql="SELECT * FROM TRIP WHERE TRIP_ID=\"$tripid\" ";
+	$sql="SELECT * FROM trip WHERE TRIP_ID=\"$tripid\" ";
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$nb = mysql_num_rows($result);
 	
@@ -47,7 +47,7 @@ function loadTripData($tripid){
 function loadLocationData($locid){
 	connectDB();
 	
-	$sql="SELECT * FROM LOCATION WHERE LOCATION_ID=\"$locid\" ";
+	$sql="SELECT * FROM location WHERE LOCATION_ID=\"$locid\" ";
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$nb = mysql_num_rows($result);
 	
@@ -63,7 +63,7 @@ function loadLocationData($locid){
 function loadOwnerData($ownerid){
 	connectDB();
 	
-	$sql="SELECT * FROM CLIENT WHERE ID=\"$ownerid\" ";
+	$sql="SELECT * FROM client WHERE ID=\"$ownerid\" ";
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$nb = mysql_num_rows($result);
 	
@@ -79,7 +79,7 @@ function loadOwnerData($ownerid){
 function loadUserTrips($userid){
 	connectDB();
 	
-	$sql="SELECT * FROM TRIP WHERE OWNER_ID=\"$userid\" ORDER BY DEPART_DATE DESC, DEPART_TIME DESC";
+	$sql="SELECT * FROM trip WHERE OWNER_ID=\"$userid\" ORDER BY DEPART_DATE DESC, DEPART_TIME DESC";
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$nb = mysql_num_rows($result);
 	
@@ -102,7 +102,7 @@ function loadUserTrips($userid){
 function loadLocationName($locid){
 	connectDB();
 	
-	$sql="SELECT * FROM LOCATION WHERE LOCATION_ID=\"$locid\" ";
+	$sql="SELECT * FROM location WHERE LOCATION_ID=\"$locid\" ";
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$nb = mysql_num_rows($result);
 	

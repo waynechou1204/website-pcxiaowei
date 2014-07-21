@@ -6,7 +6,7 @@
 
 	connectDB();
 
-	$sql="select * from CLIENT WHERE EMAIL= '" .$q. "'";
+	$sql="select * from client WHERE EMAIL= '" .$q. "'";
 
 	$result = mysql_query($sql);
 	$row=mysql_fetch_array($result);

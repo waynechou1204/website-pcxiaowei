@@ -10,7 +10,7 @@
 	
 	connectDB();
 	
-	$sql="UPDATE TRIP SET INTEREST_NUM=INTEREST_NUM+1 WHERE TRIP_ID=\"$tripid\" ";
+	$sql="UPDATE trip SET INTEREST_NUM=INTEREST_NUM+1 WHERE TRIP_ID=\"$tripid\" ";
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
 	
 
