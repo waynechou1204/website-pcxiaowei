@@ -22,7 +22,7 @@
 
 			connectDB();
 			
-			$sql="SELECT * from client WHERE EMAIL='$useremail' and PWD='$password'";
+			$sql="SELECT * from client WHERE email='$useremail' and pwd='$password'";
 			$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
 			$row=mysql_fetch_array($result);
 			

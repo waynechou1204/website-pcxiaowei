@@ -79,11 +79,11 @@
 							<label>行程路线: </label>
 							<label class="lab-tripresult">
 								<?php 
-									$start_loc=loadLocationData($trip['START_LOCATION']);
-									$end_loc=loadLocationData($trip['END_LOCATION']);
-									echo "<label id=\"lab-startloc\">".$start_loc['NAME']."</label>"
+									$start_loc=loadLocationData($trip['start_location']);
+									$end_loc=loadLocationData($trip['end_location']);
+									echo "<label id=\"lab-startloc\">".$start_loc['name']."</label>"
 									    ."  &#8594;  "
-									    ."<label id=\"lab-endloc\">".$end_loc['NAME']."</label>";
+									    ."<label id=\"lab-endloc\">".$end_loc['name']."</label>";
 								?>	
 							</label>		
 						
@@ -95,7 +95,7 @@
 									出发日期:
 								</label>
 								<label class="lab-tripresult">
-									<?php echo $trip['DEPART_DATE']; ?>
+									<?php echo $trip['depart_date']; ?>
 								</label>
 							</div>
 							<div style="clear:both"></div> 
@@ -104,14 +104,14 @@
 							<div id="select-departtime">
 								<label>出发时间:</label>
 								<label class="lab-tripresult">
-									<?php echo $trip['DEPART_TIME']; ?>
+									<?php echo $trip['depart_time']; ?>
 								</label>
 							</div>
 						</div>
 						
 						<div id="div-freeseats" class="trip-bars">
 							<?php 
-								if ($trip['TYPE']=="picked"){
+								if ($trip['type']=="picked"){
 									echo '<label>同行人数: </label>';
 								}else{
 									echo '<label>空余座位: </label>';
@@ -125,21 +125,21 @@
 						<div id="div-price" class="trip-bars">
 							<label>价格: </label>
 							<label class="lab-tripresult-prix">
-								<?php echo $trip['PRICE_ONEWAY']; ?> 
+								<?php echo $trip['price_oneway']; ?> 
 							</label>	元/人
 						</div>
 
 						<div id="div-pubtime" class="trip-bars">
 							<label>发布时间：</label>
-							<?php echo $trip['PUB_TIME'];?>
+							<?php echo $trip['pub_time'];?>
 						</div>
 						<form action="doAddTripInterestNum.php" method="get" onsubmit="return getOwnerInfo();">
 							<div id="div-submit" class="trip-bars">
 								<?php 
-									$owner = loadOwnerData($trip['OWNER_ID']);
+									$owner = loadOwnerData($trip['owner_id']);
 									echo "<div id=\"ownername\" style=\"display:none\">".$owner['name']."</div>";
 									echo "<div id=\"ownerphone\" style=\"display:none\">".$owner['telephone']."</div>";
-									echo "<input name=\"tripid\" style=\"display:none\" value=\"". $trip['TRIP_ID'] ."\" /> ";
+									echo "<input name=\"tripid\" style=\"display:none\" value=\"". $trip['trip_id'] ."\" /> ";
 								?>
 								<input type="submit" id="sub-publish" value="感兴趣" />
 							</div>

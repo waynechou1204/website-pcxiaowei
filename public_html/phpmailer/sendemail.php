@@ -51,7 +51,7 @@
 		$email = $_GET['claimemail'];
 		$encryp = md5($password);
 
-		$str = "UPDATE CLIENT SET PWD = \"$encryp\" WHERE EMAIL=\"$email\"";
+		$str = "UPDATE client SET pwd = \"$encryp\" WHERE email=\"$email\"";
 
 		$result=mysql_query($str) or die("Invalid query: " . mysql_error());
 		

@@ -122,21 +122,21 @@
 										foreach ($trips as $arr) {
 											echo '<hr style="border:1px dashed gray;" />';
 											
-											if ($arr['TYPE']=="pickup") { // blue
+											if ($arr['type']=="pickup") { // blue
 												echo '<div class="search-result-pickup" onMouseOver="this.className=\'search-result-mouseover\';" onMouseOut="this.className=\'search-result-pickup\';" onclick="location.href=\'trip.php?tripid='.$arr['TRIP_ID'].'\';">';
 											}
 											else{ //pink
 												echo '<div class="search-result-picked" onMouseOver="this.className=\'search-result-mouseover\';" onMouseOut="this.className=\'search-result-picked\';" onclick="location.href=\'trip.php?tripid='.$arr['TRIP_ID'].'\';">';	
 											}
 											
-											echo '		<div class="result-loc">'.(loadLocationName($arr['START_LOCATION'])).'  &#8594;  '.
-																			 	  (loadLocationName($arr['END_LOCATION'])).
+											echo '		<div class="result-loc">'.(loadLocationName($arr['start_location'])).'  &#8594;  '.
+																			 	  (loadLocationName($arr['end_location'])).
 														'</div>';
-											echo '		<div class="result-time">'.$arr['DEPART_DATE']."<br />".$arr['DEPART_TIME'].'</div>';
+											echo '		<div class="result-time">'.$arr['depart_date']."<br />".$arr['depart_time'].'</div>';
 											
 											date_default_timezone_set('PRC');
 											$currenttime = date("Y-m-d H:i:s");
-											$pubtime = $arr['PUB_TIME'];
+											$pubtime = $arr['pub_time'];
 											$date=floor((strtotime($currenttime)-strtotime($pubtime))/86400);
 											$hour=floor((strtotime($currenttime)-strtotime($pubtime))%86400/3600);
 											$minute=floor((strtotime($currenttime)-strtotime($pubtime))%86400/60);
@@ -155,18 +155,18 @@
 											echo '		<div class="result-pubtime">'. $timegap .'前发布</div>';
 											
 											if ($arr['TYPE']=="pickup") {
-											echo '		<div class="result-seats">' ."可搭乘".$arr['SEAT_NUM']."人".
-															'<div class="result-reserv">'."有".$arr['INTEREST_NUM']."人感兴趣".'</div>'.
+											echo '		<div class="result-seats">' ."可搭乘".$arr['seat_num']."人".
+															'<div class="result-reserv">'."有".$arr['interest_num']."人感兴趣".'</div>'.
 														'</div>'; 
 											}
 											else{
 													echo '	<div class="result-seats">'. 
-																'<div class="result-reserv">'."有".$arr['INTEREST_NUM']."人感兴趣".'</div>'.
+																'<div class="result-reserv">'."有".$arr['interest_num']."人感兴趣".'</div>'.
 															'</div>'; 
 											}
-											echo '		<div class="result-price-normal"><label>&yen;'.$arr['PRICE_ONEWAY'].'</label></div>';
+											echo '		<div class="result-price-normal"><label>&yen;'.$arr['price_oneway'].'</label></div>';
 											echo '<form action="doDeleteTrip.php" method="POST" enctype="multipart/form-data" onsubmit="return confirm(\'确定删除吗？\');"> ';
-												echo '<input type="hidden" name="tripid" value="'.$arr['TRIP_ID'].'" />';
+												echo '<input type="hidden" name="tripid" value="'.$arr['trip_id'].'" />';
 												echo '<input type="submit" id="deletebutton" value="删除" />';
 											echo'</form>';
 											echo "</div>";

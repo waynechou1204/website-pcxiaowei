@@ -13,11 +13,11 @@
 	
 	// add user
 	//$str="INSERT INTO CLIENT(NAME, SEX, BIRTHYEAR, CLIENT_TYPE, EMAIL, TELEPHONE, PWD) VALUES(\"$name\", \"$sex\", $yob, \"$type\", \"$email\", \"$phone\", \"$pwd\")";
-	$str="INSERT INTO client(NAME, EMAIL, TELEPHONE, PWD) VALUES(\"$name\", \"$email\", \"$phone\", \"$password\")";
+	$str="INSERT INTO client(name, email, telephone, pwd) VALUES(\"$name\", \"$email\", \"$phone\", \"$password\")";
 	$result=mysql_query($str) or die("Invalid query: " . mysql_error());
 	
 	// get user id
-	$sql=" SELECT * from client WHERE EMAIL='$email' ";
+	$sql=" SELECT * from client WHERE email='$email' ";
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$row=mysql_fetch_array($result);
 	

@@ -7,7 +7,7 @@ function loadlocations()
 
 	connectDB();
 	
-	$sql='SELECT * from location ORDER BY LOCATION_TYPE';
+	$sql='SELECT * from location ORDER BY location_type';
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$nb = mysql_num_rows($result);
 	
@@ -31,7 +31,7 @@ function loadlocations()
 function loadTripData($tripid){
 	connectDB();
 	
-	$sql="SELECT * FROM trip WHERE TRIP_ID=\"$tripid\" ";
+	$sql="SELECT * FROM trip WHERE trip_id=\"$tripid\" ";
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$nb = mysql_num_rows($result);
 	
@@ -47,7 +47,7 @@ function loadTripData($tripid){
 function loadLocationData($locid){
 	connectDB();
 	
-	$sql="SELECT * FROM location WHERE LOCATION_ID=\"$locid\" ";
+	$sql="SELECT * FROM location WHERE location_id=\"$locid\" ";
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$nb = mysql_num_rows($result);
 	
@@ -63,7 +63,7 @@ function loadLocationData($locid){
 function loadOwnerData($ownerid){
 	connectDB();
 	
-	$sql="SELECT * FROM client WHERE ID=\"$ownerid\" ";
+	$sql="SELECT * FROM client WHERE id=\"$ownerid\" ";
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$nb = mysql_num_rows($result);
 	
@@ -79,7 +79,7 @@ function loadOwnerData($ownerid){
 function loadUserTrips($userid){
 	connectDB();
 	
-	$sql="SELECT * FROM trip WHERE OWNER_ID=\"$userid\" ORDER BY DEPART_DATE DESC, DEPART_TIME DESC";
+	$sql="SELECT * FROM trip WHERE owner_id=\"$userid\" ORDER BY depart_date DESC, depart_time DESC";
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$nb = mysql_num_rows($result);
 	
@@ -102,14 +102,14 @@ function loadUserTrips($userid){
 function loadLocationName($locid){
 	connectDB();
 	
-	$sql="SELECT * FROM location WHERE LOCATION_ID=\"$locid\" ";
+	$sql="SELECT * FROM location WHERE location_id=\"$locid\" ";
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$nb = mysql_num_rows($result);
 	
 	if ($nb > 0) {
 		while ($arr = mysql_fetch_array($result)) {
 			
-			return $arr['NAME'];
+			return $arr['name'];
 		}
 	}
 	mysql_close();

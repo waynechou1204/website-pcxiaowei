@@ -8,7 +8,7 @@
 
 	connectDB();
 	
-	$sql="DELETE FROM trip WHERE TRIP_ID=\"$tripid\" ";
+	$sql="DELETE FROM trip WHERE trip_id=\"$tripid\" ";
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
 	
 	mysql_close();

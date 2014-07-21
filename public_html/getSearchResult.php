@@ -16,16 +16,16 @@
 	
 	$date_sql = " ";
 	if (!empty($depart_date)) {
-		$date_sql = " AND DEPART_DATE= '".$depart_date."'";
+		$date_sql = " AND depart_date= '".$depart_date."'";
 	}
 
 
 	$type_sql = " ";
 	if($type_takeman=="true" && $type_bycar=="false"){
-		$type_sql=" AND TYPE='pickup' ";
+		$type_sql=" AND type='pickup' ";
 	}
 	else if($type_takeman=="false" && $type_bycar=="true"){
-		$type_sql=" AND TYPE='picked' ";
+		$type_sql=" AND type='picked' ";
 	}
 
 
@@ -33,38 +33,38 @@
 	switch ($order_indx)
 	{
 	case 0:
-		$order_sql = " ORDER BY DEPART_DATE ASC, DEPART_TIME ASC";
+		$order_sql = " ORDER BY depart_date ASC, depart_time ASC";
 		break;  
 	case 1:
-		$order_sql = " ORDER BY DEPART_DATE DESC, DEPART_TIME DESC";
+		$order_sql = " ORDER BY depart_date DESC, depart_time DESC";
 		break;
 	case 2:
-		$order_sql = " ORDER BY PRICE_ONEWAY ASC";
+		$order_sql = " ORDER BY price_oneway ASC";
 		break;
 	case 3:
-		$order_sql = " ORDER BY PRICE_ONEWAY DESC";
+		$order_sql = " ORDER BY price_oneway DESC";
 		break;
 	case 4:
-		$order_sql = " ORDER BY PUB_TIME ASC";
+		$order_sql = " ORDER BY pub_time ASC";
 		break;
 	case 5:
-		$order_sql = " ORDER BY PUB_TIME DESC";
+		$order_sql = " ORDER BY pub_time DESC";
 		break;
 	default:
 	  	break;
 	}
 
-	$sql = "SELECT * from LOCATION WHERE NAME = '".$start_loc."'";
+	$sql = "SELECT * from location WHERE name = '".$start_loc."'";
 	$restemp = mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$arrtemp = mysql_fetch_array($restemp); 
-	$start_loc_id = $arrtemp['LOCATION_ID'];
+	$start_loc_id = $arrtemp['location_id'];
 
-	$sql = "SELECT * from LOCATION WHERE NAME = '".$end_loc."'";
+	$sql = "SELECT * from location WHERE name = '".$end_loc."'";
 	$restemp = mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$arrtemp = mysql_fetch_array($restemp);
-	$end_loc_id = $arrtemp['LOCATION_ID'];		
+	$end_loc_id = $arrtemp['location_id'];		
 
-	$sql="SELECT * from TRIP WHERE START_LOCATION= '" .$start_loc_id. "'" . " AND END_LOCATION= '" .$end_loc_id. "'" .
+	$sql="SELECT * from trip WHERE start_location= '" .$start_loc_id. "'" . " AND end_location= '" .$end_loc_id. "'" .
 			 $date_sql . $type_sql . $order_sql;
 
 	$result = mysql_query($sql) or die("Invalid query: " . mysql_error());
@@ -87,7 +87,7 @@
 			echo '	<div class="result-owner">';
 			echo '		<div class="div-owner">';
 			//echo '			<img class="driver-photo" alt="Driver Photo" src="../upload/photo/<{$trip['driverId']}>" onerror="javascript:this.src='../images/default_user.jpg'" width="50" height="50">';
-			$sql = "SELECT * FROM client WHERE id= '".$arr['OWNER_ID']."'";
+			$sql = "SELECT * FROM client WHERE id= '".$arr['owner_id']."'";
 			$restemp = mysql_query($sql) or die("Invalid query: ".mysql_error());
 			$arrtemp = mysql_fetch_array($restemp);
 			$ower_name = $arrtemp['name'];
@@ -99,7 +99,7 @@
 			echo '	</div>';
 			echo '	<div class="result-detail">';
 			echo '		<div class="result-loc">'.$start_loc.'  &#8594;  '.$end_loc.'</div>';
-			echo '		<div class="result-time">'.$arr['DEPART_DATE']."<br />".$arr['DEPART_TIME'].'</div>';
+			echo '		<div class="result-time">'.$arr['depart_date']."<br />".$arr['depart_time'].'</div>';
 			
 			date_default_timezone_set('PRC');
 			$currenttime = date("Y-m-d H:i:s");
@@ -123,15 +123,15 @@
 			
 			if ($arr['TYPE']=="pickup") {
 			echo '		<div class="result-seats">' ."可搭乘".$arr['SEAT_NUM']."人".
-							'<div class="result-reserv">'."有".$arr['INTEREST_NUM']."人感兴趣".'</div>'.
+							'<div class="result-reserv">'."有".$arr['interest_num']."人感兴趣".'</div>'.
 						'</div>'; 
 			}
 			else{
 				echo '	<div class="result-seats">'. 
-							'<div class="result-reserv">'."有".$arr['INTEREST_NUM']."人感兴趣".'</div>'.
+							'<div class="result-reserv">'."有".$arr['interest_num']."人感兴趣".'</div>'.
 						'</div>'; 
 			}
-			echo '		<div class="result-price-normal">&yen;<label>'.$arr['PRICE_ONEWAY'].'</label></div>';
+			echo '		<div class="result-price-normal">&yen;<label>'.$arr['price_oneway'].'</label></div>';
 			echo '	</div>';
 			echo "</div>";
 		}

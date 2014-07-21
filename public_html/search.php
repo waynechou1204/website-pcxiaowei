@@ -69,15 +69,15 @@
 										$locations = loadlocations();
 										$type = "0";
 										foreach ($locations as $loc) {
-											if ($loc['LOCATION_TYPE'] != $type) {
+											if ($loc['location_type'] != $type) {
 												if ($type != "0") {
 													echo '</optgroup>';
 												}
-												echo '<optgroup label="'.$loc['LOCATION_TYPE'].'">';
-												$type = $loc['LOCATION_TYPE'];
+												echo '<optgroup label="'.$loc['location_type'].'">';
+												$type = $loc['location_type'];
 											} 
 												
-											echo '<option value ="'.$loc['LOCATION_ID'].'">'.$loc['NAME'].'</option>';
+											echo '<option value ="'.$loc['location_id'].'">'.$loc['name'].'</option>';
 										}
 										echo '</optgroup>';
 										unset($loc);
@@ -94,19 +94,19 @@
 										$type = "0";
 										$i=0;
 										foreach ($locations as $loc) {
-											if ($loc['LOCATION_TYPE'] != $type) {
+											if ($loc['location_type'] != $type) {
 												if ($type != "0") {
 													echo '</optgroup>';
 												}
-												echo '<optgroup label="'.$loc['LOCATION_TYPE'].'">';
-												$type = $loc['LOCATION_TYPE'];
+												echo '<optgroup label="'.$loc['location_type'].'">';
+												$type = $loc['location_type'];
 											} 
 											if ($i==1) 
 											{
-												echo '<option value ="'.$loc['LOCATION_ID'].'" selected="selected">'.$loc['NAME'].'</option>';
+												echo '<option value ="'.$loc['location_id'].'" selected="selected">'.$loc['name'].'</option>';
 											}
 											else{
-												echo '<option value ="'.$loc['LOCATION_ID'].'">'.$loc['NAME'].'</option>';	
+												echo '<option value ="'.$loc['location_id'].'">'.$loc['name'].'</option>';	
 											}	
 											$i++;
 										}
