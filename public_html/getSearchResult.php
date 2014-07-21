@@ -77,11 +77,11 @@
 		while($arr = mysql_fetch_array($result))
 		{
 			echo '<hr style="border:1px dashed gray;" />';
-			if ($arr['TYPE']=="pickup") { // blue
-				echo '<div class="search-result-pickup" onMouseOver="this.className=\'search-result-mouseover\';" onMouseOut="this.className=\'search-result-pickup\';" onclick="location.href=\'trip.php?tripid='.$arr['TRIP_ID'].'\';">';
+			if ($arr['type']=="pickup") { // blue
+				echo '<div class="search-result-pickup" onMouseOver="this.className=\'search-result-mouseover\';" onMouseOut="this.className=\'search-result-pickup\';" onclick="location.href=\'trip.php?tripid='.$arr['trip_id'].'\';">';
 			}
 			else{ //pink
-				echo '<div class="search-result-picked" onMouseOver="this.className=\'search-result-mouseover\';" onMouseOut="this.className=\'search-result-picked\';" onclick="location.href=\'trip.php?tripid='.$arr['TRIP_ID'].'\';">';	
+				echo '<div class="search-result-picked" onMouseOver="this.className=\'search-result-mouseover\';" onMouseOut="this.className=\'search-result-picked\';" onclick="location.href=\'trip.php?tripid='.$arr['trip_id'].'\';">';	
 			}
 			
 			echo '	<div class="result-owner">';
@@ -103,7 +103,7 @@
 			
 			date_default_timezone_set('PRC');
 			$currenttime = date("Y-m-d H:i:s");
-			$pubtime = $arr['PUB_TIME'];
+			$pubtime = $arr['pub_time'];
 			$date=floor((strtotime($currenttime)-strtotime($pubtime))/86400);
 			$hour=floor((strtotime($currenttime)-strtotime($pubtime))%86400/3600);
 			$minute=floor((strtotime($currenttime)-strtotime($pubtime))%86400/60);
@@ -122,7 +122,7 @@
 			echo '		<div class="result-pubtime">'. $timegap .'前发布</div>';
 			
 			if ($arr['TYPE']=="pickup") {
-			echo '		<div class="result-seats">' ."可搭乘".$arr['SEAT_NUM']."人".
+			echo '		<div class="result-seats">' ."可搭乘".$arr['seat_num']."人".
 							'<div class="result-reserv">'."有".$arr['interest_num']."人感兴趣".'</div>'.
 						'</div>'; 
 			}
