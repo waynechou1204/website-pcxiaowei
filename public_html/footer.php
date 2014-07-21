@@ -4,19 +4,19 @@
 		<div class="footer-grid">
 			<h3>Quick Links</h3>
 			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About Features</a></li>
-				<li><a href="#">Login</a></li>
-				<li><a href="#">Sign Up</a></li>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="about.php">About Features</a></li>
+				<li><a href="index.php">Login</a></li>
+				<li><a href="index.php">Sign Up</a></li>
 			</ul>
 		</div>
 		<div class="footer-grid">
 			<h3>More</h3>
 			<ul>
-				<li><a href="#">FAQ</a></li>
-				<li><a href="#">Support</a></li>
-				<li><a href="#">Privacy Policy</a></li>
-				<li><a href="#">Terms and Conditions</a></li>
+				<li><a href="contact.php">FAQ</a></li>
+				<li><a href="about.php">Support</a></li>
+				<li><a href="about.php">Privacy Policy</a></li>
+				<li><a href="about.php">Terms and Conditions</a></li>
 			</ul>
 		</div>
 		<div class="footer-grid">
@@ -26,7 +26,7 @@
 				<li><a class="twitter" href="#"> </a></li>
 				<li><a class="youtube" href="#"> </a></li>
 			</ul>
-			<p class="copy-right">Template by <a href="#">W3layouts</a></p>
+			<!--p class="copy-right">Template by <a href="#">W3layouts</a></p-->
 		</div>
 		<div class="footer-grid">
 			<h3>Newsletter</h3>
