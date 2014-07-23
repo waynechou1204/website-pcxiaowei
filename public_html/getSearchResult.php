@@ -99,7 +99,7 @@
 			echo '	</div>';
 			echo '	<div class="result-detail">';
 			echo '		<div class="result-loc">'.$start_loc.'  &#8594;  '.$end_loc.'</div>';
-			echo '		<div class="result-time">'.$arr['depart_date']."<br />".$arr['depart_time'].'</div>';
+			echo '		<div class="result-time">'.$arr['depart_date']."<br>".$arr['depart_time'].'</div>';
 			
 			date_default_timezone_set('PRC');
 			$currenttime = date("Y-m-d H:i:s");
@@ -121,7 +121,7 @@
 			
 			echo '		<div class="result-pubtime">'. $timegap .'前发布</div>';
 			
-			if ($arr['TYPE']=="pickup") {
+			if ($arr['type']=="pickup") {
 			echo '		<div class="result-seats">' ."可搭乘".$arr['seat_num']."人".
 							'<div class="result-reserv">'."有".$arr['interest_num']."人感兴趣".'</div>'.
 						'</div>'; 

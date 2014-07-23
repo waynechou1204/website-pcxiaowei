@@ -60,23 +60,23 @@
 		                    	<form id="signupForm" action="register.php" method="post" enctype="multipart/form-data" onsubmit="return checkForm();">
 		                        <fieldset id="signupbody">
 		                        	<fieldset>
-		                                <label for="signupusername">真实姓名 <span><lable id="hint-name" class="hint">*</lable></span></label>
+		                                <label for="signupusername">真实姓名</label><lable id="hint-name" class="hint">*</lable>
 		                                <input type="text" name="username" id="signupusername" onblur="checkName()"/>
 		                            </fieldset>
 		                            <fieldset>
-		                                <label for="signupemail">邮箱地址 <span><lable id="hint-email" class="hint">*</lable></span></label>
+		                                <label for="signupemail">邮箱地址</label> <lable id="hint-email" class="hint">*</lable>
 		                                <input type="text" name="email" id="signupemail" onblur="checkEmail()"/>
 		                            </fieldset>
 		                            <fieldset>
-		                                <label for="signupphone">手机号 <span><lable id="hint-phone" class="hint">*</lable></span></label>
+		                                <label for="signupphone">手机号</label> <lable id="hint-phone" class="hint">*</lable>
 		                                <input type="text" name="phone" id="signupphone" placeholder="11位手机号" onblur="checkPhone()"/>
 		                            </fieldset>
 		                            <fieldset>
-		                                <label for="signuppassword">请输入密码 <span><lable id="hint-pwd" class="hint">*</lable></span></label>
+		                                <label for="signuppassword">请输入密码</label> <lable id="hint-pwd" class="hint">*</lable>
 		                                <input type="password" name="password" id="signuppassword" placeholder="6-14个字母、数字或下划线" onblur="checkPwd()"/>
 		                            </fieldset>
 		                            <fieldset>
-		                                <label for="signuppassword1">确认密码 <span><lable id="hint-pwdconf" class="hint">*</lable></span></label>
+		                                <label for="signuppassword1">确认密码</label> <lable id="hint-pwdconf" class="hint">*</lable>
 		                                <input type="password" name="password" id="signuppassword1" onblur="checkPwdConf()"/>
 		                            </fieldset>
 		                            <input type="submit" id="signup" value="立即注册" />
@@ -102,7 +102,7 @@
 					                                ?>					                                
 					                            </fieldset>
 					                            <fieldset>
-					                                <label for="password">密码 <span><lable id="hint-loginpwd" class="hint"></lable></span></label>
+					                                <label for="password">密码</label> <lable id="hint-loginpwd" class="hint"></lable>
 					                                <?php 
 					                                	if (isset($_COOKIE['password'])) {
 					                                		echo '<input type="password" name="password" id="password" value="'.$_COOKIE['password'].'"/>';

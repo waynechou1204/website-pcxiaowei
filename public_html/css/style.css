@@ -1797,3 +1797,10 @@ input:focus {
 		padding: 0;
 	}
 }
+
+.hint{
+	display: inline-block;
+	padding: 0px;
+	font-size: 0.875em;
+	color:#F36EA7;
+}

@@ -67,7 +67,7 @@
 						<div class="trip-bars">
 							<div id="rad-fil">类型:
 								<?php 
-									if ($trip['TYPE']=="picked"){
+									if ($trip['type']=="picked"){
 										echo '<label class="lab-tripresult-picked" style="background:#fffafa">求车</label>';
 									}else{
 										echo '<label class="lab-tripresult-pickup" style="background:#f0ffff">出车</label>';
@@ -118,7 +118,7 @@
 								}
 							?>
 							<label class="lab-tripresult">
-								<?php echo $trip['SEAT_NUM']; ?>
+								<?php echo $trip['seat_num']; ?>
 							</label>
 						</div>
 
@@ -141,7 +141,7 @@
 									echo "<div id=\"ownerphone\" style=\"display:none\">".$owner['telephone']."</div>";
 									echo "<input name=\"tripid\" style=\"display:none\" value=\"". $trip['trip_id'] ."\" /> ";
 								?>
-								<input type="submit" id="sub-publish" value="感兴趣" />
+								<input type="submit" id="sub-publish" value="联系ta" />
 							</div>
 						</form>
 					</div>
@@ -163,7 +163,7 @@
 	</body>
 </html>
 
-<script type="text/javascript">
+<script>
 function getBaiduMap(){
 	var start = document.getElementById("lab-startloc").innerHTML;
 	var end = document.getElementById("lab-endloc").innerHTML;
