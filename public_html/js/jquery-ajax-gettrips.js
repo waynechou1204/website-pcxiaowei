@@ -46,11 +46,17 @@ function gettrips() {
 	var pub_early = document.getElementById("select_start").value;
 	var pub_late = document.getElementById("select_start").value;
 	*/
-	xmlhttp.open("GET", "getSearchResult.php?stloc=" + start_loc +
+
+	var geturl = "getSearchResult.php?stloc=" + start_loc +
 		"&edloc=" + end_loc + "&deptdate=" + depart_date + "&typtkm=" + type_takeman + "&typbcar=" + type_bycar +
-		"&order="+order_idx, false);
+		"&order=" + order_idx;
+	
+	geturl=encodeURI(encodeURI(geturl));
+
+	xmlhttp.open("GET", geturl, false);
 		//"&dperl=" + depart_early + "&deplt=" + depart_late + "&prxup=" + price_up +
 		//"&prxdw=" + price_down + "&puberl=" + pub_early + "&publt=" + pub_late, false);
+	xmlhttp.setRequestHeader("If-Modified-Since","0");
 	xmlhttp.send();
 }
 
