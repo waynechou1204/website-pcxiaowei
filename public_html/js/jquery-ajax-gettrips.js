@@ -11,11 +11,11 @@ function gettrips() {
 	}
 
 	xmlhttp.onreadystatechange = function() {
-		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-
-			// show results of search
-			results.innerHTML = xmlhttp.responseText;
-
+		if (xmlhttp.readyState == 4 ) {
+			if (xmlhttp.status == 200) {
+				// show results of search
+				results.innerHTML = xmlhttp.responseText;
+			}
 		}
 	}
 
