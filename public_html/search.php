@@ -23,7 +23,12 @@
 		<script type="application/x-javascript"> 
 			addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
 		</script>
-
+ 
+ 		<!-- for the progress bar -->
+ 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		
 		<!-- my script -->
 		<script src="js/My97DatePicker/WdatePicker.js"></script>
 	    <script src="js/jquery-ajax-gettrips.js"></script>
@@ -154,9 +159,12 @@
 							<label style="background:#f0ffff">出车</label>
 							<label style="background:#fffafa">求车</label>
 					</div>
-					
+
+					<div id="progressbar"></div>
+
 					<!-- use php to repeat -->
 					<div id="search-results">
+
 						<!-- results of search, loaded by jquery-ajax-gettrips gettrips() -->
 					</div>		
 					

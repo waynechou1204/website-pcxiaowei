@@ -86,11 +86,13 @@
 				</script>
 			</div>
 		</div>
+
 		<script type="text/javascript">
 			$(document).ready(function(){
     		$('.loadingdiv').fadeOut();    
 			});	
 		</script>
+		
 			<!---//End-da-slider-->
 		<!--//End-banner-->
 		<!---start-content-->

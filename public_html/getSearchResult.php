@@ -72,8 +72,18 @@
 	
 
 	//get search results from db
+	$index=0;
 	if($nb > 0)
 	{
+		$index++;
+		echo '<script>'.
+			'$(function() {'.
+			'	$( "#progressbar" ).progressbar({'.
+			'	value: '. $index*100/$nb.
+			'	});'.
+			'});'.
+		'</script>';
+
 		while($arr = mysql_fetch_array($result))
 		{
 			echo '<hr style="border:1px dashed gray;" />';
