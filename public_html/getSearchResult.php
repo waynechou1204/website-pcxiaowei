@@ -2,15 +2,15 @@
 
 	include 'setDB.php';
 
-	$start_loc=$_GET["stloc"];
-	$end_loc = $_GET["edloc"];
+	$start_loc = urldecode($_GET["stloc"]);
+	$end_loc = urldecode($_GET["edloc"]);
 	
-	$depart_date=$_GET["deptdate"];
+	$depart_date = $_GET["deptdate"];
 	
-	$type_takeman=$_GET["typtkm"];
-	$type_bycar=$_GET["typbcar"];
+	$type_takeman = $_GET["typtkm"];
+	$type_bycar = $_GET["typbcar"];
 
-	$order_indx=$_GET["order"];
+	$order_indx = $_GET["order"];
 
 	connectDB();
 	
@@ -27,7 +27,6 @@
 	else if($type_takeman=="false" && $type_bycar=="true"){
 		$type_sql=" AND type='picked' ";
 	}
-
 
 	$order_sql = " ";
 	switch ($order_indx)
@@ -63,6 +62,7 @@
 	$restemp = mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$arrtemp = mysql_fetch_array($restemp);
 	$end_loc_id = $arrtemp['location_id'];		
+
 
 	$sql="SELECT * from trip WHERE start_location= '" .$start_loc_id. "'" . " AND end_location= '" .$end_loc_id. "'" .
 			 $date_sql . $type_sql . $order_sql;
@@ -136,7 +136,10 @@
 			echo "</div>";
 		}
 	}
-
+	else{
+	
+		echo "没有找到相关行程!";
+	}
 	mysql_close();
 
 ?>
