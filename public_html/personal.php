@@ -123,10 +123,10 @@
 											echo '<hr style="border:1px dashed gray;" />';
 											
 											if ($arr['type']=="pickup") { // blue
-												echo '<div class="search-result-pickup" onMouseOver="this.className=\'search-result-mouseover\';" onMouseOut="this.className=\'search-result-pickup\';" onclick="location.href=\'trip.php?tripid='.$arr['TRIP_ID'].'\';">';
+												echo '<div class="search-result-pickup" onMouseOver="this.className=\'search-result-mouseover\';" onMouseOut="this.className=\'search-result-pickup\';" onclick="location.href=\'trip.php?tripid='.$arr['trip_id'].'\';">';
 											}
 											else{ //pink
-												echo '<div class="search-result-picked" onMouseOver="this.className=\'search-result-mouseover\';" onMouseOut="this.className=\'search-result-picked\';" onclick="location.href=\'trip.php?tripid='.$arr['TRIP_ID'].'\';">';	
+												echo '<div class="search-result-picked" onMouseOver="this.className=\'search-result-mouseover\';" onMouseOut="this.className=\'search-result-picked\';" onclick="location.href=\'trip.php?tripid='.$arr['trip_id'].'\';">';	
 											}
 											
 											echo '		<div class="result-loc">'.(loadLocationName($arr['start_location'])).'  &#8594;  '.
@@ -154,7 +154,7 @@
 											
 											echo '		<div class="result-pubtime">'. $timegap .'前发布</div>';
 											
-											if ($arr['TYPE']=="pickup") {
+											if ($arr['type']=="pickup") {
 											echo '		<div class="result-seats">' ."可搭乘".$arr['seat_num']."人".
 															'<div class="result-reserv">'."有".$arr['interest_num']."人感兴趣".'</div>'.
 														'</div>'; 

@@ -1804,3 +1804,9 @@ input:focus {
 	font-size: 0.875em;
 	color:#F36EA7;
 }
+
+.loadingdiv{
+	margin: 0;
+	height: 630px;
+	background:url("../images/loading.gif") center no-repeat;
+}

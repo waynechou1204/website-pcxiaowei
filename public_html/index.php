@@ -8,7 +8,7 @@
 	<head>
 		<title>拼车晓位 | 首页</title>
 		<link href="css/style.css" rel='stylesheet' type='text/css' />
-		
+
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -44,9 +44,13 @@
 		
 		<?php include 'header.php'; ?>
 		
+		<!-- Loading image -->
+		<div class="loadingdiv"></div>
+
 		<!--start-banner-->
 		<div class="text-slider">
-			<div class="wrap"> 
+
+			<div class="wrap" > 
 				<!---start-da-slider-->
 				<div id="da-slider" class="da-slider">
 						<div class="da-slide">
@@ -82,6 +86,11 @@
 				</script>
 			</div>
 		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+    		$('.loadingdiv').fadeOut();    
+			});	
+		</script>
 			<!---//End-da-slider-->
 		<!--//End-banner-->
 		<!---start-content-->
