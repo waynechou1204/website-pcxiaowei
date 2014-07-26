@@ -116,6 +116,7 @@
 								<input type="radio" name="tabs" id="tab3" />
 								<label for="tab3">发布的行程</label>
 								<div id="tab-content-trips" class="tab-content">
+									
 									<!-- use php to repeat -->
 									<?php 
 										

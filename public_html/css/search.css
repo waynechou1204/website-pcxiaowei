@@ -98,7 +98,6 @@ h3{
 	
 	width: 60%;
 	opacity:.50;
-	filter: alpha(opacity=50);
 	position:absolute;
 	
 	background:url("../images/loading.gif") center no-repeat;
@@ -190,6 +189,8 @@ h3{
 .filter-bars input{
 	width: auto;
 	margin: 0 2px 0 10px;
+	padding: 0;
+	border: none;
 }
 
 #chk-type{
@@ -197,6 +198,7 @@ h3{
 }
 
 .rad-fil{
+	width: auto;
 	float: left;
 	margin: 0 0 0 35px;
 }
