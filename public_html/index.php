@@ -89,7 +89,7 @@
 
 		<script type="text/javascript">
 			$(document).ready(function(){
-    		$('.loadingdiv').fadeOut();    
+    			$('.loadingdiv').fadeOut();    
 			});	
 		</script>
 		

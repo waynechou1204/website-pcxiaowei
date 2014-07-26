@@ -2,6 +2,14 @@ function gettrips() {
 
 	var results = document.getElementById("search-results");
 
+	// clear results list	
+	//results.innerHTML="";
+
+	var loadingdiv = document.getElementById("loadingdiv");
+
+	// display loading gif
+	loadingdiv.style.display="";
+
 	/*USE AJAX TO REFRESH RESULT LIST*/
 	var xmlhttp;
 	if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -13,8 +21,12 @@ function gettrips() {
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4 ) {
 			if (xmlhttp.status == 200) {
+				
+				// hide loading gif
+				loadingdiv.style.display = "none"; 
+				
 				// show results of search
-				results.innerHTML = xmlhttp.responseText;
+				results.innerHTML = xmlhttp.responseText;				
 			}
 		}
 	}
