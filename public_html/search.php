@@ -24,11 +24,6 @@
 			addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
 		</script>
  
- 		<!-- for the progress bar -->
- 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-  		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-		
 		<!-- my script -->
 		<script src="js/My97DatePicker/WdatePicker.js"></script>
 	    <script src="js/jquery-ajax-gettrips.js"></script>
@@ -44,13 +39,14 @@
 		<!---768px-menu-->
 		<link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
 		<script type="text/javascript" src="js/jquery.mmenu.js"></script>
-			<script type="text/javascript">
-				//	The menu on the left
-				$(function() {
-					$('nav#menu-left').mmenu();
-				});
-			</script>
+		<script type="text/javascript">
+			//	The menu on the left
+			$(function() {
+				$('nav#menu-left').mmenu();
+			});
+		</script>
 		<!---//768px-menu-->
+
 	</head>
 
 	<body onload="gettrips()">
@@ -160,14 +156,14 @@
 							<label style="background:#fffafa">求车</label>
 					</div>
 
-					<div id="progressbar"></div>
-
+					<!-- Loading image -->
+					<div id="loadingdiv" style="display:none"></div>
+					
 					<!-- use php to repeat -->
 					<div id="search-results">
-
 						<!-- results of search, loaded by jquery-ajax-gettrips gettrips() -->
-					</div>		
-					
+					</div>	
+
 					<div class="divclear"></div>
 				</div>
 			</div>
