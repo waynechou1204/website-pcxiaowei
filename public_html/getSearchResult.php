@@ -14,7 +14,12 @@
 
 	connectDB();
 	
-	$date_sql = " ";
+	// get current date and time
+	date_default_timezone_set('PRC');
+	$date = date("Y-m-d");
+	$time = date("H:i");
+
+	$date_sql = "AND depart_date>=\"$date\" AND depart_time>=\"$time\"";
 	if (!empty($depart_date)) {
 		$date_sql = " AND depart_date= '".$depart_date."'";
 	}
