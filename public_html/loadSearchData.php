@@ -7,7 +7,7 @@ function loadlocations()
 
 	connectDB();
 	
-	$sql='SELECT * from location ORDER BY location_type';
+	$sql='SELECT * from location ORDER BY location_type, location_id ASC';
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$nb = mysql_num_rows($result);
 	
