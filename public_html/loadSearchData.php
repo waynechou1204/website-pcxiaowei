@@ -31,7 +31,12 @@ function loadlocations()
 function loadTripData($tripid){
 	connectDB();
 	
-	$sql="SELECT * FROM trip WHERE trip_id=\"$tripid\" ";
+	// get current date and time
+	date_default_timezone_set('PRC');
+	$date = date("Y-m-d");
+	$time = date("H:i");
+
+	$sql="SELECT * FROM trip WHERE trip_id=\"$tripid\" AND depart_date>=\"$date\" AND depart_time>=\"$time\"";
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$nb = mysql_num_rows($result);
 	
