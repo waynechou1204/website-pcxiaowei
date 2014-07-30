@@ -30,6 +30,9 @@
 	$str="INSERT INTO trip(start_location, end_location, owner_id, depart_date, depart_time, pub_time, seat_num, price_oneway, type) VALUES(\"$start\", \"$end\", \"$owner\", \"$date\", \"$time\", \"$pubtime\", \"$seats\", \"$prix\", \"$type\")";
 	$result=mysql_query($str) or die("Invalid query: " . mysql_error());
 	
+	$str="INSERT INTO trip_bak(start_location, end_location, owner_id, depart_date, depart_time, pub_time, seat_num, price_oneway, type) VALUES(\"$start\", \"$end\", \"$owner\", \"$date\", \"$time\", \"$pubtime\", \"$seats\", \"$prix\", \"$type\")";
+	$result=mysql_query($str) or die("Invalid query: " . mysql_error());
+
 	mysql_close($db);
 
 	header("Location:search.php");
