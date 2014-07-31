@@ -56,22 +56,22 @@
 						<div class="da-slide">
 							<h2>出发！</h2>
 							<p> 风景总在路上</p>
-							<a href="about.php" class="da-link">关于网站</a>
+							<a href="search.php" class="da-link">开始使用</a>
 						</div>
 						<div class="da-slide">
 							<h2>一起拼车吧</h2>
-							<p> 方便，环保，还能社交！</p>
-							<!--a href="about.html" class="da-link">开始使用</a-->
+							<p> 方便，环保，还能交友！</p>
+							<a href="about.php" class="da-link">关于网站</a>
 						</div>
 						<div class="da-slide">
 							<h2>程序猿君说：</h2>
-							<p> 网站上线啦，快来吐槽吧！</p>
-							<!--a href="about.html" class="da-link">开始使用</a-->
+							<p> 网站上线啦，快来吐槽！</p>
+							<a href="contact.php" class="da-link">我有建议</a>
 						</div>
-						<nav class="da-arrows">
+						<!--nav class="da-arrows">
 							<span class="da-arrows-prev"></span>
 							<span class="da-arrows-next"></span>
-						</nav>
+						</nav-->
 				</div>
 				<script type="text/javascript" src="js/jquery.cslider.js"></script>
 				<script type="text/javascript">

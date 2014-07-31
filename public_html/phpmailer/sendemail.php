@@ -34,7 +34,7 @@
 	        exit;    
 	    }    
 	    else {    
-	        echo '<script>alert("OK!");location.href="../index.php";</script>';
+	        echo '<script>alert("OK, Thank you! ^o^");location.href="../index.php";</script>';
 	    }    
 	}    
 	
