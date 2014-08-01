@@ -27,7 +27,8 @@
 		<!-- my script -->
 		<script src="js/My97DatePicker/WdatePicker.js"></script>
 	    <script src="js/jquery-ajax-gettrips.js"></script>
-
+		<script src="js/checkFormat.js"></script>
+	    
 	    <!---strat-slider-->
 	    <script type="text/javascript" src="js/jquery.min.js"></script>
 	    <link rel="stylesheet" type="text/css" href="css/slider-style.css" />
