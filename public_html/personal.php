@@ -25,8 +25,7 @@
 		</script>
 
 		<!-- my script -->
-		<script src="js/My97DatePicker/WdatePicker.js"></script>
-	    <script src="js/checkFormat.js"></script>
+		<script src="js/checkFormat.js"></script>
 
 	    <!---strat-slider-->
 	    <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -69,7 +68,7 @@
 								<input type="radio" name="tabs" id="tab1" checked />
 								<label for="tab1">个人信息</label>
 								<div id="tab-content-info" class="tab-content">
-									<form id="signupForm" action="doModifyInfo.php" method="post" enctype="multipart/form-data" onsubmit="return checkFormNameEmailPhone('<?php echo $_SESSION['useremail'];?>');">
+									<form id="signupForm" action="doModifyInfo.php" method="post" enctype="multipart/form-data" onsubmit="return checkNameEmailPhone('<?php echo $_SESSION['useremail'];?>');">
 			                        	<input type="hidden" name="item" value="info" />  
 			                        	
 			                        	<div class="inp">
@@ -82,7 +81,7 @@
 			                            </div>
 			                            <div class="inp">
 			                                手机号 <lable id="hint-phone" class="hint">*</lable>
-			                                <input type="text" name="phone" id="signupphone" value="<?php echo $_SESSION['userphone'];?>" onblur="checkPhone()"/>
+			                                <input type="text" name="phone" id="signupphone" value="<?php echo $_SESSION['userphone'];?>" onblur="checkPhone()" autocomplete="off"/>
 			                            </div>
 			                           
 			                            <input type="submit" id="modifybutton" value="修改" />

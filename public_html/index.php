@@ -32,12 +32,16 @@
 		<!---768px-menu-->
 		<link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
 		<script type="text/javascript" src="js/jquery.mmenu.js"></script>
-			<script type="text/javascript">
-				//	The menu on the left
-				$(function() {
-					$('nav#menu-left').mmenu();
-				});
-			</script>
+		<script type="text/javascript">
+			//	The menu on the left
+			$(function() {
+				$('nav#menu-left').mmenu();
+			});
+		
+			$(window).load(function(){
+				$('.loadingdiv').fadeOut(); 	
+			});
+		</script>
 		<!---//768px-menu-->
 	</head>
 	<body>
@@ -87,11 +91,6 @@
 			</div>
 		</div>
 
-		<script type="text/javascript">
-			$(document).ready(function(){
-    			$('.loadingdiv').fadeOut();    
-			});	
-		</script>
 		
 			<!---//End-da-slider-->
 		<!--//End-banner-->
