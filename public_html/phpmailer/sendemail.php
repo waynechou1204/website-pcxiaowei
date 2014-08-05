@@ -50,7 +50,7 @@
 		$email = $_GET['claimemail'];
 		$encryp = md5($password);
 
-		$sql='SELECT * from client WHERE email=\"$email\"';
+		$sql="SELECT * from client WHERE email=\"$email\"";
 		$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
 		$nb = mysql_num_rows($result);
 		if($nb > 0)
