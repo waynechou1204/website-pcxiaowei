@@ -2,7 +2,7 @@
 	session_start();
 
 	require_once "class.phpmailer.php";
-	require_once "setDB.php";
+	require_once "../setDB.php";
 
 	function smtp_mail( $sendto_email, $subject, $body, $extra_hdrs, $user_name){    
 	    $mail = new PHPMailer();    
@@ -28,14 +28,13 @@
 	    $mail->Body = $body;                                                                          
 	    $mail->AltBody ="text/html";    
 
-	    if(!$mail->Send())    
-	    {    
+	    if(!$mail->Send()) {
 	        echo '<script>alert("Error, please try later");location.href="../index.php";</script>';
 	        exit;    
 	    }    
 	    else {    
-	        echo '<script>alert("OK, Thank you! ^o^");location.href="../index.php";</script>';
-	    }    
+	    	echo '<script>alert("OK, Thank you! ^o^");location.href="../index.php";</script>';
+	    }
 	}    
 	
 	// 参数说明(发送到, 邮件主题, 邮件内容, 用户邮箱, 用户名)    

@@ -66,7 +66,7 @@
 									<span>您的留言: </span>
 									<textarea id="message" name="textarea" cols="1" rows="1" onfocus="if(value=='请输入正文'){value=''}" onblur="if(value==''){value='请输入正文'}">请输入正文</textarea>				
 								</div>
-								<a href="#" class="button1" onClick="checkMessageContent();">发送</a>
+								<a href="#" id="sendbtn" class="button1" onClick="checkMessageContent();">发送</a>
 								<div style="clear:both;"></div>
 							</div>
 						</form>

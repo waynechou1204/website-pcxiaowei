@@ -283,6 +283,7 @@ function checkMessageContent(){
 		msg.style.borderColor="red";
 		return false;
 	}
+	document.getElementById('sendbtn').innerHTML="发送中...";
 	document.getElementById('ContactForm').submit();
 	return true;
 }
