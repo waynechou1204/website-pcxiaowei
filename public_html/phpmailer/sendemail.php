@@ -50,13 +50,19 @@
 		$email = $_GET['claimemail'];
 		$encryp = md5($password);
 
-		$str = "UPDATE client SET pwd = \"$encryp\" WHERE email=\"$email\"";
-
-		$result=mysql_query($str) or die("Invalid query: " . mysql_error());
+		$sql='SELECT * from client WHERE email=\"$email\"';
+		$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
+		$nb = mysql_num_rows($result);
+		if($nb > 0)
+		{
+			$str = "UPDATE client SET pwd = \"$encryp\" WHERE email=\"$email\"";
 		
-		$str = "拼车晓位网用户，您好! <br /><br /> 您的密码已经重置为：" . $password . 
-		"<br />请及时登录<a href=\"http://www.pcxiaowei.com\">拼车晓位</a>进行修改! <br /><br /> 祝您度过美好的一天！<br />拼车晓位管理员";
+			$result=mysql_query($str) or die("Invalid query: " . mysql_error());
+			
+			$str = "拼车晓位网用户，您好! <br /><br /> 您的密码已经重置为：" . $password . 
+			"<br />请及时登录<a href=\"http://www.pcxiaowei.com\">拼车晓位</a>进行修改! <br /><br /> 祝您度过美好的一天！<br />拼车晓位管理员";
 
-		smtp_mail($_GET['claimemail'], "账户安全提醒：密码重置", $str, "admin@pcxiaowei.com", "拼车晓位管理员");  	
+			smtp_mail($_GET['claimemail'], "账户安全提醒：密码重置", $str, "admin@pcxiaowei.com", "拼车晓位管理员");  	
+		}
 	}
 ?>

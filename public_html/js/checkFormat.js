@@ -190,9 +190,14 @@ function checkLoginPwd()
 
 	var rememberpwd = document.getElementById("checkbox").checked;
 
+	var btn = document.getElementById("login");
+
+	btn.value="登录中...";
+
 	if(!login.value || !pwd.value)
 	{
 		hint.innerHTML=" 账号或密码不能为空！";
+		btn.value="登录";
 		return false;
 	}
 
@@ -219,12 +224,14 @@ function checkLoginPwd()
 	    {
 	    	hint.innerHTML="";
 			pwd.style.borderColor="#00c957";
+			btn.value="登录";
 	    	flag = true;
 	    }
 	    else
 	    {
 	    	hint.innerHTML="*账号或密码错误!";
 	    	pwd.style.borderColor="red";
+	    	btn.value="登录";
 	    	flag = false;
 	    }
 	  }
