@@ -6,12 +6,16 @@
 
 	function smtp_mail( $sendto_email, $subject, $body, $extra_hdrs, $user_name){    
 	    $mail = new PHPMailer();    
+	    
 	    $mail->IsSMTP();                  // send via SMTP    
-	    $mail->Host = "smtp.sina.com";   // SMTP servers    
+	    //$mail->SMTPDebug = 1;
+	    //$mail->Host = "smtp.sina.com";   // SMTP servers    
+	    $mail->Host = "smtpout.secureserver.net";
 	    $mail->SMTPAuth = true;           // turn on SMTP authentication    
-	    $mail->Username = "pcxiaowei@sina.com";     // SMTP username  注意：普通邮件认证不需要加 @域名    
+	    $mail->Port=80;
+	    $mail->Username = "admin@pcxiaowei.com";     // SMTP username  注意：普通邮件认证不需要加 @域名    
 	    $mail->Password = "891204"; // SMTP password    
-	    $mail->From = "pcxiaowei@sina.com";      // 发件人邮箱    
+	    $mail->From = "admin@pcxiaowei.com";      // 发件人邮箱    
 	    $mail->FromName =  "拼车晓位";  // 发件人    
 	  
 	    $mail->CharSet = "utf-8";   // 这里指定字符集！    
@@ -29,7 +33,7 @@
 	    $mail->AltBody ="text/html";    
 
 	    if(!$mail->Send()) {
-	        echo '<script>alert("Error, please try later");location.href="../index.php";</script>';
+	        echo '<script>alert("Error,'. $mail->ErrorInfo .' Please try later");location.href="../index.php";</script>';
 	        exit;    
 	    }    
 	    else {    
@@ -40,7 +44,7 @@
 	// 参数说明(发送到, 邮件主题, 邮件内容, 用户邮箱, 用户名)    
 	if(!isset($_GET['claimemail']))
 	{
-		smtp_mail("admin@pcxiaowei.com", "Suggestion", $_POST['textarea'], $_SESSION['useremail'], $_SESSION['username']);  
+		smtp_mail("pcxiaowei@sina.com", "Suggestion", $_POST['textarea'], $_SESSION['useremail'], $_SESSION['username']);  
 	}
 	else{
 		connectDB();
@@ -50,19 +54,13 @@
 		$email = $_GET['claimemail'];
 		$encryp = md5($password);
 
-		$sql="SELECT * from client WHERE email=\"$email\"";
-		$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
-		$nb = mysql_num_rows($result);
-		if($nb > 0)
-		{
-			$str = "UPDATE client SET pwd = \"$encryp\" WHERE email=\"$email\"";
+		$str = "UPDATE client SET pwd = \"$encryp\" WHERE email=\"$email\"";
 		
-			$result=mysql_query($str) or die("Invalid query: " . mysql_error());
+		$result=mysql_query($str) or die("Invalid query: " . mysql_error());
 			
-			$str = "拼车晓位网用户，您好! <br /><br /> 您的密码已经重置为：" . $password . 
+		$str = "拼车晓位网用户，您好! <br /><br /> 您的密码已经重置为：" . $password . 
 			"<br />请及时登录<a href=\"http://www.pcxiaowei.com\">拼车晓位</a>进行修改! <br /><br /> 祝您度过美好的一天！<br />拼车晓位管理员";
 
-			smtp_mail($_GET['claimemail'], "账户安全提醒：密码重置", $str, "admin@pcxiaowei.com", "拼车晓位管理员");  	
-		}
+		smtp_mail($_GET['claimemail'], "账户安全提醒：密码重置", $str, "admin@pcxiaowei.com", "拼车晓位管理员");  
 	}
 ?>

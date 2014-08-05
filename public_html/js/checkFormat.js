@@ -298,7 +298,9 @@ function checkMessageContent(){
 function checkClaimPwdEmail()
 {
 	var temp = document.getElementById("claimemail").value;
-	
+	var btn = document.getElementById("claimbtn");
+	btn.innerHTML="取回中...";
+
 	/*USE AJAX TO CHECK EXISTING EMAIL*/
 	var xmlhttp;
 	if (window.XMLHttpRequest)
@@ -324,6 +326,7 @@ function checkClaimPwdEmail()
 	    {
 	    	alert("该账户不存在！");
 	    	flag = false;
+	    	btn.innerHTML="找回密码";
 		}
 	  }
 	}

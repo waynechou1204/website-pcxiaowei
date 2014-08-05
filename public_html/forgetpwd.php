@@ -50,7 +50,7 @@
 									<span>您的邮箱: </span> <input type="text" id="claimemail" name="claimemail">
 							</div>		
 							<div class="button">
-								<a href="#" class="button1" onClick="checkClaimPwdEmail();">找回密码</a>
+								<a href="#" id="claimbtn" class="button1" onClick="checkClaimPwdEmail();">找回密码</a>
 							</div>
 						</div>
 					</form>
