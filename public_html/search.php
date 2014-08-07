@@ -94,7 +94,6 @@
 								<select id="select_end" onchange="gettrips()">
 									<?php 
 										$type = "0";
-										$i=0;
 										foreach ($locations as $loc) {
 											if ($loc['location_type'] != $type) {
 												if ($type != "0") {
@@ -103,14 +102,7 @@
 												echo '<optgroup label="'.$loc['location_type'].'">';
 												$type = $loc['location_type'];
 											} 
-											if ($i==1) 
-											{
-												echo '<option value ="'.$loc['location_id'].'" selected="selected">'.$loc['name'].'</option>';
-											}
-											else{
-												echo '<option value ="'.$loc['location_id'].'">'.$loc['name'].'</option>';	
-											}	
-											$i++;
+											echo '<option value ="'.$loc['location_id'].'">'.$loc['name'].'</option>';
 										}
 										echo '</optgroup>';
 										unset($locations);

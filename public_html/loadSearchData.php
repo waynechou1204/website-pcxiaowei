@@ -2,12 +2,34 @@
 
 include 'setDB.php';
 
-function loadlocations()
-{
-
+function loadlocations(){
 	connectDB();
 	
 	$sql='SELECT * from location ORDER BY location_type, location_id ASC';
+	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
+	$nb = mysql_num_rows($result);
+	
+	//get locations from db
+	if($nb > 0)
+	{
+		$i=0;
+		while($arr = mysql_fetch_array($result))
+		{
+			$locations[$i]=$arr;
+			$i++;
+		}
+			
+		return $locations;
+	}
+	return null;
+
+	mysql_close();
+}
+
+function loadlocationsWithoutAll(){
+	connectDB();
+	
+	$sql='SELECT * from location WHERE name<>"全部" ORDER BY location_type, location_id ASC';
 	$result=mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$nb = mysql_num_rows($result);
 	

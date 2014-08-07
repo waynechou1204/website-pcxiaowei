@@ -17,9 +17,9 @@
 	// get current date and time
 	date_default_timezone_set('PRC');
 	$date = date("Y-m-d");
-	$time = date("H:i");
+	//$time = date("H:i");
 
-	$date_sql = "AND depart_date>=\"$date\" AND depart_time>=\"$time\"";
+	$date_sql = "AND depart_date>=\"$date\" ";
 	if (!empty($depart_date)) {
 		$date_sql = " AND depart_date= '".$depart_date."'";
 	}
@@ -64,7 +64,7 @@
 		$restemp = mysql_query($sql) or die("Invalid query: " . mysql_error());
 		$arrtemp = mysql_fetch_array($restemp); 
 		$start_loc_id = $arrtemp['location_id'];
-		$start_loc_sql = " WHERE start_location='".$start_loc_id."' ";
+		$start_loc_sql = " WHERE start_location=\"".$start_loc_id."\"";
 	}
 	
 	$end_loc_sql = " ";
@@ -73,11 +73,11 @@
 		$restemp = mysql_query($sql) or die("Invalid query: " . mysql_error());
 		$arrtemp = mysql_fetch_array($restemp);
 		$end_loc_id = $arrtemp['location_id'];		
-		$end_loc_sql = " AND end_location='".$end_loc_id."' ";
+		$end_loc_sql = " AND end_location=\"".$end_loc_id."\" ";
 	}
 	
 
-	$sql="SELECT * from trip". $start_loc_sql . $end_loc_sql . $date_sql . $type_sql . $order_sql;
+	$sql="SELECT * from trip ". $start_loc_sql . $end_loc_sql . $date_sql . $type_sql . $order_sql;
 
 	$result = mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$nb = mysql_num_rows($result);
@@ -110,7 +110,18 @@
 			echo '		</div>';
 			echo '	</div>';
 			echo '	<div class="result-detail">';
-			echo '		<div class="result-loc">'.$start_loc.'  &#8594;  '.$end_loc.'</div>';
+			
+			$sql = "SELECT * FROM location WHERE location_id= '".$arr['start_location']."'";
+			$restemp = mysql_query($sql) or die("Invalid query: ".mysql_error());
+			$arrtemp = mysql_fetch_array($restemp);
+			$loc_start_name = $arrtemp['name'];
+
+			$sql = "SELECT * FROM location WHERE location_id= '".$arr['end_location']."'";
+			$restemp = mysql_query($sql) or die("Invalid query: ".mysql_error());
+			$arrtemp = mysql_fetch_array($restemp);
+			$loc_end_name = $arrtemp['name'];
+			 
+			echo '		<div class="result-loc">'.$loc_start_name.'  &#8594;  '.$loc_end_name.'</div>';
 			echo '		<div class="result-time">'.$arr['depart_date']."<br>".$arr['depart_time'].'</div>';
 			
 			date_default_timezone_set('PRC');

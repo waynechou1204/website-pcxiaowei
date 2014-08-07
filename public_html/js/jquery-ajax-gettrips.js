@@ -36,7 +36,7 @@ function gettrips() {
 
 	var depart_date = document.getElementById("departdate").value;
 
-	var type_takeman = document.getElementById("chk-pick").checked; //????? value?
+	var type_takeman = document.getElementById("chk-pick").checked; 
 	var type_bycar = document.getElementById("chk-gotpicked").checked;
 
 	var radio_order = document.getElementsByName("rad-filter");

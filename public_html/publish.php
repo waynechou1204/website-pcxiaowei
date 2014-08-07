@@ -73,7 +73,7 @@
 								</label>
 								<select id="select_start" name="position_start">
 									<?php 
-										$locations = loadlocations();
+										$locations = loadlocationsWithoutAll();
 										$type = "0";
 										foreach ($locations as $loc) {
 											if ($loc['location_type'] != $type) {
