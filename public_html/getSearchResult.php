@@ -58,19 +58,26 @@
 	  	break;
 	}
 
-	$sql = "SELECT * from location WHERE name = '".$start_loc."'";
-	$restemp = mysql_query($sql) or die("Invalid query: " . mysql_error());
-	$arrtemp = mysql_fetch_array($restemp); 
-	$start_loc_id = $arrtemp['location_id'];
+	$start_loc_sql = "WHERE 1=1";
+	if ($start_loc != "全部") {
+		$sql = "SELECT * from location WHERE name = '".$start_loc."'";
+		$restemp = mysql_query($sql) or die("Invalid query: " . mysql_error());
+		$arrtemp = mysql_fetch_array($restemp); 
+		$start_loc_id = $arrtemp['location_id'];
+		$start_loc_sql = " WHERE start_location='".$start_loc_id."' ";
+	}
+	
+	$end_loc_sql = " ";
+	if ($end_loc != "全部") {
+		$sql = "SELECT * from location WHERE name = '".$end_loc."'";
+		$restemp = mysql_query($sql) or die("Invalid query: " . mysql_error());
+		$arrtemp = mysql_fetch_array($restemp);
+		$end_loc_id = $arrtemp['location_id'];		
+		$end_loc_sql = " AND end_location='".$end_loc_id."' ";
+	}
+	
 
-	$sql = "SELECT * from location WHERE name = '".$end_loc."'";
-	$restemp = mysql_query($sql) or die("Invalid query: " . mysql_error());
-	$arrtemp = mysql_fetch_array($restemp);
-	$end_loc_id = $arrtemp['location_id'];		
-
-
-	$sql="SELECT * from trip WHERE start_location= '" .$start_loc_id. "'" . " AND end_location= '" .$end_loc_id. "'" .
-			 $date_sql . $type_sql . $order_sql;
+	$sql="SELECT * from trip". $start_loc_sql . $end_loc_sql . $date_sql . $type_sql . $order_sql;
 
 	$result = mysql_query($sql) or die("Invalid query: " . mysql_error());
 	$nb = mysql_num_rows($result);
