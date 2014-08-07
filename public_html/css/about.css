@@ -1,8 +1,18 @@
-.main{
-	margin: 0 auto;
-	width: 760px;
-	padding: 30px;
+@media screen and (min-width: 850px){
+	.main{
+		margin: 0 auto;
+		width: 800px;
+		padding: 30px;
+	}
 }
+@media screen and (max-width: 850px){
+	.main{
+		margin: 0 auto;
+		width: 90%;
+		padding: 5%;
+	}
+}
+
 html{
 	font-family: cambria,georgia,times,serif;
     font-size: 17px;

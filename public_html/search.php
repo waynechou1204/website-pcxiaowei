@@ -16,7 +16,7 @@
 		<link href="css/style.css" rel='stylesheet' type='text/css' />
 		<link rel="stylesheet" href="css/search.css" type='text/css'/>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 		<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />

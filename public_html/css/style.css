@@ -78,7 +78,7 @@ body{
 .header {
 	padding: 0.3em 0 0em;
 	border-bottom: 1px solid #eee;
-	min-width: 1043px;
+	width: 100%;
 }
 .header-left{
 	float:left;
@@ -212,7 +212,7 @@ body{
 }
 .border{
 	height: 3px;
-	width: 300px;
+	width: 85%;
 	display: block;
 	background: url(../images/grids-border.png) no-repeat 0px 0px;
 	position: absolute;
@@ -1050,6 +1050,7 @@ input:focus {
 		width: 215px;
 		left: 61%;
 		top: 76%;
+		display: none;
 	}
 	.top-grids {
 		padding: 2em 0 3em 0;
@@ -1093,6 +1094,7 @@ input:focus {
 		width: 148px;
 		left: 64%;
 		top: 76%;
+		display: none;
 	}
 	.top-grids {
 		padding: 2em 0 3em 0;
@@ -1249,6 +1251,7 @@ input:focus {
 		width: 126px;
 		left: 65%;
 		top: 76%;
+		display: none;
 	}
 	.top-grids {
 		padding: 2em 0 3em 0;
@@ -1388,7 +1391,7 @@ input:focus {
 	.product-pic {
 		min-height: 129px;
 	}
-	.sign-ligin-btns ul li a.signup, .sign-ligin-btns ul li a.login span {
+	.sign-ligin-btns ul li a.signup span, .sign-ligin-btns ul li a.login span {
 		padding: 0.4em 1.2em 0.4em 1.2em;
 	}
 	.logo a {
@@ -1424,6 +1427,7 @@ input:focus {
 		width: 79px;
 		left: 70%;
 		top: 66%;
+		display: none;
 	}
 	.top-grids {
 		padding: 1.5em 0 1.8em 0;
@@ -1570,7 +1574,7 @@ input:focus {
 	.product-pic {
 		min-height: 84px;
 	}
-	.sign-ligin-btns ul li a.signup, .sign-ligin-btns ul li a.login span {
+	.sign-ligin-btns ul li a.signup span, .sign-ligin-btns ul li a.login span {
 		padding: 0.4em 1.2em 0.4em 1.2em;
 	}
 	.logo a {
@@ -1609,6 +1613,7 @@ input:focus {
 		width: 42px;
 		left: 76%;
 		top:63%;
+		display: none;
 	}
 	.top-grids {
 		padding: 1.5em 0 1.8em 0;
