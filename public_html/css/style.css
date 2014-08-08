@@ -150,10 +150,31 @@ body{
 }
 /*---End-header----*/
 /*--slider--*/
-.text-slider{
-	background:url(../images/img_firstpage.jpg) no-repeat 0px 0px;
+@media only screen and (max-width:480px){
+	.text-slider{
+	background:url(../images/img_firstpage_480.jpg) no-repeat 0px 0px;
 	background-size: 100% 100%;
+	}
 }
+@media only screen and (max-width:768px) and (min-width:480px) {
+	.text-slider{
+	background:url(../images/img_firstpage_768.jpg) no-repeat 0px 0px;
+	background-size: 100% 100%;
+	}
+}
+@media only screen and (max-width:1024px) and (min-width:768px) {
+	.text-slider{
+	background:url(../images/img_firstpage_1024.jpg) no-repeat 0px 0px;
+	background-size: 100% 100%;
+	}
+}
+@media only screen and (min-width:1024px) {
+	.text-slider{
+	background:url(../images/img_firstpage_2023.jpg) no-repeat 0px 0px;
+	background-size: 100% 100%;
+	}
+}
+
 /*--//End-slider--*/
 /*----start-content---*/
 .content{

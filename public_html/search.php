@@ -137,8 +137,9 @@
 								<input type="radio" name="rad-filter" value="asc" onchange="gettrips()"/> 最早
 								<input type="radio" name="rad-filter" value="des" onchange="gettrips()"/> 最新
 							</div>
-							
+							<br style="clear:both;" />
 						</div>
+						
 					</div>
 					
 				</div>

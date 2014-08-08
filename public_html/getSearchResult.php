@@ -155,6 +155,7 @@
 						'</div>'; 
 			}
 			echo '		<div class="result-price-normal">&yen;<label>'.$arr['price_oneway'].'</label></div>';
+			echo '	<br style="clear:both;" />';
 			echo '	</div>';
 			echo "</div>";
 		}

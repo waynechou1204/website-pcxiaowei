@@ -1,7 +1,48 @@
-.main{
-	margin: 0 auto;
-	width: 960px;
+@media screen and (min-width: 900px){
+	.main{
+		margin: 0 auto;
+		width: 900px;
+	}
+
+	.start_pos{
+		float:left;
+		width:40%;
+		height: auto;
+	}
+
+	.end_pos{
+		float:left;
+		width:40%;
+	}
+
+	.go_date{
+		width:20%;
+	}
+
 }
+@media screen and (max-width: 900px){
+	.main{
+		margin: 0 auto;
+		width: 95%;
+	}
+
+	.start_pos{
+		float:left;
+		width:48%;
+		height: auto;
+		margin-right: 5px;
+	}
+
+	.end_pos{
+		float:left;
+		width:48%;
+	}
+
+	.go_date{
+		width:50%;
+	}
+}
+
 
 h3{
 	font-family: "heiti";
@@ -12,48 +53,31 @@ h3{
 }
 
 .searcher-pad{
-	width: 100%;
 	text-align:left;
 	border: 1px solid #a4a4a4;
-	margin: 15px;
+	margin-top: 15px;
+	margin-bottom: 15px;
 	padding: 15px;
-	height: 200px;
 }
 
 #search-pad-left{
-	float: left;
 	width: 100%;
-	height: 205px;
 }
 
 .searcher-pad select,input{
-	width:97%;
+	width:100%;
 	border: 1px solid ;
 	padding:6px 8px;
 	margin: 2px 0;
 	height: auto;
+	max-width: 320px;
 }
 
 .search-bars{
 	padding:0;
 	width:100%;
-	height: 60px;
 }
 
-.start_pos{
-	float:left;
-	width:40%;
-	height: auto;
-}
-
-.end_pos{
-	float:left;
-	width:40%;
-}
-
-.go_date{
-	width:20%;
-}
 
 .input_date{
 	height:32px;
@@ -73,10 +97,9 @@ h3{
 
 /*------results-----------*/
 #results{
-	width: 100%;
 	min-height: 200px;
 	height: auto;
-	margin: 15px;
+	margin-bottom: 15px;
 	padding: 15px;
 	-webkit-border: 1px solid #a4a4a4;
 	-moz-border: 1px solid #a4a4a4;
@@ -89,7 +112,6 @@ h3{
 	width: auto;
 	height: 100%;
 	text-align: middle;
-	padding:0 5px;
 }
 
 #loadingdiv{
@@ -104,7 +126,7 @@ h3{
 }
 
 #search-results{
-	padding:10px 5px;
+	padding:10px 0;
 	width:98%;
 	height: 100%;
 }
@@ -113,12 +135,14 @@ h3{
 	min-height: 80px;
 	height: auto;
 	background-color: #f0ffff;
+	padding: 5px;
 }
 .search-result-picked{
 	width: 100%;
 	min-height: 80px;
 	height: auto;
 	background-color: #fffafa;
+	padding: 5px;
 }
 .search-result-mouseover{
 	width: 100%;
@@ -126,19 +150,18 @@ h3{
 	height: auto;
 	background-color: #eeffbb;
 	cursor:pointer;
+	padding: 5px;
 }
 
 
 .result-owner{
 	width: 10%;
 	top: 50%;
-	padding: 5px;
 	float: left;
 	height: 100%
 }
 .result-detail{
 	width: 88%;
-	padding: 5px 5px 5px 0;
 	float: left;
 	height: 100%; 
 }
@@ -154,6 +177,14 @@ h3{
 	width: auto;
 	width: 15%;
 }
+
+@media screen and (max-width: 800px){
+	.result-pubtime{display: none;}
+	.result-seats{display: none;}
+	.result-loc{width: 60%;}
+}
+
+
 .result-pubtime{
 	float: left;
 	padding: 5px;
@@ -179,9 +210,16 @@ h3{
 	padding:5px;
 }
 
+@media screen and (max-width: 510px){
+	.result-price-normal{
+		padding-top: 30px;
+		padding-right: 0;
+		margin-right: 0;
+	}
+}
 
 .filter-bars{
-	height: 20px;
+	min-height: 20px;
 	width: 100%;
 	margin: 10px 0;
 }
@@ -195,18 +233,14 @@ h3{
 
 #chk-type{
 	float: left;
+	margin: 0 30px 0 0 ;
 }
 
 .rad-fil{
 	width: auto;
 	float: left;
-	margin: 0 0 0 35px;
+	margin: 0 30px 0 0 ;
 }
-
-
-
-
-
 
 .result-price-expensive{
 	float:right;

@@ -1,6 +1,15 @@
-.main{
-	margin: 0 auto;
-	width: 960px;
+@media screen and (min-width: 900px){
+	.main{
+		margin: 0 auto;
+		width: 900px;
+	}
+
+}
+@media screen and (max-width: 900px){
+	.main{
+		margin: 0 auto;
+		width: 95%;
+	}
 }
 
 h3{
@@ -12,10 +21,9 @@ h3{
 }
 
 .searcher-pad{
-	width: 100%;
 	text-align:left;
 	border: 1px solid #a4a4a4;
-	margin: 15px;
+	margin: 15px 0 15px 0;
 	padding: 15px;
 	min-height: 200px;
 }
