@@ -40,4 +40,10 @@
 		<div class="clear"> </div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2c9cba06c2ed33c4a43f782cca39dc80' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
 <!---//End-bottom-footer-grids-->

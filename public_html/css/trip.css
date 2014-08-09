@@ -1,7 +1,17 @@
-.main{
-	margin: 0 auto;
-	width: 960px;
+@media screen and (min-width: 960px){
+    .main{
+        margin: 0 auto;
+        width: 960px;
+    }
+
 }
+@media screen and (max-width: 960px){
+    .main{
+        margin: 0 auto;
+        width: 95%;
+    }
+}
+
 
 h3{
 	font-family: "heiti";
@@ -12,7 +22,6 @@ h3{
 }
 
 .searcher-pad{
-	width: 100%;
 	text-align:left;
 	border: 1px solid #a4a4a4;
 	margin: 15px;
@@ -119,14 +128,19 @@ h3{
 
 
 #trip-pad-right{
-	width: 480px;
+	width: 50%;
 	float: right;
 	min-height: 200px;
 }
 #baidumap {
-	width: 480px;
+	width: 100%;
 	height: 380px;
 	overflow: hidden;
 	margin:0;
 	border:#ccc solid 1px;
+}
+
+@media screen and (max-width: 680px){
+	#trip-pad-left {width: 100%;}
+	#trip-pad-right {width: 100%;}
 }
