@@ -1673,7 +1673,7 @@ input:focus {
 	}
 	.top-grid a {
 		font-size: 0.9em;
-		height: 20px;
+		/*height: 20px;*/
 		overflow: hidden;
 	}
 	.top-grid span {

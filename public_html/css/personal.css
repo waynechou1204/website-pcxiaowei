@@ -28,6 +28,10 @@ h3{
   min-height: 200px;
 }
 
+.tab-pane{
+  padding: 10px 5px 0 5px;
+}
+
 #person-info-pad{
   width: 100%;
   text-align:left;
@@ -69,67 +73,8 @@ h3{
 }
 
 
-/*------------ tabs ------------*/
-.tabs {
-  width: 90%;
-  position: relative;
-  margin: 10px 0 0 10px;
-  text-align: left;
-
-}
-.tabs li {
-  float: left;
-  display: block;
-}
-.tabs input[type="radio"] {
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
-}
-.tabs label {
-  display: block;
-  padding: 17px 21px;
-  border-radius: 2px 2px 0 0;
-  font-size: 20px;
-  font-weight: normal;
-  text-transform: uppercase;
-  background: white;
-  cursor: pointer;
-  position: relative;
-  top: 4px;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-.tabs label:hover {
-  background: white;
-}
-.tabs .tab-content {
-  z-index: 2;
-  display: none;
-  overflow: hidden;
-  width: 100%;
-  font-size: 17px;
-  line-height: 25px;
-  padding: 25px;
-  position: absolute;
-  top: 53px;
-  left: 0;
-  background: white;
-  border-top: thin solid gray;
-}
-.tabs [id^="tab"]:checked + label {
-  top: 0;
-  padding-top: 17px;
-  background: #53CBE9;
-}
-.tabs [id^="tab"]:checked ~ [id^="tab-content"] {
-  display: block;
-}
-
-
 /*------results-----------*/
+
 #results{
   width: 100%;
   min-height: 200px;
@@ -220,3 +165,22 @@ h3{
   background-color: transparent;
 }
 
+
+@media screen and (max-width: 768px){
+  .result-price-normal{display: none;}
+}
+@media screen and (max-width: 650px){
+  .result-pubtime{display: none;}
+  .result-seats{width: 20%;}
+}
+@media screen and (max-width: 620px){
+  .result-seats{display: none;}
+  .result-loc{width: 60%;}
+}
+@media screen and (max-width: 480px){  
+  #deletebutton{
+    margin-top: 3em;
+    width: 30px;
+    height: 30px;
+  }
+}
