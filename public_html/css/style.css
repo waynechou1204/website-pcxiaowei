@@ -1564,6 +1564,9 @@ input:focus {
 		padding-top: 0.1em;
 		display: inline-block;
 	}
+	#pcxwlogo{
+		display: none;
+	}
 	.sign-ligin-btns ul li {
 		margin-left: 0.5em;
 	}
@@ -1752,6 +1755,9 @@ input:focus {
 		display: inline-block;
 		margin-left: 9%;
 	}
+	#pcxwlogo{
+		display: none;
+	}
 	.sign-ligin-btns ul li {
 		margin-left: 0.5em;
 	}
@@ -1793,4 +1799,12 @@ input:focus {
 	margin: 0;
 	height: 630px;
 	background:url("../images/loading.gif") center no-repeat;
+}
+
+#pcxwlogo{
+	height: 50px;
+	width: 50px;
+	float: left;
+	background:url(../images/pcxw_logo.png) no-repeat 0px 0px;
+	background-size: 100% 100%;
 }

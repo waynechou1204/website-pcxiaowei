@@ -21,7 +21,7 @@
 	<div class="wrap">
 		<div class="header-left">
 			<div class="logo">
-				<a href="index.php">拼车晓位</a>
+				<a href="index.php"><div id="pcxwlogo"></div>拼车晓位</a>
 			</div>
 		</div>
 	
