@@ -21,17 +21,17 @@
 		<?php include 'header.php'; ?>
 		
 		<!-- Loading image -->
-		<div class="loadingdiv"></div>
+		<!--div class="loadingdiv"></div-->
 
 		<!--start-banner-->
-		<div class="text-slider" style="display:none">
+		<div class="text-slider">
 
 			<div class="wrap" > 
 				<!---start-da-slider-->
 				<div id="da-slider" class="da-slider">
 						<div class="da-slide">
-							<h2>出发！</h2>
-							<p> 风景总在路上</p>
+							<h2>自驾、打的都能拼车</h2>
+							<p> 来试试吧！</p>
 							<a href="search.php" class="da-link">开始使用</a>
 						</div>
 						<div class="da-slide">
@@ -125,10 +125,10 @@
 			$('nav#menu-left').mmenu();
 		});
 	
-		$(window).load(function(){
-			$('.loadingdiv').fadeOut(); 
-			$('.text-slider').fadeIn();	
-		});
+		//$(window).load(function(){
+			//$('.loadingdiv').fadeOut(); 
+			//$('.text-slider').fadeIn();	
+		//});
 	</script>
 	<!---//768px-menu-->	
 	    
