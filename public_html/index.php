@@ -40,7 +40,7 @@
 							<a href="about.php" class="da-link">关于网站</a>
 						</div>
 						<div class="da-slide">
-							<h2>程序猿君说：</h2>
+							<h2>程序君说：</h2>
 							<p> 网站上线啦，快来吐槽！</p>
 							<a href="contact.php" class="da-link">我有建议</a>
 						</div>

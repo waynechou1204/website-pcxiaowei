@@ -81,6 +81,9 @@
 		                                <label for="signuppassword1">确认密码</label> <lable id="hint-pwdconf" class="hint">*</lable>
 		                                <input type="password" name="password" id="signuppassword1" onblur="checkPwdConf()"/>
 		                            </fieldset>
+		                            <fieldset>
+		                            	<label>*您的个人信息不会向第三方透露</label>
+		                            </fieldset>
 		                            <input type="submit" id="signup" value="立即注册" />
 		                        </fieldset>
 			                    </form>
