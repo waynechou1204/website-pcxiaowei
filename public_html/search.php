@@ -158,6 +158,10 @@
 						<!-- results of search, loaded by jquery-ajax-gettrips gettrips() -->
 					</div>	
 
+					<div id="history-results">
+						
+					</div>
+
 					<div class="divclear"></div>
 				</div>
 			</div>

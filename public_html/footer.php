@@ -2,16 +2,16 @@
 <div class="footer-grids">
 	<div class="wrap">
 		<div class="footer-grid">
-			<h3>Quick Links</h3>
+			<h3>快速链接</h3>
 			<ul>
-				<li><a href="index.php">首页</a></li>
-				<li><a href="about.php">功能</a></li>
-				<li><a href="index.php">登陆</a></li>
-				<li><a href="index.php">注册</a></li>
+				<li><a href="index.php">首 页</a></li>
+				<li><a href="about.php">功 能</a></li>
+				<li><a href="index.php">登 陆</a></li>
+				<li><a href="index.php">注 册</a></li>
 			</ul>
 		</div>
 		<div class="footer-grid">
-			<h3>More</h3>
+			<h3>更多</h3>
 			<ul>
 				<li><a href="contact.php">联系我们</a></li>
 				<li><a href="about.php">技术支持</a></li>
