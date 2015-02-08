@@ -13,6 +13,7 @@ class UsersController extends MyController
                     default:
                         // do nothing, this is not a supported action
                         break;
+                    }
             } else {
                 $data["message"] = "here is the info for user " . $user_id;
             }
