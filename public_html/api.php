@@ -26,8 +26,8 @@ class Request {
         $this->url_elements = explode('/', $_SERVER['PATH_INFO']);
 	
 		$this->parseIncomingParams();
-        // initialise json as default format
-        $this->format = 'json';
+        // initialise as default format
+        $this->format = 'Api';
         if(isset($this->parameters['format'])) {
             $this->format = $this->parameters['format'];
         }
@@ -73,9 +73,6 @@ class Request {
                 break;
         }
         $this->parameters = $parameters;
-    
-
-        
     }
 }
 
@@ -88,13 +85,15 @@ if (class_exists($controller_name)) {
     $controller = new $controller_name();
     $action_name = strtolower($r->verb) . 'Action';
     $result = $controller->$action_name($r);
-    print_r($result);
+    
+    //print_r($result);
+    $view_name = ucfirst($r->format) . 'View';
+    if(class_exists($view_name)) {
+        $view = new $view_name();
+        $view->render($result);
+    }
+
 }
 
-$view_name = ucfirst($r->format) . 'View';
-if(class_exists($view_name)) {
-    $view = new $view_name();
-    $view->render($result);
-}
 
 ?>

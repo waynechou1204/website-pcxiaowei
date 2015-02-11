@@ -3,6 +3,7 @@
 class UsersController extends MyController
 {
     public function getAction($request) {
+        // user id
         if(isset($request->url_elements[2])) {
             $user_id = (int)$request->url_elements[2];
             if(isset($request->url_elements[3])) {

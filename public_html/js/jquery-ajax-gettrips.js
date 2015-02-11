@@ -8,7 +8,7 @@ function gettrips() {
 	var loadingdiv = document.getElementById("loadingdiv");
 
 	// display loading gif
-	loadingdiv.style.display="";
+	loadingdiv.style.display="true";
 
 	/*USE AJAX TO REFRESH RESULT LIST*/
 	var xmlhttp;

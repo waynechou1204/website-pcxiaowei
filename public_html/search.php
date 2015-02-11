@@ -7,7 +7,7 @@
 	//}
 ?>
 
-<?php include 'loadSearchData.php'; ?>
+<?php include 'php_functions/loadSearchData.php'; ?>
 
 <!DOCTYPE HTML>
 <html>
