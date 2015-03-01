@@ -7,47 +7,27 @@
 	//}
 ?>
 
-<?php include 'php_functions/loadSearchData.php'; ?>
+<?php 
+include 'php_functions/loadSearchData.php'; 
+require_once 'models/Trip.php';
+?>
 
 <!DOCTYPE HTML>
-<html>
+<html lang="zh-CN">
 	<head>
 		<title>拼车晓位 | 搜索</title>
-		<link href="css/style.css" rel='stylesheet' type='text/css' />
-		<link rel="stylesheet" href="css/search.css" type='text/css'/>
-
+		
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-		<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
-		<script type="application/x-javascript"> 
-			addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
-		</script>
- 
-		<!-- my script -->
-		<script src="js/My97DatePicker/WdatePicker.js"></script>
-	    <script src="js/jquery-ajax-gettrips.js"></script>
-		<script src="js/checkFormat.js"></script>
-	    
-	    <!---strat-slider-->
-	    <script type="text/javascript" src="js/jquery.min.js"></script>
-	    <link rel="stylesheet" type="text/css" href="css/slider-style.css" />
-		<script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
-		<!---//strat-slider-->
-		<!---start-login-script-->
-		<script src="js/login.js"></script>
-		<!---//End-login-script-->
-		<!---768px-menu-->
 		<link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
-		<script type="text/javascript" src="js/jquery.mmenu.js"></script>
-		<script type="text/javascript">
-			//	The menu on the left
-			$(function() {
-				$('nav#menu-left').mmenu();
-			});
-		</script>
-		<!---//768px-menu-->
-
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		
+		<link href="css/style.css" rel='stylesheet' type='text/css' />
+		<link rel="stylesheet" href="css/search.css" type='text/css'/>
+		<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
+	    <link rel="stylesheet" type="text/css" href="css/slider-style.css" />
+		
 	</head>
 
 	<body onload="gettrips()">
@@ -55,7 +35,7 @@
 			
 		<!--start-banner-->
 		<div class="content">
-			<div class="main">
+			<div class="container">
 				<div class="searcher-pad">
 					<div id="search-pad-left">
 						<h3>
@@ -157,9 +137,33 @@
 					<div id="search-results">
 						<!-- results of search, loaded by jquery-ajax-gettrips gettrips() -->
 					</div>	
+					
+					<div class="history-seperator">
+						<span>以往的行程</span>
+					</div>
 
 					<div id="history-results">
-						
+						<?php
+							// 初始化一个 cURL 对象
+							$curl = curl_init(); 
+							curl_setopt($curl, CURLOPT_URL, 'http://127.0.0.1/TongjiCovoit/public_html/api.php/trips');
+							curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+							
+							$data = curl_exec($curl);
+							curl_close($curl);
+							 
+							$tripsArray = unserialize($data);
+							
+							date_default_timezone_set('PRC');
+            				$date = date("Y-m-d");
+							
+							foreach ($tripsArray as $triparray) {
+								$trip = new Trip($triparray);
+								if ($trip->depart_date<$date) {
+									$trip->renderOnSearch();
+								}
+							}
+						?>	
 					</div>
 
 					<div class="divclear"></div>
@@ -174,4 +178,3 @@
 		<!---//End-wrap-->
 	</body>
 </html>
-

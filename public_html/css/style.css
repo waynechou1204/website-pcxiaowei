@@ -59,16 +59,18 @@ img{max-width:100%;}
 body{
 	background:#fff;
 	/*font-family: 'open_sansregular';*/
-	font-family:Lucida Sans Unicode, Hiragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
+	/*font-family:Lucida Sans Unicode, Hiragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;*/
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	-webkit-font-soomthong: antialiased;
 	-moz-font-soomthong: antialiased;
 	-ms-font-soomthong: antialiased;
 	-o-font-soomthong: antialiased;
 	font-soomthong: antialiased;
+	/*for navi bar top-fix->  padding-top: 46px;*/
 }
-/*---start-wrap-----*/
-.wrap{
-	width:70%;
+/*---start-container-----*/
+.container{
+	width:960px;
 	margin:0 auto;
 }
 #page{
@@ -76,13 +78,14 @@ body{
 }
 /*---start-header----*/
 .header {
-	padding: 0.3em 0 0em;
-	border-bottom: 1px solid #eee;
 	width: 100%;
+	height: 45px;
+	background: #eee;
+	box-shadow: 0 0 1px 0px rgba(0,0,0,0.3),0 0 6px 2px rgba(0,0,0,0.15);
 }
 .header-left{
 	float:left;
-	margin-top: 1em;
+	height: 45px;
 }
 .logo a{
 	color: #009fcc;
@@ -93,13 +96,13 @@ body{
 .header-right{
 	float:right;
 	min-width: 651px;
+	height: 45px;
 }
 .top-nav ul li{
 	display:inline-block;
 }
 .top-nav ul li a{
-	color: #777777;
-	padding: 1.8em 0.8em;
+	padding: 0 0.8em;
 	display: block;
 	font-size: 1.2em;
 	transition:0.5s all;
@@ -112,16 +115,17 @@ body{
 }
 .top-nav{
 	float:left;
+	margin-top: 11px;
 }
-.sign-ligin-btns{
+.sign-login-btns{
 	float:right;
-	margin-top: 1.8em;
+	
 }
-.sign-ligin-btns ul li{
+.sign-login-btns ul li{
 	display:inline-block;
 	margin-left: 1em;
 }
-.sign-ligin-btns ul li a.signup span,.sign-ligin-btns ul li a.login span{
+.sign-login-btns ul li a.signup span,.sign-login-btns ul li a.login span{
 	padding: 0.5em 1.8em 0.55em 1.8em;
 	display: block;
 	font-size: 1em;
@@ -134,27 +138,28 @@ body{
 	-moz-border-radius: 0.15em;
 	-o-border-radius: 0.15em;
 }
-.sign-ligin-btns ul li a.signup{
+.sign-login-btns ul li a.signup{
 	background:#53CBE9;
 	color:#FFF;
 }
-.sign-ligin-btns ul li a.signup:hover{
+.sign-login-btns ul li a.signup:hover{
 	background: #43C5E6;
 }
-.sign-ligin-btns ul li a.login{
+.sign-login-btns ul li a.login{
 	background:#F36EA7;
 	color:#FFF;
 }
-.sign-ligin-btns ul li a.login:hover{
+.sign-login-btns ul li a.login:hover{
 	background: #EE639F;
 }
 /*---End-header----*/
+
 /*----start-content---*/
 .content{
 	border-color: #EEEEEE -moz-use-text-color;
     border-image: none;
-    border-style: solid none;
-    border-width: 1px medium;
+    /*border-style: solid none;
+    border-width: 1px medium;*/
     width: 100%;
 }
 
@@ -992,7 +997,7 @@ input:focus {
     outline:none;
 }
 /*----//End-content---*/
-/*---//End-wrap-----*/
+/*---//End-container-----*/
 /*---start-responsive-design----*/
 
 .text-slider{
@@ -1000,26 +1005,18 @@ input:focus {
 	background-size: 100% 100%;
 }
 
-@media only screen and (max-width:1440px) and (min-width:1366px) {
-	.wrap {
-		width: 75%;
-	}
-}
-@media only screen and (max-width:1366px) and (min-width:1280px) {
-	.wrap {
-		width:80%;
+@media only screen and (max-width:1440px) and (min-width:1024px) {
+	.container {
+		width: 960px;
 	}
 }
 @media only screen and (max-width:1280px) and (min-width:1024px) {
-	.wrap {
-		width:80%;
-	}
 	.header-right {
 		width: 53%;
 	}
 }
 @media only screen and (max-width:1024px) and (min-width:768px) {
-	.wrap {
+	.container {
 		width:80%;
 	}
 	.header-right {
@@ -1060,7 +1057,7 @@ input:focus {
 	}
 }
 @media only screen and (max-width:768px) and (min-width:640px) {
-	.wrap {
+	.container {
 		width:80%;
 	}
 	.header-right {
@@ -1158,7 +1155,7 @@ input:focus {
 		float: none;
 		margin-top:0em;
 	}
-	.sign-ligin-btns {
+	.login {
 		float: none;
 		margin-top: 0px;
 		position: absolute;
@@ -1214,7 +1211,7 @@ input:focus {
 	}
 }
 @media only screen and (max-width:640px) and (min-width:480px) {
-	.wrap {
+	.container {
 		width:80%;
 	}
 	.header-right {
@@ -1312,7 +1309,7 @@ input:focus {
 		float: none;
 		margin-top:0em;
 	}
-	.sign-ligin-btns {
+	.sign-login-btns {
 		float: none;
 		margin-top: 0px;
 		position: absolute;
@@ -1376,7 +1373,7 @@ input:focus {
 	.product-pic {
 		min-height: 129px;
 	}
-	.sign-ligin-btns ul li a.signup span, .sign-ligin-btns ul li a.login span {
+	.sign-login-btns ul li a.signup span, .sign-login-btns ul li a.login span {
 		padding: 0.4em 1.2em 0.4em 1.2em;
 	}
 	.logo a {
@@ -1386,7 +1383,7 @@ input:focus {
 	}
 }
 @media only screen and (max-width:480px) and (min-width:320px) {
-	.wrap {
+	.container {
 		width:80%;
 	}
 	.header-right {
@@ -1488,7 +1485,7 @@ input:focus {
 		float: none;
 		margin-top:0em;
 	}
-	.sign-ligin-btns {
+	.sign-login-btns {
 		float: none;
 		margin-top: 0px;
 		position: absolute;
@@ -1556,7 +1553,7 @@ input:focus {
 	.product-pic {
 		min-height: 84px;
 	}
-	.sign-ligin-btns ul li a.signup span, .sign-ligin-btns ul li a.login span {
+	.sign-login-btns ul li a.signup span, .sign-login-btns ul li a.login span {
 		padding: 0.4em 1.2em 0.4em 1.2em;
 	}
 	.logo a {
@@ -1567,12 +1564,12 @@ input:focus {
 	#pcxwlogo{
 		display: none;
 	}
-	.sign-ligin-btns ul li {
+	.sign-login-btns ul li {
 		margin-left: 0.5em;
 	}
 }
 @media only screen and (max-width:320px) and (min-width:240px) {
-	.wrap {
+	.container {
 		width:90%;
 	}
 	.header-right {
@@ -1676,7 +1673,7 @@ input:focus {
 		float: none;
 		margin-top:0em;
 	}
-	.sign-ligin-btns {
+	.sign-login-btns {
 		float: none;
 		margin-top: 0px;
 		position: absolute;
@@ -1746,7 +1743,7 @@ input:focus {
 	.product-pic {
 		min-height: 56px;
 	}
-	.sign-ligin-btns ul li a.login span {
+	.sign-login-btns ul li a.login span {
 		padding: 5px 5px 1px 5px;
 	}
 	.logo a {
@@ -1758,7 +1755,7 @@ input:focus {
 	#pcxwlogo{
 		display: none;
 	}
-	.sign-ligin-btns ul li {
+	.sign-login-btns ul li {
 		margin-left: 0.5em;
 	}
 	#signupButton span,#loginButton span{
@@ -1783,7 +1780,7 @@ input:focus {
 	#signupForm input[type="text"], #signupForm input[type="password"] {
 		width: 92%;
 	}
-	.sign-ligin-btns ul li a.signup span, .sign-ligin-btns ul li a.login span {
+	.sign-login-btns ul li a.signup span, .sign-login-btns ul li a.login span {
 		padding: 0;
 	}
 }
@@ -1802,9 +1799,8 @@ input:focus {
 }
 
 #pcxwlogo{
-	height: 50px;
-	width: 50px;
-	float: left;
-	background:url(../images/pcxw_logo.png) no-repeat 0px 0px;
-	background-size: 100% 100%;
+	background: url(../images/pcxw_logo.png) no-repeat 0px 8px;
+	text-indent: -9999px;
+	float: left;	
+	background-size: 45px 50px;
 }

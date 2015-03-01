@@ -55,8 +55,8 @@ h3{
 .searcher-pad{
 	text-align:left;
 	border: 1px solid #a4a4a4;
-	margin-top: 15px;
-	margin-bottom: 15px;
+	/*margin-top: 15px;*/
+	margin-bottom: 20px;
 	padding: 15px;
 }
 
@@ -135,14 +135,14 @@ h3{
 	min-height: 80px;
 	height: auto;
 	background-color: #f0ffff;
-	padding: 5px;
+	margin: 5px 0 5px 0;
 }
 .search-result-picked{
 	width: 100%;
 	min-height: 80px;
 	height: auto;
 	background-color: #fffafa;
-	padding: 5px;
+	margin: 5px 0 5px 0;
 }
 .search-result-mouseover{
 	width: 100%;
@@ -150,7 +150,7 @@ h3{
 	height: auto;
 	background-color: #eeffbb;
 	cursor:pointer;
-	padding: 5px;
+	margin: 5px 0 5px 0;
 }
 
 
@@ -263,3 +263,18 @@ h3{
 	padding:20px 5px 5px 0;
 }
 
+.history-seperator{
+	position: relative;
+	margin-top: 20px;
+	border-top: 1px solid #1f78ba;
+	text-align: center;
+	color: #259;
+}
+
+.history-seperator span{
+	position: relative;
+	top: -10px;
+	display: inline-block;
+	padding: 0 20px;
+	background: #fff;
+}

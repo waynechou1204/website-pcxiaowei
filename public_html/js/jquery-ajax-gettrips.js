@@ -59,7 +59,7 @@ function gettrips() {
 	var pub_late = document.getElementById("select_start").value;
 	*/
 
-	var geturl = "getSearchResult.php?stloc=" + start_loc +
+	var geturl = "php_functions/getSearchResult.php?stloc=" + start_loc +
 		"&edloc=" + end_loc + "&deptdate=" + depart_date + "&typtkm=" + type_takeman + "&typbcar=" + type_bycar +
 		"&order=" + order_idx;
 	

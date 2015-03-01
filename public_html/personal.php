@@ -6,7 +6,7 @@
 	}
 ?>
 
-<?php include 'loadSearchData.php'; ?>
+<?php include 'php_functions/loadSearchData.php'; ?>
 
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="css/personal.css" type='text/css'/>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		
 		<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
 		<script type="application/x-javascript"> 
@@ -25,7 +25,6 @@
 
 		<!---strat-slider-->
 	    <!--script type="text/javascript" src="js/jquery.min.js"></script-->
-	    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
 	    <link rel="stylesheet" type="text/css" href="css/slider-style.css" />
 		<script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
 		<!---//strat-slider-->
@@ -35,12 +34,12 @@
 		<!---768px-menu-->
 		<link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
 		<script type="text/javascript" src="js/jquery.mmenu.js"></script>
-			<script type="text/javascript">
-				//	The menu on the left
-				$(function() {
-					$('nav#menu-left').mmenu();
-				});
-			</script>
+		<script type="text/javascript">
+			//	The menu on the left
+			$(function() {
+				$('nav#menu-left').mmenu();
+			});
+		</script>
 		<!---//768px-menu-->
 
 		<!-- my script -->
@@ -179,4 +178,6 @@
 
 		<!---//End-wrap-->
 	</body>
+
+	   	
 </html>

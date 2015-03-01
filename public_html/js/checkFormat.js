@@ -212,7 +212,7 @@ function checkLoginPwd()
 	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 	}
 
-	xmlhttp.open("POST","logincheck.php",false);
+	xmlhttp.open("POST","php_functions/logincheck.php",false);
 
 	var flag = false;
 	
