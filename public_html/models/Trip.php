@@ -65,6 +65,8 @@ class Trip
         return true;
 	}
 
+//// connect db too often!
+
 	function renderOnSearch(){
 		//echo '<hr style="border:1px dashed gray;" />';
 		if ($this->type == "pickup") { // blue
@@ -77,10 +79,20 @@ class Trip
 		echo '	<div class="result-owner">';
 		echo '		<div class="div-owner">';
 		//echo '			<img class="driver-photo" alt="Driver Photo" src="../upload/photo/<{$trip['driverId']}>" onerror="javascript:this.src='../images/default_user.jpg'" width="50" height="50">';
-		$sql = "SELECT * FROM client WHERE id= '". $this->owner_id ."'";
-		$restemp = mysql_query($sql) or die("Invalid query: ".mysql_error());
-		$arrtemp = mysql_fetch_array($restemp);
-		$ower_name = $arrtemp['name'];
+		
+		// $sql = "SELECT * FROM client WHERE id= '". $this->owner_id ."'";
+		// $restemp = mysql_query($sql) or die("Invalid query: ".mysql_error());
+		// $arrtemp = mysql_fetch_array($restemp);
+		
+		$curl = curl_init(); 
+		$url = dirname($_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"]);
+		curl_setopt($curl, CURLOPT_URL, $url.'/api.php/users/'.$this->owner_id);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+		$data = curl_exec($curl);
+		$user = unserialize($data);
+		unset($data);
+
+		$ower_name = $user->name;
 		echo 			$ower_name;
 		echo '		</div>';
 		echo '		<div class="div-driver">';
@@ -89,15 +101,27 @@ class Trip
 		echo '	</div>';
 		echo '	<div class="result-detail">';
 		
-		$sql = "SELECT * FROM location WHERE location_id= '". $this->start_location ."'";
-		$restemp = mysql_query($sql) or die("Invalid query: ".mysql_error());
-		$arrtemp = mysql_fetch_array($restemp);
-		$loc_start_name = $arrtemp['name'];
+		curl_setopt($curl, CURLOPT_URL, $url.'/api.php/locations/'.$this->start_location);
+		$data = curl_exec($curl);
+		$st_location = unserialize($data);
+		unset($data);
 
-		$sql = "SELECT * FROM location WHERE location_id= '".$this->end_location."'";
-		$restemp = mysql_query($sql) or die("Invalid query: ".mysql_error());
-		$arrtemp = mysql_fetch_array($restemp);
-		$loc_end_name = $arrtemp['name'];
+		// $sql = "SELECT * FROM location WHERE location_id= '". $this->start_location ."'";
+		// $restemp = mysql_query($sql) or die("Invalid query: ".mysql_error());
+		// $arrtemp = mysql_fetch_array($restemp);
+		$loc_start_name = $st_location->name;
+
+
+		curl_setopt($curl, CURLOPT_URL, $url.'/api.php/locations/'.$this->end_location);
+		$data = curl_exec($curl);
+		$end_location = unserialize($data);
+		unset($data);
+		// $sql = "SELECT * FROM location WHERE location_id= '".$this->end_location."'";
+		// $restemp = mysql_query($sql) or die("Invalid query: ".mysql_error());
+		// $arrtemp = mysql_fetch_array($restemp);
+		$loc_end_name = $end_location->name;
+		
+		curl_close($curl);
 		 
 		echo '		<div class="result-loc">'.$loc_start_name.'  &#8594;  '.$loc_end_name.'</div>';
 		echo '		<div class="result-time">'.$this->depart_date."<br>".$this->depart_time.'</div>';

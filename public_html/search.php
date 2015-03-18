@@ -10,6 +10,9 @@
 <?php 
 include 'php_functions/loadSearchData.php'; 
 require_once 'models/Trip.php';
+require_once 'models/Location.php';
+require_once 'models/User.php';
+
 ?>
 
 <!DOCTYPE HTML>
@@ -48,18 +51,25 @@ require_once 'models/Trip.php';
 								</label>
 								<select id="select_start" onchange="gettrips()">
 									<?php 
-										$locations = loadlocations();
+										$curl = curl_init(); 
+										$url = dirname($_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"]);
+										curl_setopt($curl, CURLOPT_URL, $url.'/api.php/locations');
+										curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+										
+										$data = curl_exec($curl);
+										curl_close($curl);
+										
+										$locationsArray = unserialize($data);	
 										$type = "0";
-										foreach ($locations as $loc) {
-											if ($loc['location_type'] != $type) {
+										foreach ($locationsArray as $loc) {
+											if ($loc->location_type != $type) {
 												if ($type != "0") {
 													echo '</optgroup>';
 												}
-												echo '<optgroup label="'.$loc['location_type'].'">';
-												$type = $loc['location_type'];
+												echo '<optgroup label="'.$loc->location_type.'">';
+												$type = $loc->location_type;
 											} 
-												
-											echo '<option value ="'.$loc['location_id'].'">'.$loc['name'].'</option>';
+											echo '<option value ="'.$loc->location_id.'">'.$loc->name.'</option>';
 										}
 										echo '</optgroup>';
 										unset($loc);
@@ -74,18 +84,18 @@ require_once 'models/Trip.php';
 								<select id="select_end" onchange="gettrips()">
 									<?php 
 										$type = "0";
-										foreach ($locations as $loc) {
-											if ($loc['location_type'] != $type) {
+										foreach ($locationsArray as $loc) {
+											if ($loc->location_type != $type) {
 												if ($type != "0") {
 													echo '</optgroup>';
 												}
-												echo '<optgroup label="'.$loc['location_type'].'">';
-												$type = $loc['location_type'];
+												echo '<optgroup label="'.$loc->location_type.'">';
+												$type = $loc->location_type;
 											} 
-											echo '<option value ="'.$loc['location_id'].'">'.$loc['name'].'</option>';
+											echo '<option value ="'.$loc->location_id.'">'.$loc->name.'</option>';
 										}
 										echo '</optgroup>';
-										unset($locations);
+										unset($locationsArray);
 										unset($loc);
 									?>
 								</select>
@@ -146,19 +156,18 @@ require_once 'models/Trip.php';
 						<?php
 							// 初始化一个 cURL 对象
 							$curl = curl_init(); 
-							curl_setopt($curl, CURLOPT_URL, 'http://127.0.0.1/TongjiCovoit/public_html/api.php/trips');
+							$url = dirname($_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"]);
+							curl_setopt($curl, CURLOPT_URL, $url.'/api.php/trips');
 							curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 							
 							$data = curl_exec($curl);
 							curl_close($curl);
 							 
 							$tripsArray = unserialize($data);
-							
 							date_default_timezone_set('PRC');
             				$date = date("Y-m-d");
 							
-							foreach ($tripsArray as $triparray) {
-								$trip = new Trip($triparray);
+							foreach ($tripsArray as $trip) {
 								if ($trip->depart_date<$date) {
 									$trip->renderOnSearch();
 								}

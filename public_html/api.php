@@ -16,7 +16,7 @@ function apiAutoload($classname)
 }
 
 class Request {
-    public $verb;
+    public $verb;           //GET POST UPDATE PUT
     public $url_elements;
     public $parameters;
     public $format;
