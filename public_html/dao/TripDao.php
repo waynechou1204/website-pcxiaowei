@@ -8,12 +8,22 @@ class TripDao
 {
 	function getAllTrips(){
 		connectDB();
-        $sql = 'SELECT * FROM trip';
+        $sql = 'SELECT t.*, u.name, la.name, lb.name
+            FROM  `trip` AS t
+            INNER JOIN  `location` AS la
+            INNER JOIN  `location` AS lb
+            INNER JOIN  `client` AS u ON t.start_location = la.location_id
+            AND t.end_location = lb.location_id
+            AND t.owner_id = u.id';
+
         $result=mysql_query($sql) or die("Invalid query: " . mysql_error());
         $nb = mysql_num_rows($result);
         if($nb > 0) {
             while($arr = mysql_fetch_array($result)) {
                 $trip = new Trip($arr);
+                $trip->owner_name=$arr[19]; // need to fix, name confict
+                $trip->start_location_name=$arr[20];
+                $trip->end_location_name=$arr[21];
                 $data[]=$trip;
             }
         }
@@ -23,7 +33,14 @@ class TripDao
 
     function getTripById($trip_id){
         connectDB();
-        $sql = 'SELECT * FROM trip WHERE trip_id="' . $trip_id .'" ';
+        $sql = 'SELECT t.*, u.name, la.name, lb.name
+                FROM  `trip` AS t
+                INNER JOIN  `location` AS la
+                INNER JOIN  `location` AS lb
+                INNER JOIN  `client` AS u ON t.start_location = la.location_id
+                AND t.end_location = lb.location_id
+                AND t.owner_id = u.id 
+                WHERE trip_id="' . $trip_id .'" ';
         $result=mysql_query($sql) or die("Invalid query: " . mysql_error());
         $nb = mysql_num_rows($result);
         if($nb > 0) {

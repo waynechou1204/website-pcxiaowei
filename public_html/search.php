@@ -12,7 +12,7 @@ include 'php_functions/loadSearchData.php';
 require_once 'models/Trip.php';
 require_once 'models/Location.php';
 require_once 'models/User.php';
-
+require_once 'views/Render.php';
 ?>
 
 <!DOCTYPE HTML>
@@ -167,9 +167,10 @@ require_once 'models/User.php';
 							date_default_timezone_set('PRC');
             				$date = date("Y-m-d");
 							
+							$render = new Render();
 							foreach ($tripsArray as $trip) {
 								if ($trip->depart_date<$date) {
-									$trip->renderOnSearch();
+									$render->renderTripOnSearch($trip);
 								}
 							}
 						?>	
