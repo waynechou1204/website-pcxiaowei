@@ -8,6 +8,8 @@
 		<title>拼车晓位 | 关于网站</title>
 		<link href="css/style.css" rel='stylesheet' type='text/css' />
 		<link rel="stylesheet" href="css/about.css" type='text/css'/>
+		
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
