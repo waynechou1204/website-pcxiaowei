@@ -6,65 +6,36 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		
 		<title>拼车晓位 | 首页</title>
-		<link href="css/style.css" rel='stylesheet' type='text/css' />
-		<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
-	    <link rel="stylesheet" type="text/css" href="css/slider-style.css" />
+
 		<!---768px-menu-->
 		<link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+		<link href="css/style.css" rel='stylesheet' type='text/css' />
+		<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
+	    <link rel="stylesheet" type="text/css" href="css/slider-style.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
 	</head>
+
 	<body>
 		
 		<?php include 'header.php'; ?>
-		
-		<!-- Loading image -->
-		<!--div class="loadingdiv"></div-->
-
-		<!--start-banner-->
-		<div class="text-slider">
-
-			<div class="wrap" > 
-				<!---start-da-slider-->
-				<div id="da-slider" class="da-slider">
-						<div class="da-slide">
-							<h2>自驾、打的都能拼车</h2>
-							<p> 来试试吧！</p>
-							<a href="search.php" class="da-link">开始使用</a>
-						</div>
-						<div class="da-slide">
-							<h2>一起拼车吧</h2>
-							<p> 方便，环保，还能交友！</p>
-							<a href="about.php" class="da-link">关于网站</a>
-						</div>
-						<div class="da-slide">
-							<h2>程序君说：</h2>
-							<p> 网站上线啦，快来吐槽！</p>
-							<a href="contact.php" class="da-link">我有建议</a>
-						</div>
-						<!--nav class="da-arrows">
-							<span class="da-arrows-prev"></span>
-							<span class="da-arrows-next"></span>
-						</nav-->
-				</div>
-				<script type="text/javascript" src="js/jquery.cslider.js"></script>
-				<script type="text/javascript">
-					$(function() {
-						$('#da-slider').cslider({
-							autoplay	: true,
-							bgincrement	: 450,
-							interval: 10000
-						});
-					
-					});
-				</script>
+		<!---start-content-->
+		<div id="firstPageImage" class="bg" display="relative">
+			<div class="slogan center">
+				<h2>自驾、打的都能拼车</h2>
+				<p> 来试试吧！</p>
+				<div class="heightBlank"></div>
+				<a href="search.php" class="slogan-link center">开始使用</a>
 			</div>
 		</div>
-
-		<!---start-content-->
-		<div class="content">
+		<div class="container">
+			<div class="content">
 			<div class="wrap">
 				<!--- start-top-grids-->
 				<div class="top-grids">
@@ -81,10 +52,10 @@
 							<img src="images/phone.jpg" title="phone" alt="contact the pcer"/>
 						</div>
 						<span><label>2</label></span>
-						<div class="border hide"> </div>
+						<div class="border"> </div>
 						<a href="search.php">与拼友取得联系</a>
 					</div>
-					<div class="top-grid hide">
+					<div class="top-grid">
 						<div class="product-pic">
 							<img src="images/sharecar.jpg" title="sharecar" alt="share the car"/>
 						</div>
@@ -96,7 +67,9 @@
 				</div>
 
 				<div class="clear"> </div>
-		</div>		
+			</div>		
+		</div>
+		
 			
 
 		<?php include 'footer.php'; ?>
