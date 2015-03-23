@@ -1,6 +1,7 @@
 .bg{
-	background: url(../images/img_firstpage.jpg) no-repeat center fixed;
-	width:100%;
+	background: url(../images/img_firstpage.jpg) no-repeat;
+	background-size: 100% 480px;
+	webkit-background-size: 100% 480px;
 	height: 480px;
 }
 
@@ -42,8 +43,6 @@
 }
 
 .slogan .slogan-link{
-	top: 45%;
-	margin-left: 0.5%;
 	color: #FFF;
 	border: 2px solid #fff;
 	padding: 0.6em 1.5em;

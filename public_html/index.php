@@ -31,7 +31,7 @@
 				<h2>自驾、打的都能拼车</h2>
 				<p> 来试试吧！</p>
 				<div class="heightBlank"></div>
-				<a href="search.php" class="slogan-link">开始使用</a>
+				<a href="search.php" class="slogan-link center">开始使用</a>
 			</div>
 		</div>
 		<div class="container">

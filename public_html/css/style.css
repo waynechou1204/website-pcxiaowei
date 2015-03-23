@@ -407,7 +407,7 @@ body{
 	background: #EE639F;
 }
 .footer-grids {
-	padding: 3em 0 5em;
+	/* padding: 3em 0 5em; */
 	height: 120px;
 }
 .copy-right{
