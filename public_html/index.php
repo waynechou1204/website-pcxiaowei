@@ -20,6 +20,9 @@
 		<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
 	    <link rel="stylesheet" type="text/css" href="css/slider-style.css" />
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		
+		<!-- weibo auth -->
+		<meta property="wb:webmaster" content="9ab6704cd473f7e7" />
 	</head>
 
 	<body>
