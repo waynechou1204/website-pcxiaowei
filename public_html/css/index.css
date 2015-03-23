@@ -4,6 +4,15 @@
 	height: 480px;
 }
 
+/* rewrite narvar margin-bottom of bootstrap*/
+.navbar{
+	margin-bottom: 0;
+}
+
+.heightBlank{
+	height: 138px;
+}
+
 .slogan h2{
 	color:#FFFFFF;
 	width: 77%;
