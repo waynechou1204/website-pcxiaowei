@@ -7,27 +7,28 @@ include 'php_functions/setDB.php';
 class TripDao
 {
 	function getAllTrips(){
-		connectDB();
-        $sql = 'SELECT t.*, u.name, la.name, lb.name
+		$conn=connectDB();
+        
+        // 预处理 SQL 并绑定参数
+        $stmt = $conn->prepare("
+            SELECT t.*, u.name AS owner_name, la.name AS start_location_name, lb.name AS end_location_name
             FROM  `trip` AS t
-            INNER JOIN  `location` AS la
-            INNER JOIN  `location` AS lb
-            INNER JOIN  `client` AS u ON t.start_location = la.location_id
+            INNER JOIN  `location` la
+            INNER JOIN  `location` lb
+            INNER JOIN  `client` u ON t.start_location = la.location_id
             AND t.end_location = lb.location_id
-            AND t.owner_id = u.id';
+            AND t.owner_id = u.id
+        ");
+        $stmt->execute();
 
-        $result=mysql_query($sql) or die("Invalid query: " . mysql_error());
-        $nb = mysql_num_rows($result);
-        if($nb > 0) {
-            while($arr = mysql_fetch_array($result)) {
-                $trip = new Trip($arr);
-                $trip->owner_name=$arr[19]; // need to fix, name confict
-                $trip->start_location_name=$arr[20];
-                $trip->end_location_name=$arr[21];
-                $data[]=$trip;
-            }
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        
+        $data = array();
+        while($arr = $stmt->fetch()) { 
+            $trip = new Trip($arr);
+            $data[]=$trip;
         }
-        mysql_close();
+
         return $data;
 	} 
 
