@@ -1,8 +1,9 @@
-<!---start-header
+
 <div id="page">
 	<div class="header">
 		<a class="navicon" href="#menu-left"> </a>
 	</div>
+
 	<nav id="menu-left">
 		<ul>
 			<li><a href="index.php">首页</a></li>
@@ -12,8 +13,7 @@
 			<li><a href="contact.php">联系我们</a></li>
 		</ul>
 	</nav>
-	<div class="clear"> </div>
-</div>-->
+</div>
 
 <div class="header navbar navbar-default" role="navigation"><!--class+="navbar-fixed-top"-->
 	<div class="container">

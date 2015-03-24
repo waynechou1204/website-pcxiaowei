@@ -1,4 +1,4 @@
-<!---start-bottom-footer-grids-->
+<!--start-bottom-footer-grids-->
 <div class="footer-grids">
 	<div class="container">
 		<div class="footer-grid">
@@ -49,7 +49,7 @@
 
 <script src="js/login.js"></script>
 
-
+<!--validate html5 and css3-->
 <script src="js/modernizr.custom.28468.js"></script>
 
 <!--script src="js/jquery.min.js"></script-->
@@ -64,17 +64,17 @@
 	addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
 </script>
 
+<!-- The mini menu on the left -->
 <script type="text/javascript">
-	//	The menu on the left
 	$(function() {
 		$('nav#menu-left').mmenu();
 	});
 </script>
 
-<script type="text/javascript">
+<!--script type="text/javascript">
 	// baidu audit
 	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2c9cba06c2ed33c4a43f782cca39dc80' type='text/javascript'%3E%3C/script%3E"));
-</script>
+</script-->
 
-<!---//End-bottom-footer-grids-->
+<!---//End-bottom-footer-grids
