@@ -4,7 +4,7 @@
 ?>
 
 <!DOCTYPE HTML>
-<html>
+<html xmlns:wb="http://open.weibo.com/wb">
 	<head>
 		
 		<title>拼车晓位 | 首页</title>
@@ -23,7 +23,8 @@
 		<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
 
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
-				
+		
+		<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=2080267226" type="text/javascript" charset="utf-8"></script>	
 	</head>
 
 	<body>

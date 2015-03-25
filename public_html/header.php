@@ -107,6 +107,7 @@
 					</li>
 					<li id="loginContainer">
 						<button type="button" class="btn btn-default navbar-btn">登录</button>
+						<wb:login-button type="3,2" onlogin="login" onlogout="logout">登录按钮</wb:login-button>
 						<!--a class="login button" id="loginButton" href="#"><span>登录</span></a-->
 						<div class="clear"> </div>
 			                <div id="loginBox">                
