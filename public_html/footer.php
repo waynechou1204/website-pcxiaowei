@@ -58,7 +58,8 @@
 <script src="js/bootstrap.min.js"></script>
 
 <script src="js/jquery.mmenu.js"></script>
-				
+
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=2080267226&debug=true" type="text/javascript" charset="utf-8"></script>					
 <!-- ================================================== -->
 <script type="application/x-javascript"> 
 	addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
@@ -71,10 +72,19 @@
 	});
 </script>
 
+<script type="text/javascript">
+	function login(o) {
+	    alert(o.screen_name);
+	}
+	 
+	function logout() {
+	    alert('logout');
+	}
+</script>
 <!--script type="text/javascript">
 	// baidu audit
 	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2c9cba06c2ed33c4a43f782cca39dc80' type='text/javascript'%3E%3C/script%3E"));
 </script-->
 
-<!---//End-bottom-footer-grids
+<!---//End-bottom-footer-grids-->

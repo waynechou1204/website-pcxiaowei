@@ -1,6 +1,5 @@
 <?php 
 	session_start(); 
-	
 ?>
 
 <!DOCTYPE HTML>
@@ -24,7 +23,7 @@
 
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
 		
-		<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=2080267226" type="text/javascript" charset="utf-8"></script>	
+		
 	</head>
 
 	<body>
