@@ -59,7 +59,7 @@
 
 <script src="js/jquery.mmenu.js"></script>
 
-<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=2080267226&debug=true" type="text/javascript" charset="utf-8"></script>					
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=2080267226&amp;debug=true" type="text/javascript" charset="utf-8"></script>					
 <!-- ================================================== -->
 <script type="application/x-javascript"> 
 	addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
