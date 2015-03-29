@@ -1,0 +1,38 @@
+#signupForm{
+	width: 100%;
+}
+
+#signupForm fieldset{
+	margin: 0 0 5px 0;
+}
+#loginForm #checkbox{
+	margin-top:4px;
+}
+#loginForm fieldset{
+	margin: 0 0 5px 0;
+}
+#loginForm{
+	width: 100%;
+}
+#loginForm input{
+	display: block;
+}
+.modal-dialog {
+  width: 300px;
+}
+
+.m-login-form{
+	height:290px;
+}
+.WB_loginButton img{
+	padding-left: 13px;
+}
+.pl13{
+	padding-left: 13px;
+}
+.mb20{
+	margin-bottom:20px;
+}
+.fs80{
+	font-size: 80%;
+}

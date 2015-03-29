@@ -22,6 +22,7 @@
 		<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
 
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel='stylesheet' type='text/css' href="css/header.css"/>
 		
 		
 	</head>
