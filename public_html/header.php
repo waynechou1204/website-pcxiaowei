@@ -15,11 +15,11 @@
 	</nav>
 </div>
 
-<div class="header navbar navbar-default" role="navigation"><!--class+="navbar-fixed-top"-->
+<div class="header navbar navbar-default navbar-static-top" role="navigation"><!--class+="navbar-fixed-top"-->
 	<div class="container">
 		
 		<div class="navbar-header">
-		    <a class="navbar-brand" id="pcxwlogo" href="index.php">拼车晓位 15--61*30</a>
+		    <a class="navbar-brand" href="index.php"><img src="images/pcxw_logo.png" alt="拼车晓位 15--61*30"></a>
 		</div>
 
 	   	<div>
