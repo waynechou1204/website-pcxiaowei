@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title>拼车晓位 | 主页</title>
 
-    <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.mmenu.all.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     
-    <!-- <link href="css/style.css" rel='stylesheet' type='text/css' /> -->
-    <link rel="stylesheet" href="css/main.css" type='text/css'/>    
-    <link href="css/footer.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" type="text/css" href="css/header.css" />
+    <link rel="stylesheet" type='text/css' href="css/main.css" />    
+    <link rel='stylesheet' type='text/css' href="css/footer.css" />
     
+</script>
 </head>
 
 <body data-spy="scroll" data-target="#myScrollspy">
@@ -23,7 +24,7 @@
         </div>
         <div class="row">
             <div class="col-xs-3" id="myScrollspy">
-                <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="230" data-offset-bottom="230">
+                <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="200" data-offset-bottom="230">
                     <li class="active"><a href="#section-location-set">选择地点</a></li>
                     <li><a href="#section-time-set">选择时间</a></li>
                     <li><a href="#section-result-select">搜索结果</a></li>
@@ -33,6 +34,8 @@
             </div>
 
             <div class="col-xs-9">
+
+
                 <h1 id="section-location-set">选择地点</h1>
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">出发地</span>
@@ -99,6 +102,7 @@
                 <hr>
                 <hr>
 
+                
             </div>
         </div>
     </div>

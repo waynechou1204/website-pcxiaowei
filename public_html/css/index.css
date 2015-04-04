@@ -1,3 +1,51 @@
+html {
+	height: 100%;
+}
+body {
+	background: #E2E4E7;
+	padding: 0;
+	text-align: center;
+	font-family: 'open sans';
+	position: relative;
+	margin: 0;
+	height: 100%;
+	-webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+	height: 100% !important;
+	height: 100%;
+	margin: 0 auto; 
+	overflow: hidden;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+.main {
+	float: left;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.main section  {
+	overflow: hidden;
+}
+
+.main section.page1 {
+	background:rgb(230, 217, 200);
+}
+.main section.page2 {
+	background: #555557 url(back-phone.png) no-repeat center -150px ;
+}
+.main section.page3 {
+	background:url(tilted-phone.png) no-repeat 156px -150px ;
+}
+
+/*--------------------------------------------------------*/
+
 .bg{
 	background: url(../images/img_firstpage.jpg) no-repeat;
 	background-size: 100% 480px;
@@ -5,10 +53,6 @@
 	height: 480px;
 }
 
-/* rewrite narvar margin-bottom of bootstrap*/
-.navbar{
-	margin-bottom: 0;
-}
 
 .heightBlank{
 	height: 80px;
@@ -49,14 +93,14 @@
 	border-radius: 1.2em;
 	z-index:10;
 }
- .slogan-link:hover{
- 	color: #eee;
+.slogan-link:hover{
+	color: #eee;
 	border: 2px solid #eee;
- }
- 
- .center {
-  display: table;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 100px;
+}
+
+.center {
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 100px;
 }

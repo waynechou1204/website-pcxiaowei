@@ -1,4 +1,3 @@
-<!--start-bottom-footer-grids-->
 <div class="footer-grids">
 	<div class="container">
 		<div class="footer-grid">
@@ -43,11 +42,11 @@
 
 <!-- ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="js/My97DatePicker/WdatePicker.js"></script>
-<script src="js/jquery-ajax-gettrips.js"></script>
-<script src="js/checkFormat.js"></script>
 
-<script src="js/login.js"></script>
+<!-- <script src="js/My97DatePicker/WdatePicker.js"></script> -->
+<!-- <script src="js/jquery-ajax-gettrips.js"></script> -->
+<!-- <script src="js/checkFormat.js"></script> -->
+<!-- <script src="js/login.js"></script> -->
 
 <!--validate html5 and css3-->
 <script src="js/modernizr.custom.28468.js"></script>
@@ -59,20 +58,20 @@
 
 <script src="js/jquery.mmenu.js"></script>
 
-<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=2080267226&amp;debug=true" type="text/javascript" charset="utf-8"></script>					
+<!-- <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=2080267226&amp;debug=true" type="text/javascript" charset="utf-8"></script>					 -->
 <!-- ================================================== -->
 <script type="application/x-javascript"> 
 	addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
 </script>
 
 <!-- The mini menu on the left -->
-<script type="text/javascript">
+<!--script type="text/javascript">
 	$(function() {
 		$('nav#menu-left').mmenu();
 	});
-</script>
+</script-->
 
-<script type="text/javascript">
+<!--script type="text/javascript">
 	function login(o) {
 	    alert(o.screen_name);
 	}
@@ -80,11 +79,12 @@
 	function logout() {
 	    alert('logout');
 	}
-</script>
+</script-->
+
 <!--script type="text/javascript">
 	// baidu audit
 	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2c9cba06c2ed33c4a43f782cca39dc80' type='text/javascript'%3E%3C/script%3E"));
 </script-->
 
-<!---//End-bottom-footer-grids-->
+<!---//End-bottom-footer-grids
