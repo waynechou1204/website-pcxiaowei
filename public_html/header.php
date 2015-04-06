@@ -15,60 +15,51 @@
 		</ul>
 	</nav>
 </div>
- -->
-<div class="header navbar navbar-default navbar-static-top" role="navigation"><!--class+="navbar-fixed-top"-->
+-->
+<div class="header navbar navbar-default" role="navigation"><!--class+="navbar-fixed-top"-->
 	<div class="container">
 		
 		<div class="navbar-header">
-			<a class="navbar-brand" href="index.php"><img src="images/pcxw_logo.png" alt="拼车晓位 15--61*30"></a>
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+				<span class="sr-only">切换导航</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.php"><img src="images/cartoon-color.png" alt="拼车晓位 15--61*30"></a>
 		</div>
 
-		<div>
-			<ul class="nav navbar-nav">
+		<div class="collapse navbar-collapse" id="navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
 				<li><a href="index.php">首页</a></li>
-				<li><a href="search.php">搜索</a></li>
-				<li><a href="publish.php">发布</a></li>
-				<li><a href="about.php">关于网站</a></li>
-				<li><a href="contact.php">联系我们</a></li>
-			</ul>
-		</div>
-
-		<div class="sign-login-btns">
-			<ul>
-				<?php 
+				<li><a href="search.php">搜索/发布</a></li>
+				
+				<li><a href="mailto:admin@pcxiaowei.com">联系我们</a></li>
+				
+				<?php
 				if (isset($_SESSION['islogin']) && $_SESSION['islogin']===true) {
-					?> 
-					<li id="signupContainer">
-						<a class="signup" id="personalButton" href="personal.php?userid=<?php echo $_SESSION['userid'];?>">
-							<span><?php echo $_SESSION['username']; ?></span>
-						</a>
-					</li>
-					<li id="loginContainer">
-						<a class="login" id="logoutButton" href="logincheck.php">
-							<span>退出</span>
-						</a>
-					</li>
-
-					<?php    	
-				} else {
-					?>
-
-					<li id="signupContainer">
-						<!--a class="zzzsignup button" id="signupButton" href="#"><span>注册</span></a-->
-						<button type="button" id="signupButton" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#signUpModal">注册</button>
-					</li>
-					<li id="loginContainer">
-						<button type="button" id="loginButton" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#loginModal">登录</button>
-					</li>
-
-					<?php    
+				?>
+					<li><a class="signup" id="personalButton" href="personal.php?userid=<?php echo $_SESSION['userid'];?>">
+						<span><?php echo $_SESSION['username']; ?></span>
+					</a></li>
+					<li><a class="login" id="logoutButton" href="logincheck.php">
+						<span>退出</span>
+					</a></li>
+				<?php 
+				}else{
+				?>
+					<li><a href="#" data-toggle="modal" data-target="#signUpModal">注册</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#loginModal">登录</a></li>
+				<?php 
 				}
 				?>
-
 			</ul>
 		</div>
 	</div>
 </div>
+
 
 <!-- Modals for signin and signup -->
 
@@ -115,7 +106,7 @@
 				</form>
 				<!-- Login Ends Here -->
 			</div>
-	    </div><!-- /.modal-content -->
+		</div><!-- /.modal-content -->
 	</div><!-- /.modal -->
 </div>
 

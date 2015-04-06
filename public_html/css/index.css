@@ -35,7 +35,13 @@ a {
 }
 
 .main section.page1 {
-	background:rgb(230, 217, 200);
+	/*background:rgb(230, 217, 200);*/
+	background: url("../images/img_firstpage_dark.jpg") no-repeat scroll center -200px #555557;
+		
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 .main section.page2 {
 	background: #555557 url(back-phone.png) no-repeat center -150px ;
@@ -45,14 +51,14 @@ a {
 }
 
 /*--------------------------------------------------------*/
-
+/*
 .bg{
 	background: url(../images/img_firstpage.jpg) no-repeat;
 	background-size: 100% 480px;
 	webkit-background-size: 100% 480px;
 	height: 480px;
 }
-
+*/
 
 .heightBlank{
 	height: 80px;
